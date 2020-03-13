@@ -1,4 +1,4 @@
-package han.oose.dea.spottitube.controllers;
+package han.oose.dea.spottitube;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

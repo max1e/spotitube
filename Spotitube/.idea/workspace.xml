@@ -6,11 +6,50 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a255ccb-d8cd-4dcc-bd6f-64468dd2b024" name="Default Changelist" comment="" />
+    <list default="true" id="6a255ccb-d8cd-4dcc-bd6f-64468dd2b024" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/controllers/PlaylistController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/controllers/dto/PlaylistDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/controllers/service/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/controllers/service/PlaylistService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/service/LoginServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/service/PlaylistServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/service/dao/PlaylistDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spotitube.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spotitube.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/controllers/HelloWorldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/HelloWorldController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/controllers/JAXRSConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/JAXRSConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/controllers/dto/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spottitube/controllers/dto/LoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/han/ica/oose/spottitube/controllers/LoginControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/han/ica/oose/spottitube/controllers/LoginControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Spotitube.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spotitube.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Spotitube/WEB-INF/classes/han/oose/dea/spottitube/controllers/HelloWorldController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Spotitube/WEB-INF/classes/han/oose/dea/spottitube/controllers/JAXRSConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Spotitube/WEB-INF/classes/han/oose/dea/spottitube/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spotitube/WEB-INF/classes/han/oose/dea/spottitube/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Spotitube/WEB-INF/classes/han/oose/dea/spottitube/controllers/dto/LoginDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spotitube/WEB-INF/classes/han/oose/dea/spottitube/controllers/dto/LoginDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spottitube/controllers/HelloWorldController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spottitube/controllers/JAXRSConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spottitube/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/han/oose/dea/spottitube/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spottitube/controllers/dto/LoginDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/han/oose/dea/spottitube/controllers/dto/LoginDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/nl/han/ica/oose/spottitube/controllers/LoginControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/nl/han/ica/oose/spottitube/controllers/LoginControllerTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="239" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -30,7 +69,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1Z2dpGZV9WWi1BEgZxNUpnV7qgg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -41,13 +82,99 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../IntelliJ/workshop_rest/pom.xml" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.PlaylistControllerTest">
+    <configuration name="LoginControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.han.ica.oose.spottitube.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.han.ica.oose.spottitube.controllers" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.ica.oose.spottitube.controllers.LoginControllerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginControllerTest.testHandleLoginReturnsUnauthorizedIfLoginDoesntMatch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.han.ica.oose.spottitube.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.han.ica.oose.spottitube.controllers" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.ica.oose.spottitube.controllers.LoginControllerTest" />
+      <option name="METHOD_NAME" value="testHandleLoginReturnsUnauthorizedIfLoginDoesntMatch" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlaylistControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.han.ica.oose.spottitube.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.han.ica.oose.spottitube.controllers" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.ica.oose.spottitube.controllers.PlaylistControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlaylistControllerTest.testGetAllPlaylistsReturnsPlaylistsIfTokenMatches (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.han.ica.oose.spottitube.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.han.ica.oose.spottitube.controllers" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.ica.oose.spottitube.controllers.PlaylistControllerTest" />
+      <option name="METHOD_NAME" value="testGetAllPlaylistsReturnsPlaylistsIfTokenMatches" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlaylistControllerTest.testGetAllPlaylistsReturnsPlaylistsIfTokenMatches" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.han.ica.oose.spottitube.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.han.ica.oose.spottitube.controllers" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.ica.oose.spottitube.controllers.PlaylistControllerTest" />
+      <option name="METHOD_NAME" value="testGetAllPlaylistsReturnsPlaylistsIfTokenMatches(han.oose.dea.spottitube.controllers.dto.PlaylistsDTO)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TomEE? More like Tom ieeh" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 9.0.30" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Spotitube_war/" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -121,6 +248,23 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.LoginControllerTest" />
+      <item itemvalue="JUnit.LoginControllerTest.testHandleLoginReturnsUnauthorizedIfLoginDoesntMatch" />
+      <item itemvalue="TomEE Server.TomEE? More like Tom ieeh" />
+      <item itemvalue="JUnit.PlaylistControllerTest.testGetAllPlaylistsReturnsPlaylistsIfTokenMatches" />
+      <item itemvalue="JUnit.PlaylistControllerTest.testGetAllPlaylistsReturnsPlaylistsIfTokenMatches (1)" />
+      <item itemvalue="JUnit.PlaylistControllerTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PlaylistControllerTest" />
+        <item itemvalue="JUnit.PlaylistControllerTest.testGetAllPlaylistsReturnsPlaylistsIfTokenMatches (1)" />
+        <item itemvalue="JUnit.PlaylistControllerTest.testGetAllPlaylistsReturnsPlaylistsIfTokenMatches" />
+        <item itemvalue="JUnit.LoginControllerTest" />
+        <item itemvalue="JUnit.LoginControllerTest.testHandleLoginReturnsUnauthorizedIfLoginDoesntMatch" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -135,7 +279,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="TomEE Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -154,7 +298,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584041303505</updated>
-      <workItem from="1584041308531" duration="892000" />
+      <workItem from="1584041308531" duration="6452000" />
+      <workItem from="1584093554285" duration="25626000" />
     </task>
     <servers />
   </component>
@@ -162,13 +307,92 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="254" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584041439981">
+    <state x="254" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584114388586">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="254" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1584041439981" />
+    <state x="254" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1584114388586" />
+    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1584110755541">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1584110755541" />
+    <state x="580" y="186" key="FileChooserDialogImpl" timestamp="1584111332370">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1584111332370" />
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1584128957964">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584128957964" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1584128957964">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584128957964" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1584128957964">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584128957964" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1584128957964">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584128957964" />
+    <state width="1069" height="222" key="GridCell.Tab.1.bottom" timestamp="1584126429938">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1069" height="222" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584126429938" />
+    <state width="1069" height="222" key="GridCell.Tab.1.center" timestamp="1584126429938">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1069" height="222" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1584126429938" />
+    <state width="1069" height="222" key="GridCell.Tab.1.left" timestamp="1584126429937">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1069" height="222" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1584126429937" />
+    <state width="1069" height="222" key="GridCell.Tab.1.right" timestamp="1584126429938">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1069" height="222" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1584126429938" />
+    <state width="1069" height="222" key="GridCell.Tab.2.bottom" timestamp="1584126429937">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1069" height="222" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584126429937" />
+    <state width="1069" height="222" key="GridCell.Tab.2.center" timestamp="1584126429937">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1069" height="222" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1584126429937" />
+    <state width="1069" height="222" key="GridCell.Tab.2.left" timestamp="1584126429937">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1069" height="222" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1584126429937" />
+    <state width="1069" height="222" key="GridCell.Tab.2.right" timestamp="1584126429937">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1069" height="222" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1584126429937" />
+    <state x="330" y="86" key="Maven.ArtifactSearchDialog" timestamp="1584117138406">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="330" y="86" key="Maven.ArtifactSearchDialog/0.0.1600.860@0.0.1600.860" timestamp="1584117138406" />
     <state x="280" y="5" key="SettingsEditor" timestamp="1584041519145">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="280" y="5" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584041519145" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584093554570">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584093554570" />
+    <state x="456" y="83" width="670" height="676" key="search.everywhere.popup" timestamp="1584115710421">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="83" width="670" height="676" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1584115710421" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Spotitube$LoginControllerTest_getItemsTest.ic" NAME="LoginControllerTest.getItemsTest Coverage Results" MODIFIED="1584112793630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.han.ica.oose.spottitube.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Spotitube$LoginControllerTest_testHandleLoginReturnsUnauthorizedIfLoginDoesntMatch.ic" NAME="LoginControllerTest.testHandleLoginReturnsUnauthorizedIfLoginDoesntMatch Coverage Results" MODIFIED="1584113397480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.han.ica.oose.spottitube.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Spotitube$LoginControllerTest.ic" NAME="LoginControllerTest Coverage Results" MODIFIED="1584114365438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.han.ica.oose.spottitube.controllers.*</FILTER>
+    </SUITE>
   </component>
 </project>
