@@ -46,8 +46,10 @@ public class LoginControllerTest {
         // Act
         var response = sut.handleLogin(loginDTO);
 
+        var actualStatus = response.getStatus();
+
         // Assert
-        assertEquals(expectedStatus, response.getStatus());
+        assertEquals(expectedStatus, actualStatus);
         assertNull(response.getEntity());
     }
 
@@ -66,9 +68,12 @@ public class LoginControllerTest {
         // Act
         var response = sut.handleLogin(loginDTO);
 
+        var actualStatus = response.getStatus();
+        var actualEntity = response.getEntity();
+
         // Assert
-        assertEquals(expectedStatus, response.getStatus());
-        assertEquals(expectedEntity, response.getEntity());
+        assertEquals(expectedStatus, actualStatus);
+        assertEquals(expectedEntity, actualEntity);
     }
 
 }

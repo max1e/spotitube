@@ -52,9 +52,12 @@ public class TracksControllerTest {
             // Act
             var response = sut.getAvailableTracks(TOKEN, PLAYLIST_ID);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertNull(response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertNull(actualEntity);
         }
 
         @Test
@@ -70,9 +73,12 @@ public class TracksControllerTest {
             // Act
             var response = sut.getAvailableTracks(TOKEN, PLAYLIST_ID);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertEquals(expectedEntity, response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertEquals(expectedEntity, actualEntity);
         }
     }
 }

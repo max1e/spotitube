@@ -61,9 +61,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.getAllPlaylists(TOKEN);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertNull(response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertNull(actualEntity);
         }
 
         @Test
@@ -79,9 +82,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.getAllPlaylists(TOKEN);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertEquals(expectedEntity, response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertEquals(expectedEntity, actualEntity);
         }
     }
 
@@ -99,9 +105,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.getPlaylistsTracks(TOKEN, PLAYLIST_ID);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertNull(response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertNull(actualEntity);
         }
 
         @Test
@@ -117,9 +126,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.getPlaylistsTracks(TOKEN, PLAYLIST_ID);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertEquals(expectedEntity, response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertEquals(expectedEntity, actualEntity);
         }
     }
 
@@ -137,9 +149,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.addPlaylist(TOKEN, PLAYLIST_DTO);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertNull(response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertNull(actualEntity);
         }
 
         @Test
@@ -181,9 +196,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.addPlaylist(TOKEN, PLAYLIST_DTO);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertEquals(expectedEntity, response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertEquals(expectedEntity, actualEntity);
         }
     }
 
@@ -201,9 +219,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertNull(response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertNull(actualEntity);
         }
 
         @Test
@@ -245,9 +266,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertEquals(expectedEntity, response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertEquals(expectedEntity, actualEntity);
         }
 
         @Test
@@ -256,10 +280,10 @@ public class PlaylistControllerTest {
             // Arrange
             Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
 
-            var differentPlaylistId = 2;
+            var testPlaylistId = 2;
 
             // Act & Assert
-            assertThrows(BadRequestException.class, () -> sut.editPlaylistName(TOKEN, differentPlaylistId, PLAYLIST_DTO));
+            assertThrows(BadRequestException.class, () -> sut.editPlaylistName(TOKEN, testPlaylistId, PLAYLIST_DTO));
         }
 
         @Test
@@ -293,9 +317,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.deletePlaylist(TOKEN, PLAYLIST_ID);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertNull(response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertNull(actualEntity);
         }
 
         @Test
@@ -337,9 +364,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.deletePlaylist(TOKEN, PLAYLIST_ID);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertEquals(expectedEntity, response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertEquals(expectedEntity, actualEntity);
         }
     }
 
@@ -357,9 +387,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertNull(response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertNull(actualEntity);
         }
 
         @Test
@@ -401,9 +434,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertEquals(expectedEntity, response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertEquals(expectedEntity, actualEntity);
         }
     }
 
@@ -421,9 +457,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertNull(response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertNull(actualEntity);
         }
 
         @Test
@@ -465,9 +504,12 @@ public class PlaylistControllerTest {
             // Act
             var response = sut.addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
 
+            var actualStatus = response.getStatus();
+            var actualEntity = response.getEntity();
+
             // Assert
-            assertEquals(expectedStatus, response.getStatus());
-            assertEquals(expectedEntity, response.getEntity());
+            assertEquals(expectedStatus, actualStatus);
+            assertEquals(expectedEntity, actualEntity);
         }
     }
 }
