@@ -128,11 +128,10 @@ public class PlaylistControllerTest {
     @DisplayName("addPlaylist unit tests")
     class AddPlaylistTest {
         @Test
-        @DisplayName("Test addPlaylist() returns unautherized if token doesn't match")
+        @DisplayName("Test addPlaylist() returns unauthorized if token doesn't match")
         public void testAddPlaylistReturnsUnauthorizedIfTokenDoesntMatch() {
             // Arrange
             Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
-            var playlistId = PLAYLIST_ID;
             var expectedStatus = HTTP_UNAUTHORIZED;
 
             // Act
@@ -144,7 +143,7 @@ public class PlaylistControllerTest {
         }
 
         @Test
-        @DisplayName("Test addPlaylist() doesn't call playlistservice.addPlaylist() if token doesn't match")
+        @DisplayName("Test addPlaylist() doesn't call playlistService.addPlaylist() if token doesn't match")
         public void testAddPlaylistDoesntCallPlaylistServiceAddPlaylistIfTokenDoesntMatch() {
             // Arrange
             Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
@@ -157,7 +156,7 @@ public class PlaylistControllerTest {
         }
 
         @Test
-        @DisplayName("Test addPlaylist() calls playlistservice.addPlaylist() if token matches")
+        @DisplayName("Test addPlaylist() calls playlistService.addPlaylist() if token matches")
         public void testAddPlaylistCallsPlaylistServiceAddPlaylistIfTokenMatches() {
             // Arrange
             Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
@@ -208,7 +207,7 @@ public class PlaylistControllerTest {
         }
 
         @Test
-        @DisplayName("Test editPlaylistName() doesn't call playlistservice.editPlaylistName() if token doesn't match")
+        @DisplayName("Test editPlaylistName() doesn't call playlistService.editPlaylistName() if token doesn't match")
         public void testEditPlaylistNameDoesntCallPlaylistServiceEditPlaylistNameIfTokenDoesntMatch() {
             // Arrange
             Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
@@ -313,7 +312,7 @@ public class PlaylistControllerTest {
         }
 
         @Test
-        @DisplayName("Test deletePlaylist() calls playlistservice.deletePlaylist() if token matches")
+        @DisplayName("Test deletePlaylist() calls playlistService.deletePlaylist() if token matches")
         public void testDeletePlaylistCallsPlaylistServiceDeletePlaylistIfTokenMatches() {
             // Arrange
             Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
@@ -377,7 +376,7 @@ public class PlaylistControllerTest {
         }
 
         @Test
-        @DisplayName("Test removeTrackFromPlaylist() calls playlistservice.removeTrackFromPlaylist() if token matches")
+        @DisplayName("Test removeTrackFromPlaylist() calls playlistService.removeTrackFromPlaylist() if token matches")
         public void testRemoveTrackFromPlaylistCallsPlaylistServiceRemoveTrackFromPlaylistIfTokenMatches() {
             // Arrange
             Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
@@ -441,7 +440,7 @@ public class PlaylistControllerTest {
         }
 
         @Test
-        @DisplayName("Test addTrackToPlaylist() calls playlistservice.addTrackToPlaylist() if token matches")
+        @DisplayName("Test addTrackToPlaylist() calls playlistService.addTrackToPlaylist() if token matches")
         public void testAddTrackToPlaylistCallsPlaylistServiceRemoveAddTrackToPlaylistIfTokenMatches() {
             // Arrange
             Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
