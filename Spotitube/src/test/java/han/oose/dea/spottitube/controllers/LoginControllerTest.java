@@ -1,6 +1,5 @@
-package nl.han.ica.oose.spottitube.controllers;
+package han.oose.dea.spottitube.controllers;
 
-import han.oose.dea.spottitube.controllers.LoginController;
 import han.oose.dea.spottitube.controllers.dto.LoginDTO;
 import han.oose.dea.spottitube.controllers.dto.LoginResponseDTO;
 import han.oose.dea.spottitube.controllers.service.LoginService;

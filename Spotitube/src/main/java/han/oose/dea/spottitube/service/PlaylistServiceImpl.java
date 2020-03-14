@@ -31,19 +31,6 @@ public class PlaylistServiceImpl implements PlaylistService {
     }
 
     @Override
-    public PlaylistDTO getPlaylist(int playlistId) {
-        PlaylistDTO requestedPlaylist = null;
-
-        for (PlaylistDTO playlist : playlists) {
-            if (playlist.getId() == playlistId) {
-                requestedPlaylist = playlist;
-            }
-        }
-
-        return requestedPlaylist;
-    }
-
-    @Override
     public PlaylistsDTO getAllPlaylists() {
         var playlistWrapper = new PlaylistsDTO(playlists, 12345);
         return playlistWrapper;
@@ -63,5 +50,20 @@ public class PlaylistServiceImpl implements PlaylistService {
     @Override
     public void addPlaylist(PlaylistDTO playlist) {
         playlists.add(playlist);
+    }
+
+    @Override
+    public void editPlaylistName(PlaylistDTO playlist) {
+
+    }
+
+    @Override
+    public void removeTrackFromPlaylist(int playlistId, int trackId) {
+
+    }
+
+    @Override
+    public void addTrackToPlaylist(int playlistId, TrackDTO track) {
+
     }
 }

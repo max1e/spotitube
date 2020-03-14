@@ -3,6 +3,7 @@ D:\Code\Spotitube\Spotitube\src\main\java\han\oose\dea\spottitube\controllers\dt
 D:\Code\Spotitube\Spotitube\src\main\java\han\oose\dea\spottitube\controllers\service\LoginService.java
 D:\Code\Spotitube\Spotitube\src\main\java\han\oose\dea\spottitube\service\PlaylistServiceImpl.java
 D:\Code\Spotitube\Spotitube\src\main\java\han\oose\dea\spottitube\controllers\dto\LoginDTO.java
+D:\Code\Spotitube\Spotitube\src\main\java\han\oose\dea\spottitube\controllers\TracksController.java
 D:\Code\Spotitube\Spotitube\src\main\java\han\oose\dea\spottitube\controllers\LoginController.java
 D:\Code\Spotitube\Spotitube\src\main\java\han\oose\dea\spottitube\JAXRSConfiguration.java
 D:\Code\Spotitube\Spotitube\src\main\java\han\oose\dea\spottitube\controllers\dto\LoginResponseDTO.java
