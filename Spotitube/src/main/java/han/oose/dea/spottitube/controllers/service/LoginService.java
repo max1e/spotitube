@@ -4,7 +4,7 @@ import han.oose.dea.spottitube.controllers.dto.LoginResponseDTO;
 
 public interface LoginService {
 
-    public boolean doesLoginMatch(String user, String password);
-    public LoginResponseDTO getLoginResponse(String user, String password);
-    public boolean doesTokenMatch(String token);
+    boolean validateLogin(String user, String password);
+    LoginResponseDTO getLoginResponse(String user);
+    boolean validateToken(String token);
 }

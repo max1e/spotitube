@@ -2,34 +2,42 @@ package han.oose.dea.spottitube.service;
 
 import han.oose.dea.spottitube.controllers.dto.LoginResponseDTO;
 import han.oose.dea.spottitube.controllers.service.LoginService;
+import han.oose.dea.spottitube.service.datasource.LoginDAO;
+import org.apache.commons.codec.digest.DigestUtils;
 
-import javax.ws.rs.ForbiddenException;
+import javax.inject.Inject;
 
 public class LoginServiceImpl implements LoginService {
 
-    @Override
-    public boolean doesLoginMatch(String user, String password) {
-        var loginMatches = user.equals("plakplaatje") && password.equals("wachtwoord");
-        return loginMatches;
+    private LoginDAO loginDAO;
+
+    @Inject
+    public void setLoginDAO(LoginDAO loginDAO) {
+        this.loginDAO = loginDAO;
     }
 
     @Override
-    public LoginResponseDTO getLoginResponse(String user, String password) {
-        LoginResponseDTO loginResponse;
+    public boolean validateLogin(String username, String password) {
+        var hashedPassword = hashPassword(password);
+        var loginMatches = loginDAO.validateLogin(username, hashedPassword);
+        return loginMatches;
+    }
 
-        // Second check in case code is wrongly implemented
-        if (!doesLoginMatch(user, password)) {
-            throw new ForbiddenException();
-        }
-        else {
-            loginResponse = new LoginResponseDTO("12345", "plakplaatje");
-        }
-
+    // TODO unit testen
+    @Override
+    public LoginResponseDTO getLoginResponse(String username) {
+        var loginResponse = loginDAO.getUserToken(username);
         return loginResponse;
     }
 
     @Override
-    public boolean doesTokenMatch(String token) {
-        return token.equals("12345");
+    public boolean validateToken(String token) {
+        var tokenMatches = loginDAO.validateToken(token);
+        return tokenMatches;
+    }
+
+    private String hashPassword(String password) {
+        var hashedPassword = DigestUtils.sha256Hex(password);
+        return hashedPassword;
     }
 }

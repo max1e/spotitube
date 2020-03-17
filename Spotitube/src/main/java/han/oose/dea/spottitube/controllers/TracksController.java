@@ -29,7 +29,7 @@ public class TracksController {
     public Response getAvailableTracks(@QueryParam("token") String token, @QueryParam("playlistId") int playlistId) {
         Response response;
 
-        if (!loginService.doesTokenMatch(token)) {
+        if (!loginService.validateToken(token)) {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {

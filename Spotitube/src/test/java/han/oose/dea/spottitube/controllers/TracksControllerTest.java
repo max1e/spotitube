@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import javax.ws.rs.core.Response;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -21,9 +23,6 @@ public class TracksControllerTest {
 
     private static final String TOKEN = "1234-1234-1234";
     private static final int PLAYLIST_ID = 1;
-
-    private static final int HTTP_OK = 200;
-    private static final int HTTP_UNAUTHORIZED = 401;
 
     private static final TracksDTO TRACKS_DTO = new TracksDTO();
 
@@ -45,9 +44,9 @@ public class TracksControllerTest {
         @DisplayName("Test getAvailableTracks() returns unauthorized if token doesn't match")
         public void testGetAvailableTracksReturnsUnauthorizedIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
-            var expectedStatus = HTTP_UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED;
 
             // Act
             var response = sut.getAvailableTracks(TOKEN, PLAYLIST_ID);
@@ -64,10 +63,10 @@ public class TracksControllerTest {
         @DisplayName("Test getAvailableTracks() passes on tracks if token matches")
         public void testGetAvailableTracksPassesOnTracksIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedTracksService.getAvailableTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
-            var expectedStatus = HTTP_OK;
+            var expectedStatus = Response.Status.OK;
             var expectedEntity = TRACKS_DTO;
 
             // Act

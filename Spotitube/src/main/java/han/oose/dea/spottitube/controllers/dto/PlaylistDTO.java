@@ -1,7 +1,5 @@
 package han.oose.dea.spottitube.controllers.dto;
 
-import han.oose.dea.spottitube.controllers.PlaylistController;
-
 import java.util.List;
 
 public class PlaylistDTO {

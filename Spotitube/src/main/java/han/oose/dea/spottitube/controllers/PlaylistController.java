@@ -30,7 +30,7 @@ public class PlaylistController {
     public Response getAllPlaylists(@QueryParam("token") String token) {
         Response response;
 
-        if (!loginService.doesTokenMatch(token)) {
+        if (!loginService.validateToken(token)) {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {
@@ -46,7 +46,7 @@ public class PlaylistController {
     public Response getPlaylistsTracks(@QueryParam("token") String token, @PathParam("playlistId") int playlistId) {
         Response response;
 
-        if (!loginService.doesTokenMatch(token)) {
+        if (!loginService.validateToken(token)) {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {
@@ -62,7 +62,7 @@ public class PlaylistController {
     public Response addPlaylist(@QueryParam("token") String token, PlaylistDTO playlist) {
         Response response;
 
-        if (!loginService.doesTokenMatch(token)) {
+        if (!loginService.validateToken(token)) {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {
@@ -80,7 +80,7 @@ public class PlaylistController {
     public Response editPlaylistName(@QueryParam("token") String token, @PathParam("playlistId") int playlistId, PlaylistDTO playlist) {
         Response response;
 
-        if (!loginService.doesTokenMatch(token)) {
+        if (!loginService.validateToken(token)) {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else if (playlist.getId() != playlistId) {
@@ -100,7 +100,7 @@ public class PlaylistController {
     public Response deletePlaylist(@QueryParam("token") String token, @PathParam("playlistId") int playlistId) {
         Response response;
 
-        if (!loginService.doesTokenMatch(token)) {
+        if (!loginService.validateToken(token)) {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {
@@ -117,7 +117,7 @@ public class PlaylistController {
     public Response removeTrackFromPlaylist(@QueryParam("token") String token, @PathParam("playlistId") int playlistId, @PathParam("trackId") int trackId) {
         Response response;
 
-        if (!loginService.doesTokenMatch(token)) {
+        if (!loginService.validateToken(token)) {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {
@@ -135,7 +135,7 @@ public class PlaylistController {
     public Response addTrackToPlaylist(@QueryParam("token") String token, @PathParam("playlistId") int playlistId, TrackDTO track) {
         Response response;
 
-        if (!loginService.doesTokenMatch(token)) {
+        if (!loginService.validateToken(token)) {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {

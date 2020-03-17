@@ -7,6 +7,7 @@ import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 
 import javax.ws.rs.BadRequestException;
+import javax.ws.rs.core.Response;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.never;
@@ -21,10 +22,6 @@ public class PlaylistControllerTest {
     private static final String TOKEN = "1234-1234-1234";
     private static final int PLAYLIST_ID = 1;
     private static final int TRACK_ID = 1;
-
-    private static final int HTTP_OK = 200;
-    private static final int HTTP_CREATED = 201;
-    private static final int HTTP_UNAUTHORIZED = 401;
 
     private static final TrackDTO TRACK_DTO = new TrackDTO();
     private static final TracksDTO TRACKS_DTO = new TracksDTO();
@@ -54,9 +51,9 @@ public class PlaylistControllerTest {
         @DisplayName("Test getAllPlaylists() returns unauthorized if token doesn't match")
         public void testGetAllPlaylistsReturnsUnauthorizedIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
-            var expectedStatus = HTTP_UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED;
 
             // Act
             var response = sut.getAllPlaylists(TOKEN);
@@ -73,10 +70,10 @@ public class PlaylistControllerTest {
         @DisplayName("Test getAllPlaylists() passes on playlists if token matches")
         public void testGetAllPlaylistsPassesOnPlaylistsIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists()).thenReturn(PLAYLISTS_DTO);
 
-            var expectedStatus = HTTP_OK;
+            var expectedStatus = Response.Status.OK;
             var expectedEntity = PLAYLISTS_DTO;
 
             // Act
@@ -99,8 +96,8 @@ public class PlaylistControllerTest {
         @DisplayName("Test getPlaylistsTracks() returns unauthorized if token doesn't match")
         public void testGetPlaylistsTracksReturnsUnauthorizedIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
-            var expectedStatus = HTTP_UNAUTHORIZED;
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
+            var expectedStatus = Response.Status.UNAUTHORIZED;
 
             // Act
             var response = sut.getPlaylistsTracks(TOKEN, PLAYLIST_ID);
@@ -117,10 +114,10 @@ public class PlaylistControllerTest {
         @DisplayName("Test getPlaylistsTracks() passes on tracks if token matches")
         public void testGetPlaylistsTracksPassesOnTracksIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
-            var expectedStatus = HTTP_OK;
+            var expectedStatus = Response.Status.OK;
             var expectedEntity = TRACKS_DTO;
 
             // Act
@@ -143,8 +140,8 @@ public class PlaylistControllerTest {
         @DisplayName("Test addPlaylist() returns unauthorized if token doesn't match")
         public void testAddPlaylistReturnsUnauthorizedIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
-            var expectedStatus = HTTP_UNAUTHORIZED;
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
+            var expectedStatus = Response.Status.UNAUTHORIZED;
 
             // Act
             var response = sut.addPlaylist(TOKEN, PLAYLIST_DTO);
@@ -161,7 +158,7 @@ public class PlaylistControllerTest {
         @DisplayName("Test addPlaylist() doesn't call playlistService.addPlaylist() if token doesn't match")
         public void testAddPlaylistDoesntCallPlaylistServiceAddPlaylistIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
             // Act
             sut.addPlaylist(TOKEN, PLAYLIST_DTO);
@@ -174,7 +171,7 @@ public class PlaylistControllerTest {
         @DisplayName("Test addPlaylist() calls playlistService.addPlaylist() if token matches")
         public void testAddPlaylistCallsPlaylistServiceAddPlaylistIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
             // Act
             sut.addPlaylist(TOKEN, PLAYLIST_DTO);
@@ -187,10 +184,10 @@ public class PlaylistControllerTest {
         @DisplayName("Test addPlaylist() passes on playlists if token matches")
         public void testAddPlaylistPassesOnPlaylistsIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists()).thenReturn(PLAYLISTS_DTO);
 
-            var expectedStatus = HTTP_CREATED;
+            var expectedStatus = Response.Status.CREATED;
             var expectedEntity = PLAYLISTS_DTO;
 
             // Act
@@ -212,9 +209,9 @@ public class PlaylistControllerTest {
         @DisplayName("Test editPlaylistName() returns unauthorized if token doesn't match")
         public void testEditPlaylistNameReturnsUnauthorizedIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
-            var expectedStatus = HTTP_UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED;
 
             // Act
             var response = sut.editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
@@ -231,7 +228,7 @@ public class PlaylistControllerTest {
         @DisplayName("Test editPlaylistName() doesn't call playlistService.editPlaylistName() if token doesn't match")
         public void testEditPlaylistNameDoesntCallPlaylistServiceEditPlaylistNameIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
             // Act
             sut.editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
@@ -244,7 +241,7 @@ public class PlaylistControllerTest {
         @DisplayName("Test editPlaylistName() calls playlistService.editPlaylistName() if token matches")
         public void testEditPlaylistNameCallsPlaylistServiceEditPlaylistNameIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
             // Act
             sut.editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
@@ -257,10 +254,10 @@ public class PlaylistControllerTest {
         @DisplayName("Test editPlaylistName() passes on playlists if token matches")
         public void testEditPlaylistNamePassesOnPlaylistsIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists()).thenReturn(PLAYLISTS_DTO);
 
-            var expectedStatus = HTTP_OK;
+            var expectedStatus = Response.Status.OK;
             var expectedEntity = PLAYLISTS_DTO;
 
             // Act
@@ -278,7 +275,7 @@ public class PlaylistControllerTest {
         @DisplayName("Test editPlaylistName() throws BadRequestException if playlistId does not match playlistDTO")
         public void testEditPlaylistNameThrowsBadRequestExceptionIfPlaylistIdDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
             var testPlaylistId = 2;
 
@@ -290,7 +287,7 @@ public class PlaylistControllerTest {
         @DisplayName("Test editPlaylistName() doesn't call playlistService.editPlaylistName() if bad request exception is thrown")
         public void testEditPlaylistNameDoesntCallEditPlaylistNameIfBadRequestExceptionIsThrown() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
             var differentPlaylistId = 2;
 
@@ -310,9 +307,9 @@ public class PlaylistControllerTest {
         @DisplayName("Test deletePlaylist() returns unauthorized if token doesn't match")
         public void testDeletePlaylistReturnsUnauthorizedIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
-            var expectedStatus = HTTP_UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED;
 
             // Act
             var response = sut.deletePlaylist(TOKEN, PLAYLIST_ID);
@@ -329,7 +326,7 @@ public class PlaylistControllerTest {
         @DisplayName("Test deletePlaylist() doesn't call playlistService.deletePlaylist() if token doesn't match")
         public void testDeletePlaylistDoesntCallPlaylistServiceDeletePlaylistIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
             // Act
             sut.deletePlaylist(TOKEN, PLAYLIST_ID);
@@ -342,7 +339,7 @@ public class PlaylistControllerTest {
         @DisplayName("Test deletePlaylist() calls playlistService.deletePlaylist() if token matches")
         public void testDeletePlaylistCallsPlaylistServiceDeletePlaylistIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
             // Act
             sut.deletePlaylist(TOKEN, PLAYLIST_ID);
@@ -355,10 +352,10 @@ public class PlaylistControllerTest {
         @DisplayName("Test deletePlaylist() passes on playlists if token matches")
         public void testDeletePlaylistPassesOnPlaylistsIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists()).thenReturn(PLAYLISTS_DTO);
 
-            var expectedStatus = HTTP_OK;
+            var expectedStatus = Response.Status.OK;
             var expectedEntity = PLAYLISTS_DTO;
 
             // Act
@@ -380,9 +377,9 @@ public class PlaylistControllerTest {
         @DisplayName("Test removeTrackFromPlaylist() returns unauthorized if token doesn't match")
         public void testRemoveTrackFromPlaylistReturnsUnauthorizedIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
-            var expectedStatus = HTTP_UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED;
 
             // Act
             var response = sut.removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
@@ -399,7 +396,7 @@ public class PlaylistControllerTest {
         @DisplayName("Test removeTrackFromPlaylist() doesn't call playlistService.removeTrackFromPlaylist() if token doesn't match")
         public void testRemoveTrackFromPlaylistDoesntCallPlaylistServiceRemoveTrackFromPlaylistIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
             // Act
             sut.removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
@@ -412,7 +409,7 @@ public class PlaylistControllerTest {
         @DisplayName("Test removeTrackFromPlaylist() calls playlistService.removeTrackFromPlaylist() if token matches")
         public void testRemoveTrackFromPlaylistCallsPlaylistServiceRemoveTrackFromPlaylistIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
             // Act
             sut.removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
@@ -425,10 +422,10 @@ public class PlaylistControllerTest {
         @DisplayName("Test removeTrackFromPlaylist() passes on tracks if token matches")
         public void testRemoveTrackFromPlaylistPassesOnTracksIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
-            var expectedStatus = HTTP_OK;
+            var expectedStatus = Response.Status.OK;
             var expectedEntity = TRACKS_DTO;
 
             // Act
@@ -450,9 +447,9 @@ public class PlaylistControllerTest {
         @DisplayName("Test addTrackToPlaylist() returns unauthorized if token doesn't match")
         public void testAddTrackToPlaylistReturnsUnauthorizedIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
-            var expectedStatus = HTTP_UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED;
 
             // Act
             var response = sut.addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
@@ -469,7 +466,7 @@ public class PlaylistControllerTest {
         @DisplayName("Test addTrackToPlaylist() doesn't call playlistService.addTrackToPlaylist() if token doesn't match")
         public void testAddTrackToPlaylistDoesntCallPlaylistServiceAddTrackToPlaylistIfTokenDoesntMatch() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(false);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
             // Act
             sut.addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
@@ -482,7 +479,7 @@ public class PlaylistControllerTest {
         @DisplayName("Test addTrackToPlaylist() calls playlistService.addTrackToPlaylist() if token matches")
         public void testAddTrackToPlaylistCallsPlaylistServiceRemoveAddTrackToPlaylistIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
             // Act
             sut.addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
@@ -495,10 +492,10 @@ public class PlaylistControllerTest {
         @DisplayName("Test addTrackToPlaylist() passes on tracks if token matches")
         public void testAddTrackToPlaylistPassesOnTracksIfTokenMatches() {
             // Arrange
-            Mockito.when(mockedLoginService.doesTokenMatch(TOKEN)).thenReturn(true);
+            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
-            var expectedStatus = HTTP_OK;
+            var expectedStatus = Response.Status.OK;
             var expectedEntity = TRACKS_DTO;
 
             // Act

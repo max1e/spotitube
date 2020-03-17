@@ -14,9 +14,9 @@
           <element id="module-output" name="Spotitube" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.airhacks:jaxrs-cors:0.0.1" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.19" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
-          <element id="library" level="project" name="Maven: com.airhacks:jaxrs-cors:0.0.1" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
         </element>
       </element>

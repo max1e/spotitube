@@ -24,11 +24,11 @@ public class LoginController {
     public Response handleLogin(LoginDTO login) {
         Response response;
 
-        if (!loginService.doesLoginMatch(login.getUser(), login.getPassword())) {
+        if (!loginService.validateLogin(login.getUser(), login.getPassword())) {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {
-            var loginResponse = loginService.getLoginResponse(login.getUser(), login.getPassword());
+            var loginResponse = loginService.getLoginResponse(login.getUser());
             response = Response.status(Response.Status.OK).entity(loginResponse).build();
         }
 
