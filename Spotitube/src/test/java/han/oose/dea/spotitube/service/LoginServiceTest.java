@@ -1,5 +1,6 @@
 package han.oose.dea.spotitube.service;
 
+import han.oose.dea.spotitube.controllers.dto.LoginResponseDTO;
 import han.oose.dea.spotitube.service.datasource.LoginDAO;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,10 +17,12 @@ public class LoginServiceTest {
     private LoginServiceImpl sut;
     private LoginDAO mockedLoginDAO;
 
-    private String USERNAME = "username";
-    private String PASSWORD = "password";
-    private String HASHED_PASSWORD = DigestUtils.sha256Hex(PASSWORD);
-    private String TOKEN = "1234-1234-1234";
+    private final String USERNAME = "username";
+    private final String PASSWORD = "password";
+    private final String HASHED_PASSWORD = DigestUtils.sha256Hex(PASSWORD);
+    private final String TOKEN = "1234-1234-1234";
+
+    private final LoginResponseDTO LOGIN_RESPONSE = new LoginResponseDTO();
 
     @BeforeEach
     public void setup() {
@@ -64,7 +67,32 @@ public class LoginServiceTest {
     @Nested
     @DisplayName("getLoginResponse() unit tests")
     class GetLoginResponse {
-        //
+        @Test
+        @DisplayName("Test getLoginResponse() calls loginDAO.getUserByToken()")
+        public void getLoginResponseCallsLoginDAOGetUserByToken() {
+            // Arrange
+
+            // Act
+            sut.getLoginResponse(TOKEN);
+
+            // Assert
+            Mockito.verify(mockedLoginDAO).getUserByToken(TOKEN);
+        }
+
+        @Test
+        @DisplayName("Test getLoginResponse() passes on token from loginDAO.getUserByToken()")
+        public void getLoginResponsePassesOnTokenFromLoginDAOGetUserByToken() {
+            // Assert
+            var expected = LOGIN_RESPONSE;
+
+            Mockito.when(mockedLoginDAO.getUserByToken(TOKEN)).thenReturn(expected);
+
+            // Act
+            var actual = sut.getLoginResponse(TOKEN);
+
+            // Assert
+            assertEquals(expected, actual);
+        }
     }
 
     @Nested

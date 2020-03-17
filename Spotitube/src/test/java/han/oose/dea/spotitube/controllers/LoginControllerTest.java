@@ -43,7 +43,7 @@ public class LoginControllerTest {
             // Arrange
             Mockito.when(mockedLoginService.validateLogin(USERNAME, PASSWORD)).thenReturn(false);
 
-            var expectedStatus = Response.Status.UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
 
             // Act
             var response = sut.handleLogin(loginDTO);
@@ -65,7 +65,7 @@ public class LoginControllerTest {
             Mockito.when(mockedLoginService.validateLogin(USERNAME, PASSWORD)).thenReturn(true);
             Mockito.when(mockedLoginService.getLoginResponse(USERNAME)).thenReturn(loginResponseDTO);
 
-            var expectedStatus = Response.Status.OK;
+            var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = loginResponseDTO;
 
             // Act

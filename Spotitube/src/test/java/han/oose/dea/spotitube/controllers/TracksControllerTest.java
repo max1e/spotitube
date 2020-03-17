@@ -46,7 +46,7 @@ public class TracksControllerTest {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
-            var expectedStatus = Response.Status.UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
 
             // Act
             var response = sut.getAvailableTracks(TOKEN, PLAYLIST_ID);
@@ -66,7 +66,7 @@ public class TracksControllerTest {
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedTracksService.getAvailableTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
-            var expectedStatus = Response.Status.OK;
+            var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = TRACKS_DTO;
 
             // Act

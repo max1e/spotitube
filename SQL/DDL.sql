@@ -6,7 +6,6 @@
 
 DROP SCHEMA IF EXISTS Spotitube;
 CREATE SCHEMA Spotitube;
-SELECT @@time_zone;
 USE Spotitube;
 
 CREATE TABLE Users (
@@ -15,7 +14,7 @@ CREATE TABLE Users (
     hashedPassword char(64) not null,
     firstName varchar(255) not null,
     lastName varchar(255) not null,
-    token varchar(255) null,
+    token char(14) null,
     CONSTRAINT pk_Users PRIMARY KEY (userId),
     CONSTRAINT ak_Users_username UNIQUE (username),
     CONSTRAINT ak_Users_token UNIQUE (token)

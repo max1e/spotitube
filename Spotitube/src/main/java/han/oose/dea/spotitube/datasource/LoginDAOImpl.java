@@ -48,19 +48,42 @@ public class LoginDAOImpl implements LoginDAO {
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
         }
 
-//        loginAccepted = username.equals("plakplaatje")
-//                && hashedPassword.equals(DigestUtils.sha256Hex(hashedPassword));
-
         return loginAccepted;
     }
 
     @Override
     public boolean validateToken(String token) {
-        return token.equals("12345");
+        var tokenAccepted = false;
+
+        try {
+            // Connect to database
+            var connection = DriverManager.getConnection(databaseProperties.getConnectionString());
+
+            // Query database
+            var sqlQuery = "CALL sp_validateToken(?)";
+            var sqlStatement = connection.prepareStatement(sqlQuery);
+
+            sqlStatement.setString(1, token);
+
+            var resultSet = sqlStatement.executeQuery();
+
+            // Read result set
+            resultSet.next();
+            tokenAccepted = resultSet.getBoolean("tokenAccepted");
+
+            // Close connection
+            sqlStatement.close();
+            connection.close();
+        }
+        catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+        }
+
+        return tokenAccepted;
     }
 
     @Override
-    public LoginResponseDTO getUserToken(String username) {
+    public LoginResponseDTO getUserByToken(String username) {
         return new LoginResponseDTO("12345", "plakplaatje");
     }
 }

@@ -23,10 +23,9 @@ public class LoginServiceImpl implements LoginService {
         return loginMatches;
     }
 
-    // TODO unit testen
     @Override
     public LoginResponseDTO getLoginResponse(String username) {
-        var loginResponse = loginDAO.getUserToken(username);
+        var loginResponse = loginDAO.getUserByToken(username);
         return loginResponse;
     }
 

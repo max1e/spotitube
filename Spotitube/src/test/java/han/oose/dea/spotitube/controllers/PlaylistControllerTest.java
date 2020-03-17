@@ -53,7 +53,7 @@ public class PlaylistControllerTest {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
-            var expectedStatus = Response.Status.UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
 
             // Act
             var response = sut.getAllPlaylists(TOKEN);
@@ -73,7 +73,7 @@ public class PlaylistControllerTest {
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists()).thenReturn(PLAYLISTS_DTO);
 
-            var expectedStatus = Response.Status.OK;
+            var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = PLAYLISTS_DTO;
 
             // Act
@@ -97,7 +97,7 @@ public class PlaylistControllerTest {
         public void testGetPlaylistsTracksReturnsUnauthorizedIfTokenDoesntMatch() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-            var expectedStatus = Response.Status.UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
 
             // Act
             var response = sut.getPlaylistsTracks(TOKEN, PLAYLIST_ID);
@@ -117,7 +117,7 @@ public class PlaylistControllerTest {
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
-            var expectedStatus = Response.Status.OK;
+            var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = TRACKS_DTO;
 
             // Act
@@ -141,7 +141,7 @@ public class PlaylistControllerTest {
         public void testAddPlaylistReturnsUnauthorizedIfTokenDoesntMatch() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-            var expectedStatus = Response.Status.UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
 
             // Act
             var response = sut.addPlaylist(TOKEN, PLAYLIST_DTO);
@@ -187,7 +187,7 @@ public class PlaylistControllerTest {
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists()).thenReturn(PLAYLISTS_DTO);
 
-            var expectedStatus = Response.Status.CREATED;
+            var expectedStatus = Response.Status.CREATED.getStatusCode();
             var expectedEntity = PLAYLISTS_DTO;
 
             // Act
@@ -211,7 +211,7 @@ public class PlaylistControllerTest {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
-            var expectedStatus = Response.Status.UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
 
             // Act
             var response = sut.editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
@@ -257,7 +257,7 @@ public class PlaylistControllerTest {
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists()).thenReturn(PLAYLISTS_DTO);
 
-            var expectedStatus = Response.Status.OK;
+            var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = PLAYLISTS_DTO;
 
             // Act
@@ -309,7 +309,7 @@ public class PlaylistControllerTest {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
-            var expectedStatus = Response.Status.UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
 
             // Act
             var response = sut.deletePlaylist(TOKEN, PLAYLIST_ID);
@@ -355,7 +355,7 @@ public class PlaylistControllerTest {
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists()).thenReturn(PLAYLISTS_DTO);
 
-            var expectedStatus = Response.Status.OK;
+            var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = PLAYLISTS_DTO;
 
             // Act
@@ -379,7 +379,7 @@ public class PlaylistControllerTest {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
-            var expectedStatus = Response.Status.UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
 
             // Act
             var response = sut.removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
@@ -425,7 +425,7 @@ public class PlaylistControllerTest {
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
-            var expectedStatus = Response.Status.OK;
+            var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = TRACKS_DTO;
 
             // Act
@@ -449,7 +449,7 @@ public class PlaylistControllerTest {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
 
-            var expectedStatus = Response.Status.UNAUTHORIZED;
+            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
 
             // Act
             var response = sut.addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
@@ -495,7 +495,7 @@ public class PlaylistControllerTest {
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
-            var expectedStatus = Response.Status.OK;
+            var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = TRACKS_DTO;
 
             // Act
