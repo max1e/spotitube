@@ -8,17 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6a255ccb-d8cd-4dcc-bd6f-64468dd2b024" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/PlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/PlaylistController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/TracksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/TracksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/PlaylistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/PlaylistService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/TracksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/TracksService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/domain/Playlist.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/domain/Track.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/PlaylistServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/PlaylistServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/TracksServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/TracksServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/controllers/PlaylistControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/controllers/PlaylistControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/LoginServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/LoginServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/TracksServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/TracksServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/service/TracksServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/service/TracksServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +90,7 @@
       <recent name="han.oose.dea.spottitube.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlaylistServiceTest">
+  <component name="RunManager" selected="JUnit.TracksServiceTest">
     <configuration name="All in Spotitube" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Spotitube" />
       <option name="PACKAGE_NAME" value="" />
@@ -140,22 +131,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaylistServiceTest$GetAllPlaylistsTest.getGetPlaylistsTracksPassesOnPlaylistsFromPlaylistDAOGetPlaylistsTracks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Spotitube" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="han.oose.dea.spotitube.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.service" />
-      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.service.PlaylistServiceTest$GetAllPlaylistsTest" />
-      <option name="METHOD_NAME" value="getGetPlaylistsTracksPassesOnPlaylistsFromPlaylistDAOGetPlaylistsTracks" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PlaylistServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Spotitube" />
       <extension name="coverage">
@@ -166,6 +141,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.service" />
       <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.service.PlaylistServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TracksServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="han.oose.dea.spotitube.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.service" />
+      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.service.TracksServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -246,19 +236,19 @@
     </configuration>
     <list>
       <item itemvalue="TomEE Server.TomEE? More like Tom ieeh" />
-      <item itemvalue="JUnit.PlaylistServiceTest$GetAllPlaylistsTest.getGetPlaylistsTracksPassesOnPlaylistsFromPlaylistDAOGetPlaylistsTracks" />
       <item itemvalue="JUnit.PlaylistServiceTest$GetAllPlaylistsTest.getGetAllPlaylistsAddsCorrectDurationToPlaylists" />
       <item itemvalue="JUnit.PlaylistServiceTest" />
       <item itemvalue="JUnit.All in Spotitube" />
       <item itemvalue="JUnit.PlaylistServiceTest$AddPlaylistTest.testAddPlaylistCallsPlaylistDAOAddTrackToPlaylist" />
+      <item itemvalue="JUnit.TracksServiceTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TracksServiceTest" />
         <item itemvalue="JUnit.PlaylistServiceTest" />
         <item itemvalue="JUnit.PlaylistServiceTest$GetAllPlaylistsTest.getGetAllPlaylistsAddsCorrectDurationToPlaylists" />
         <item itemvalue="JUnit.All in Spotitube" />
         <item itemvalue="JUnit.PlaylistServiceTest$AddPlaylistTest.testAddPlaylistCallsPlaylistDAOAddTrackToPlaylist" />
-        <item itemvalue="JUnit.PlaylistServiceTest$GetAllPlaylistsTest.getGetPlaylistsTracksPassesOnPlaylistsFromPlaylistDAOGetPlaylistsTracks" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +288,7 @@
       <workItem from="1584093554285" duration="32851000" />
       <workItem from="1584181647884" duration="17630000" />
       <workItem from="1584271403071" duration="19601000" />
-      <workItem from="1584441530302" duration="20467000" />
+      <workItem from="1584441530302" duration="23382000" />
     </task>
     <servers />
   </component>
@@ -354,22 +344,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1584359414677" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1584548505509">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1584551341217">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584548505509" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1584548505509">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584551341217" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1584551341216">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584548505509" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1584548505509">
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584551341216" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1584551341216">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584548505509" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1584548505509">
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584551341216" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1584551341217">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584548505509" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584551341217" />
     <state width="1069" height="222" key="GridCell.Tab.1.bottom" timestamp="1584438116497">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -448,6 +438,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/Spotitube$PlaylistControllerTest.ic" NAME="PlaylistControllerTest Coverage Results" MODIFIED="1584142464071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.han.ica.oose.spottitube.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Spotitube$TracksServiceTest.ic" NAME="TracksServiceTest Coverage Results" MODIFIED="1584551341152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>han.oose.dea.spotitube.service.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Spotitube$PlaylistControllerTest__1_.ic" NAME="PlaylistControllerTest (1) Coverage Results" MODIFIED="1584185853457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>han.oose.dea.spottitube.controllers.*</FILTER>
