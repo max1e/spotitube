@@ -34,7 +34,7 @@ public class PlaylistController {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {
-            var playlists = playlistService.getAllPlaylists();
+            var playlists = playlistService.getAllPlaylists(token);
             response = Response.status(Response.Status.OK).entity(playlists).build();
         }
 
@@ -66,8 +66,8 @@ public class PlaylistController {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {
-            playlistService.addPlaylist(playlist);
-            var playlists = playlistService.getAllPlaylists();
+            playlistService.addPlaylist(token, playlist);
+            var playlists = playlistService.getAllPlaylists(token);
             response = Response.status(Response.Status.CREATED).entity(playlists).build();
         }
 
@@ -87,8 +87,8 @@ public class PlaylistController {
             throw new BadRequestException();
         }
         else {
-            playlistService.editPlaylistName(playlist);
-            var playlists = playlistService.getAllPlaylists();
+            playlistService.editPlaylistName(token, playlist);
+            var playlists = playlistService.getAllPlaylists(token);
             response = Response.status(Response.Status.OK).entity(playlists).build();
         }
 
@@ -104,8 +104,8 @@ public class PlaylistController {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {
-            playlistService.deletePlaylist(playlistId);
-            var playlists = playlistService.getAllPlaylists();
+            playlistService.deletePlaylist(token, playlistId);
+            var playlists = playlistService.getAllPlaylists(token);
             response = Response.status(Response.Status.OK).entity(playlists).build();
         }
 
@@ -121,7 +121,7 @@ public class PlaylistController {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {
-            playlistService.removeTrackFromPlaylist(playlistId, trackId);
+            playlistService.removeTrackFromPlaylist(token, playlistId, trackId);
             var tracks = playlistService.getPlaylistsTracks(playlistId);
             response = Response.status(Response.Status.OK).entity(tracks).build();
         }
@@ -139,7 +139,7 @@ public class PlaylistController {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {
-            playlistService.addTrackToPlaylist(playlistId, track);
+            playlistService.addTrackToPlaylist(token, playlistId, track);
             var tracks = playlistService.getPlaylistsTracks(playlistId);
             response = Response.status(Response.Status.OK).entity(tracks).build();
         }

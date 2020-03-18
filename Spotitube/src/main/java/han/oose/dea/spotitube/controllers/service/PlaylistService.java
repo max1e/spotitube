@@ -7,11 +7,11 @@ import han.oose.dea.spotitube.controllers.dto.TracksDTO;
 
 public interface PlaylistService {
 
-    PlaylistsDTO getAllPlaylists();
+    PlaylistsDTO getAllPlaylists(String token);
     TracksDTO getPlaylistsTracks(int playlistId);
-    void deletePlaylist(int id);
-    void addPlaylist(PlaylistDTO playlist);
-    void editPlaylistName(PlaylistDTO playlist);
-    void removeTrackFromPlaylist(int playlistId, int trackId);
-    void addTrackToPlaylist(int playlistId, TrackDTO track);
+    void deletePlaylist(String token, int id);
+    void addPlaylist(String token, PlaylistDTO playlist);
+    void editPlaylistName(String token, PlaylistDTO playlist);
+    void removeTrackFromPlaylist(String token, int playlistId, int trackId);
+    void addTrackToPlaylist(String token, int playlistId, TrackDTO track);
 }

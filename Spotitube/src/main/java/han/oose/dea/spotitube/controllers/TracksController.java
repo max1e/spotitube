@@ -26,7 +26,7 @@ public class TracksController {
     }
 
     @GET
-    public Response getAvailableTracks(@QueryParam("token") String token, @QueryParam("playlistId") int playlistId) {
+    public Response getAvailableTracks(@QueryParam("token") String token, @QueryParam("playlistId") Integer playlistId) {
         Response response;
 
         if (!loginService.validateToken(token)) {

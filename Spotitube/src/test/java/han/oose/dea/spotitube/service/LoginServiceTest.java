@@ -17,12 +17,12 @@ public class LoginServiceTest {
     private LoginServiceImpl sut;
     private LoginDAO mockedLoginDAO;
 
-    private final String USERNAME = "username";
-    private final String PASSWORD = "password";
-    private final String HASHED_PASSWORD = DigestUtils.sha256Hex(PASSWORD);
-    private final String TOKEN = "1234-1234-1234";
+    private static final String USERNAME = "username";
+    private static final String PASSWORD = "password";
+    private static final String HASHED_PASSWORD = DigestUtils.sha256Hex(PASSWORD);
+    private static final String TOKEN = "1234-1234-1234";
 
-    private final LoginResponseDTO LOGIN_RESPONSE = new LoginResponseDTO();
+    private static final LoginResponseDTO LOGIN_RESPONSE = new LoginResponseDTO();
 
     @BeforeEach
     public void setup() {

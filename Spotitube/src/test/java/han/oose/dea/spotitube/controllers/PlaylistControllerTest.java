@@ -71,7 +71,7 @@ public class PlaylistControllerTest {
         public void testGetAllPlaylistsPassesOnPlaylistsIfTokenMatches() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
-            Mockito.when(mockedPlaylistService.getAllPlaylists()).thenReturn(PLAYLISTS_DTO);
+            Mockito.when(mockedPlaylistService.getAllPlaylists(TOKEN)).thenReturn(PLAYLISTS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = PLAYLISTS_DTO;
@@ -164,7 +164,7 @@ public class PlaylistControllerTest {
             sut.addPlaylist(TOKEN, PLAYLIST_DTO);
 
             // Assert
-            Mockito.verify(mockedPlaylistService, never()).addPlaylist(PLAYLIST_DTO);
+            Mockito.verify(mockedPlaylistService, never()).addPlaylist(TOKEN, PLAYLIST_DTO);
         }
 
         @Test
@@ -177,7 +177,7 @@ public class PlaylistControllerTest {
             sut.addPlaylist(TOKEN, PLAYLIST_DTO);
 
             // Assert
-            Mockito.verify(mockedPlaylistService).addPlaylist(PLAYLIST_DTO);
+            Mockito.verify(mockedPlaylistService).addPlaylist(TOKEN, PLAYLIST_DTO);
         }
 
         @Test
@@ -185,7 +185,7 @@ public class PlaylistControllerTest {
         public void testAddPlaylistPassesOnPlaylistsIfTokenMatches() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
-            Mockito.when(mockedPlaylistService.getAllPlaylists()).thenReturn(PLAYLISTS_DTO);
+            Mockito.when(mockedPlaylistService.getAllPlaylists(TOKEN)).thenReturn(PLAYLISTS_DTO);
 
             var expectedStatus = Response.Status.CREATED.getStatusCode();
             var expectedEntity = PLAYLISTS_DTO;
@@ -234,7 +234,7 @@ public class PlaylistControllerTest {
             sut.editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
 
             // Assert
-            Mockito.verify(mockedPlaylistService, never()).editPlaylistName(PLAYLIST_DTO);
+            Mockito.verify(mockedPlaylistService, never()).editPlaylistName(TOKEN, PLAYLIST_DTO);
         }
 
         @Test
@@ -247,7 +247,7 @@ public class PlaylistControllerTest {
             sut.editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
 
             // Assert
-            Mockito.verify(mockedPlaylistService).editPlaylistName(PLAYLIST_DTO);
+            Mockito.verify(mockedPlaylistService).editPlaylistName(TOKEN, PLAYLIST_DTO);
         }
 
         @Test
@@ -255,7 +255,7 @@ public class PlaylistControllerTest {
         public void testEditPlaylistNamePassesOnPlaylistsIfTokenMatches() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
-            Mockito.when(mockedPlaylistService.getAllPlaylists()).thenReturn(PLAYLISTS_DTO);
+            Mockito.when(mockedPlaylistService.getAllPlaylists(TOKEN)).thenReturn(PLAYLISTS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = PLAYLISTS_DTO;
@@ -295,7 +295,7 @@ public class PlaylistControllerTest {
             try {
                 sut.editPlaylistName(TOKEN, differentPlaylistId, PLAYLIST_DTO);
             } catch (BadRequestException e) {
-                Mockito.verify(mockedPlaylistService, never()).editPlaylistName(PLAYLIST_DTO);
+                Mockito.verify(mockedPlaylistService, never()).editPlaylistName(TOKEN, PLAYLIST_DTO);
             }
         }
     }
@@ -332,7 +332,7 @@ public class PlaylistControllerTest {
             sut.deletePlaylist(TOKEN, PLAYLIST_ID);
 
             // Assert
-            Mockito.verify(mockedPlaylistService, never()).deletePlaylist(PLAYLIST_ID);
+            Mockito.verify(mockedPlaylistService, never()).deletePlaylist(TOKEN, PLAYLIST_ID);
         }
 
         @Test
@@ -345,7 +345,7 @@ public class PlaylistControllerTest {
             sut.deletePlaylist(TOKEN, PLAYLIST_ID);
 
             // Assert
-            Mockito.verify(mockedPlaylistService).deletePlaylist(PLAYLIST_ID);
+            Mockito.verify(mockedPlaylistService).deletePlaylist(TOKEN, PLAYLIST_ID);
         }
 
         @Test
@@ -353,7 +353,7 @@ public class PlaylistControllerTest {
         public void testDeletePlaylistPassesOnPlaylistsIfTokenMatches() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
-            Mockito.when(mockedPlaylistService.getAllPlaylists()).thenReturn(PLAYLISTS_DTO);
+            Mockito.when(mockedPlaylistService.getAllPlaylists(TOKEN)).thenReturn(PLAYLISTS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = PLAYLISTS_DTO;
@@ -402,7 +402,7 @@ public class PlaylistControllerTest {
             sut.removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
 
             // Assert
-            Mockito.verify(mockedPlaylistService, never()).removeTrackFromPlaylist(PLAYLIST_ID, TRACK_ID);
+            Mockito.verify(mockedPlaylistService, never()).removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
         }
 
         @Test
@@ -415,7 +415,7 @@ public class PlaylistControllerTest {
             sut.removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
 
             // Assert
-            Mockito.verify(mockedPlaylistService).removeTrackFromPlaylist(PLAYLIST_ID, TRACK_ID);
+            Mockito.verify(mockedPlaylistService).removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
         }
 
         @Test
@@ -472,7 +472,7 @@ public class PlaylistControllerTest {
             sut.addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
 
             // Assert
-            Mockito.verify(mockedPlaylistService, never()).addTrackToPlaylist(PLAYLIST_ID, TRACK_DTO);
+            Mockito.verify(mockedPlaylistService, never()).addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
         }
 
         @Test
@@ -485,7 +485,7 @@ public class PlaylistControllerTest {
             sut.addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
 
             // Assert
-            Mockito.verify(mockedPlaylistService).addTrackToPlaylist(PLAYLIST_ID, TRACK_DTO);
+            Mockito.verify(mockedPlaylistService).addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
         }
 
         @Test
