@@ -7,20 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a255ccb-d8cd-4dcc-bd6f-64468dd2b024" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../SQL/DDL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../SQL/DDL.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SQL/Stored procedures/sp_deletePlaylist.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SQL/Stored procedures/sp_getAllPlaylists.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/dto/PlaylistDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/dto/PlaylistDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/LoginDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/LoginDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/TrackDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/TrackDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/LoginServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/TracksServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/TracksServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/LoginDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/PlaylistDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/TracksDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/TrackDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/assembler/abstraction/PlaylistAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/assembler/abstraction/PlaylistAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/assembler/implementation/PlaylistAssemblerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/assembler/implementation/PlaylistAssemblerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/util/DatabaseProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/util/DatabaseProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/PlaylistServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/PlaylistServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/controllers/LoginControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/controllers/LoginControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/LoginServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/LoginServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/TracksServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/TracksServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Spotitube.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spotitube.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/service/TracksServiceTest$GetAvailableTracksTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/service/TracksServiceTest$GetAvailableTracksTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,16 +101,8 @@
       <recent name="han.oose.dea.spottitube.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TracksServiceTest">
-    <configuration name="All in Spotitube" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Spotitube" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlaylistServiceTest$AddPlaylistTest.testAddPlaylistCallsPlaylistDAOAddTrackToPlaylist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LoginServiceTest$GetLoginResponse.getLoginResponsePassesOnTokenFromLoginDAOGetUserAndToken">
+    <configuration name="LoginServiceTest$GetLoginResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Spotitube" />
       <extension name="coverage">
         <pattern>
@@ -119,45 +111,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.service" />
-      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.service.PlaylistServiceTest$AddPlaylistTest" />
-      <option name="METHOD_NAME" value="testAddPlaylistCallsPlaylistDAOAddTrackToPlaylist" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlaylistServiceTest$GetAllPlaylistsTest.getGetAllPlaylistsAddsCorrectDurationToPlaylists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Spotitube" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="han.oose.dea.spotitube.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.service" />
-      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.service.PlaylistServiceTest$GetAllPlaylistsTest" />
-      <option name="METHOD_NAME" value="getGetAllPlaylistsAddsCorrectDurationToPlaylists" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlaylistServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Spotitube" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="han.oose.dea.spotitube.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.service" />
-      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.service.PlaylistServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.service.LoginServiceTest$GetLoginResponse" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TracksServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginServiceTest$GetLoginResponse.getLoginResponseCallsLoginDAOGetUserAndToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Spotitube" />
       <extension name="coverage">
         <pattern>
@@ -166,8 +126,57 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.service" />
-      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.service.TracksServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.service.LoginServiceTest$GetLoginResponse" />
+      <option name="METHOD_NAME" value="getLoginResponseCallsLoginDAOGetUserAndToken" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginServiceTest$GetLoginResponse.getLoginResponsePassesOnTokenFromLoginDAOGetUserAndToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="han.oose.dea.spotitube.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.service" />
+      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.service.LoginServiceTest$GetLoginResponse" />
+      <option name="METHOD_NAME" value="getLoginResponsePassesOnTokenFromLoginDAOGetUserAndToken" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginServiceTest$ValidateLoginTest.testValidateLoginCallsLoginDAOValidateLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="han.oose.dea.spotitube.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.service" />
+      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.service.LoginServiceTest$ValidateLoginTest" />
+      <option name="METHOD_NAME" value="testValidateLoginCallsLoginDAOValidateLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginServiceTest$ValidateTokenTest.testValidateTokenPassesOnBooleanFromLoginDAOValidateToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="han.oose.dea.spotitube.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.service" />
+      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.service.LoginServiceTest$ValidateTokenTest" />
+      <option name="METHOD_NAME" value="testValidateTokenPassesOnBooleanFromLoginDAOValidateToken" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -246,20 +255,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.PlaylistServiceTest$GetAllPlaylistsTest.getGetAllPlaylistsAddsCorrectDurationToPlaylists" />
-      <item itemvalue="JUnit.PlaylistServiceTest" />
-      <item itemvalue="JUnit.All in Spotitube" />
-      <item itemvalue="JUnit.PlaylistServiceTest$AddPlaylistTest.testAddPlaylistCallsPlaylistDAOAddTrackToPlaylist" />
-      <item itemvalue="JUnit.TracksServiceTest" />
       <item itemvalue="TomEE Server.TomEE? More like Tom ieeh" />
+      <item itemvalue="JUnit.LoginServiceTest$ValidateLoginTest.testValidateLoginCallsLoginDAOValidateLogin" />
+      <item itemvalue="JUnit.LoginServiceTest$ValidateTokenTest.testValidateTokenPassesOnBooleanFromLoginDAOValidateToken" />
+      <item itemvalue="JUnit.LoginServiceTest$GetLoginResponse.getLoginResponseCallsLoginDAOGetUserAndToken" />
+      <item itemvalue="JUnit.LoginServiceTest$GetLoginResponse" />
+      <item itemvalue="JUnit.LoginServiceTest$GetLoginResponse.getLoginResponsePassesOnTokenFromLoginDAOGetUserAndToken" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TracksServiceTest" />
-        <item itemvalue="JUnit.PlaylistServiceTest" />
-        <item itemvalue="JUnit.PlaylistServiceTest$GetAllPlaylistsTest.getGetAllPlaylistsAddsCorrectDurationToPlaylists" />
-        <item itemvalue="JUnit.All in Spotitube" />
-        <item itemvalue="JUnit.PlaylistServiceTest$AddPlaylistTest.testAddPlaylistCallsPlaylistDAOAddTrackToPlaylist" />
+        <item itemvalue="JUnit.LoginServiceTest$GetLoginResponse.getLoginResponsePassesOnTokenFromLoginDAOGetUserAndToken" />
+        <item itemvalue="JUnit.LoginServiceTest$GetLoginResponse" />
+        <item itemvalue="JUnit.LoginServiceTest$GetLoginResponse.getLoginResponseCallsLoginDAOGetUserAndToken" />
+        <item itemvalue="JUnit.LoginServiceTest$ValidateTokenTest.testValidateTokenPassesOnBooleanFromLoginDAOValidateToken" />
+        <item itemvalue="JUnit.LoginServiceTest$ValidateLoginTest.testValidateLoginCallsLoginDAOValidateLogin" />
       </list>
     </recent_temporary>
   </component>
@@ -272,6 +281,11 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="TomEE Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="TomEE Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -295,7 +309,7 @@
       <workItem from="1584181647884" duration="17630000" />
       <workItem from="1584271403071" duration="19601000" />
       <workItem from="1584441530302" duration="26331000" />
-      <workItem from="1584609349789" duration="8581000" />
+      <workItem from="1584609349789" duration="16842000" />
     </task>
     <servers />
   </component>
@@ -327,10 +341,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1584450966743" />
-    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1584619265459">
+    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1584629862728">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1584619265459" />
+    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1584629862728" />
     <state x="417" y="356" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1584200250544">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -351,54 +365,54 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1584359414677" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1584551341217">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1584629683473">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584551341217" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1584551341216">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584629683473" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1584629683472">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584551341216" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1584551341216">
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584629683472" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1584629683472">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584551341216" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1584551341217">
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584629683472" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1584629683472">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584551341217" />
-    <state width="1069" height="222" key="GridCell.Tab.1.bottom" timestamp="1584438116497">
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584629683472" />
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1584629650938">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584438116497" />
-    <state width="1069" height="222" key="GridCell.Tab.1.center" timestamp="1584438116497">
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584629650938" />
+    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1584629650938">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1584438116497" />
-    <state width="1069" height="222" key="GridCell.Tab.1.left" timestamp="1584438116497">
+    <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1584629650938" />
+    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1584629650938">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1584438116497" />
-    <state width="1069" height="222" key="GridCell.Tab.1.right" timestamp="1584438116497">
+    <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1584629650938" />
+    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1584629650938">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1584438116497" />
-    <state width="1069" height="222" key="GridCell.Tab.2.bottom" timestamp="1584438116498">
+    <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1584629650938" />
+    <state width="1069" height="222" key="GridCell.Tab.2.bottom" timestamp="1584629278630">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584438116498" />
-    <state width="1069" height="222" key="GridCell.Tab.2.center" timestamp="1584438116498">
+    <state width="1069" height="222" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584629278630" />
+    <state width="1069" height="222" key="GridCell.Tab.2.center" timestamp="1584629278630">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1584438116498" />
-    <state width="1069" height="222" key="GridCell.Tab.2.left" timestamp="1584438116498">
+    <state width="1069" height="222" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1584629278630" />
+    <state width="1069" height="222" key="GridCell.Tab.2.left" timestamp="1584629278630">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1584438116498" />
-    <state width="1069" height="222" key="GridCell.Tab.2.right" timestamp="1584438116498">
+    <state width="1069" height="222" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1584629278630" />
+    <state width="1069" height="222" key="GridCell.Tab.2.right" timestamp="1584629278630">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1584438116498" />
+    <state width="1069" height="222" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1584629278630" />
     <state width="1069" height="222" key="GridCell.Tab.3.bottom" timestamp="1584359812320">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

@@ -51,7 +51,7 @@ public class PlaylistDAOImpl implements PlaylistDAO {
 
             var resultset = sqlStatement.executeQuery();
 
-            playlists = playlistAssembler.toPlaylistDTOList(resultset);
+            playlists = playlistAssembler.toPlaylistDTOWithDurationList(resultset);
 
             // Close connection
             sqlStatement.close();

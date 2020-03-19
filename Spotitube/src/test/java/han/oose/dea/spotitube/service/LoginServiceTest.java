@@ -22,7 +22,7 @@ public class LoginServiceTest {
     private static final String HASHED_PASSWORD = DigestUtils.sha256Hex(PASSWORD);
     private static final String TOKEN = "1234-1234-1234";
 
-    private static final LoginResponseDTO LOGIN_RESPONSE = new LoginResponseDTO();
+    private static final LoginResponseDTO LOGIN_RESPONSE = new LoginResponseDTO(TOKEN, HASHED_PASSWORD);
 
     @BeforeEach
     public void setup() {
@@ -76,7 +76,7 @@ public class LoginServiceTest {
             sut.getLoginResponse(USERNAME, PASSWORD);
 
             // Assert
-            Mockito.verify(mockedLoginDAO).getUserAndToken(USERNAME, PASSWORD);
+            Mockito.verify(mockedLoginDAO).getUserAndToken(USERNAME, HASHED_PASSWORD);
         }
 
         @Test
@@ -85,7 +85,7 @@ public class LoginServiceTest {
             // Assert
             var expected = LOGIN_RESPONSE;
 
-            Mockito.when(mockedLoginDAO.getUserAndToken(USERNAME, PASSWORD)).thenReturn(expected);
+            Mockito.when(mockedLoginDAO.getUserAndToken(USERNAME, HASHED_PASSWORD)).thenReturn(expected);
 
             // Act
             var actual = sut.getLoginResponse(USERNAME, PASSWORD);

@@ -9,4 +9,5 @@ import java.util.List;
 public interface PlaylistAssembler {
 
     List<PlaylistDTO> toPlaylistDTOList(ResultSet resultset) throws SQLException;
+    List<PlaylistDTO> toPlaylistDTOWithDurationList(ResultSet resultset) throws SQLException;
 }

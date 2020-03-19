@@ -63,7 +63,7 @@ public class LoginControllerTest {
             var loginResponseDTO = new LoginResponseDTO(TOKEN, USERNAME);
 
             Mockito.when(mockedLoginService.validateLogin(USERNAME, PASSWORD)).thenReturn(true);
-            Mockito.when(mockedLoginService.getLoginResponse(USERNAME)).thenReturn(loginResponseDTO);
+            Mockito.when(mockedLoginService.getLoginResponse(USERNAME, PASSWORD)).thenReturn(loginResponseDTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = loginResponseDTO;

@@ -36,11 +36,7 @@ public class PlaylistServiceImpl implements PlaylistService {
         var totalPlaylistsDuration = 0;
 
         for (var playlist : playlists) {
-            var playlistsTracks = playlist.getTracks();
-
-            for (var track : playlistsTracks) {
-                totalPlaylistsDuration += track.getDuration();
-            }
+            totalPlaylistsDuration += playlist.getDuration();
         }
 
         return totalPlaylistsDuration;
