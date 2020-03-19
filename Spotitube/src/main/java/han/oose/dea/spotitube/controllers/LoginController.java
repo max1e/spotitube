@@ -24,11 +24,12 @@ public class LoginController {
     public Response handleLogin(LoginDTO login) {
         Response response;
 
+        // TODO één database handeling van maken
         if (!loginService.validateLogin(login.getUser(), login.getPassword())) {
             response = Response.status(Response.Status.UNAUTHORIZED).build();
         }
         else {
-            var loginResponse = loginService.getLoginResponse(login.getUser());
+            var loginResponse = loginService.getLoginResponse(login.getUser(), login.getPassword());
             response = Response.status(Response.Status.OK).entity(loginResponse).build();
         }
 

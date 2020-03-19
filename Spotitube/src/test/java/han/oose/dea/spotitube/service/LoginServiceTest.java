@@ -68,27 +68,27 @@ public class LoginServiceTest {
     @DisplayName("getLoginResponse() unit tests")
     class GetLoginResponse {
         @Test
-        @DisplayName("Test getLoginResponse() calls loginDAO.getUserByToken()")
-        public void getLoginResponseCallsLoginDAOGetUserByToken() {
+        @DisplayName("Test getLoginResponse() calls loginDAO.getUserAndToken()")
+        public void getLoginResponseCallsLoginDAOGetUserAndToken() {
             // Arrange
 
             // Act
-            sut.getLoginResponse(TOKEN);
+            sut.getLoginResponse(USERNAME, PASSWORD);
 
             // Assert
-            Mockito.verify(mockedLoginDAO).getUserByToken(TOKEN);
+            Mockito.verify(mockedLoginDAO).getUserAndToken(USERNAME, PASSWORD);
         }
 
         @Test
-        @DisplayName("Test getLoginResponse() passes on token from loginDAO.getUserByToken()")
-        public void getLoginResponsePassesOnTokenFromLoginDAOGetUserByToken() {
+        @DisplayName("Test getLoginResponse() passes on token from loginDAO.getUserAndToken()")
+        public void getLoginResponsePassesOnTokenFromLoginDAOGetUserAndToken() {
             // Assert
             var expected = LOGIN_RESPONSE;
 
-            Mockito.when(mockedLoginDAO.getUserByToken(TOKEN)).thenReturn(expected);
+            Mockito.when(mockedLoginDAO.getUserAndToken(USERNAME, PASSWORD)).thenReturn(expected);
 
             // Act
-            var actual = sut.getLoginResponse(TOKEN);
+            var actual = sut.getLoginResponse(USERNAME, PASSWORD);
 
             // Assert
             assertEquals(expected, actual);

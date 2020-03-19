@@ -24,8 +24,9 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
-    public LoginResponseDTO getLoginResponse(String username) {
-        var loginResponse = loginDAO.getUserByToken(username);
+    public LoginResponseDTO getLoginResponse(String username, String password) {
+        var hashedPassword = hashPassword(password);
+        var loginResponse = loginDAO.getUserAndToken(username, hashedPassword);
         return loginResponse;
     }
 

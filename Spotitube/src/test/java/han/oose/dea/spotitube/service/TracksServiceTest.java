@@ -1,7 +1,7 @@
 package han.oose.dea.spotitube.service;
 
 import han.oose.dea.spotitube.controllers.dto.TrackDTO;
-import han.oose.dea.spotitube.service.datasource.TracksDAO;
+import han.oose.dea.spotitube.service.datasource.TrackDAO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TracksServiceTest {
 
     private TracksServiceImpl sut;
-    private TracksDAO mockedTracksDAO;
+    private TrackDAO mockedTrackDAO;
 
     private static final int PLAYLIST_ID = 1;
     private static final Integer EMPTY_PLAYLIST_ID = null;
@@ -28,32 +28,32 @@ public class TracksServiceTest {
     public void setup() {
         sut = new TracksServiceImpl();
 
-        mockedTracksDAO = Mockito.mock(TracksDAO.class);
-        sut.setTracksDAO(mockedTracksDAO);
+        mockedTrackDAO = Mockito.mock(TrackDAO.class);
+        sut.setTrackDAO(mockedTrackDAO);
     }
 
     @Nested
     @DisplayName("getAvailableTracks() unit tests")
     class GetAvailableTracksTest {
         @Test
-        @DisplayName("Test getAvailableTracks() calls playlistDAO.getTracksNotInPlaylist() if playlistId is set")
-        public void testGetAvailableTracksCallsPlaylistDAOGetTracksNotInPlaylistIfPlaylistIdIsSet() {
+        @DisplayName("Test getAvailableTracks() calls trackDAO.getTracksNotInPlaylist() if playlistId is set")
+        public void testGetAvailableTracksCallsTrackDAOGetTracksNotInPlaylistIfPlaylistIdIsSet() {
             // Arrange
 
             // Act
             sut.getAvailableTracks(PLAYLIST_ID);
 
             // Assert
-            Mockito.verify(mockedTracksDAO).getTracksNotInPlaylist(PLAYLIST_ID);
+            Mockito.verify(mockedTrackDAO).getTracksNotInPlaylist(PLAYLIST_ID);
         }
 
         @Test
-        @DisplayName("Test getAvailableTracks() passes on tracks from playlistDAO.getTracksNotInPlaylist() if playlistId is set")
-        public void testGetAvailableTracksPassesOnTracksFromPlaylistDAOGetTracksNotInPlaylistIfPlaylistIdIsSet() {
+        @DisplayName("Test getAvailableTracks() passes on tracks from trackDAO.getTracksNotInPlaylist() if playlistId is set")
+        public void testGetAvailableTracksPassesOnTracksFromTrackDAOGetTracksNotInPlaylistIfPlaylistIdIsSet() {
             // Assert
             var expectedTracks = TRACKS;
 
-            Mockito.when(mockedTracksDAO.getTracksNotInPlaylist(PLAYLIST_ID)).thenReturn(TRACKS);
+            Mockito.when(mockedTrackDAO.getTracksNotInPlaylist(PLAYLIST_ID)).thenReturn(TRACKS);
 
             // Act
             var actual = sut.getAvailableTracks(PLAYLIST_ID);
@@ -64,24 +64,24 @@ public class TracksServiceTest {
         }
 
         @Test
-        @DisplayName("Test getAvailableTracks() calls playlistDAO.getAllTracks() if playlistId isn't set")
-        public void testGetAvailableTracksCallsPlaylistDAOGetAllTracksIfPlaylistIdIsNotSet() {
+        @DisplayName("Test getAvailableTracks() calls trackDAO.getAllTracks() if playlistId isn't set")
+        public void testGetAvailableTracksCallsTrackDAOGetAllTracksIfPlaylistIdIsNotSet() {
             // Arrange
 
             // Act
             sut.getAvailableTracks(EMPTY_PLAYLIST_ID);
 
             // Assert
-            Mockito.verify(mockedTracksDAO).getAllTracks();
+            Mockito.verify(mockedTrackDAO).getAllTracks();
         }
 
         @Test
-        @DisplayName("Test getAvailableTracks() passes on tracks from playlistDAO.getAllTracks() if playlistId isn't set")
-        public void testGetAvailableTracksPassesOnTracksFromPlaylistDAOGetAllTracksIfPlaylistIdIsNotSet() {
+        @DisplayName("Test getAvailableTracks() passes on tracks from trackDAO.getAllTracks() if playlistId isn't set")
+        public void testGetAvailableTracksPassesOnTracksFromTrackDAOGetAllTracksIfPlaylistIdIsNotSet() {
             // Assert
             var expectedTracks = TRACKS;
 
-            Mockito.when(mockedTracksDAO.getAllTracks()).thenReturn(TRACKS);
+            Mockito.when(mockedTrackDAO.getAllTracks()).thenReturn(TRACKS);
 
             // Act
             var actual = sut.getAvailableTracks(EMPTY_PLAYLIST_ID);

@@ -7,9 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a255ccb-d8cd-4dcc-bd6f-64468dd2b024" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../SQL/DDL.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../SQL/DDL.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/LoginDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/LoginDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/TrackDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/TrackDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/TracksServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/TracksServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/LoginDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/PlaylistDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/TracksDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/TrackDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/LoginServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/LoginServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/TracksServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/TracksServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/service/TracksServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/service/TracksServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +47,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -235,12 +246,12 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TomEE Server.TomEE? More like Tom ieeh" />
       <item itemvalue="JUnit.PlaylistServiceTest$GetAllPlaylistsTest.getGetAllPlaylistsAddsCorrectDurationToPlaylists" />
       <item itemvalue="JUnit.PlaylistServiceTest" />
       <item itemvalue="JUnit.All in Spotitube" />
       <item itemvalue="JUnit.PlaylistServiceTest$AddPlaylistTest.testAddPlaylistCallsPlaylistDAOAddTrackToPlaylist" />
       <item itemvalue="JUnit.TracksServiceTest" />
+      <item itemvalue="TomEE Server.TomEE? More like Tom ieeh" />
     </list>
     <recent_temporary>
       <list>
@@ -261,11 +272,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="TomEE Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="TomEE Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -288,7 +294,8 @@
       <workItem from="1584093554285" duration="32851000" />
       <workItem from="1584181647884" duration="17630000" />
       <workItem from="1584271403071" duration="19601000" />
-      <workItem from="1584441530302" duration="23382000" />
+      <workItem from="1584441530302" duration="26331000" />
+      <workItem from="1584609349789" duration="8581000" />
     </task>
     <servers />
   </component>
@@ -320,10 +327,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1584450966743" />
-    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1584458065736">
+    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1584619265459">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1584458065736" />
+    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1584619265459" />
     <state x="417" y="356" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1584200250544">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -332,10 +339,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="596" y="290" width="437" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1584269162028" />
-    <state x="281" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584360370061">
+    <state x="281" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584613184076">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="281" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1584360370061" />
+    <state x="281" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1584613184076" />
     <state x="530" y="177" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1584544255473">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -416,14 +423,14 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="280" y="5" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584350584129" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584441561248">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584609362945">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584441561248" />
-    <state x="456" y="195" key="run.anything.popup" timestamp="1584544374126">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584609362945" />
+    <state x="456" y="195" key="run.anything.popup" timestamp="1584618119822">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1584544374126" />
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1584618119822" />
     <state x="456" y="83" width="672" height="676" key="search.everywhere.popup" timestamp="1584544561522">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

@@ -27,12 +27,18 @@ CREATE TABLE Performers (
     CONSTRAINT ak_Performers UNIQUE (performerName)
 );
 
+CREATE TABLE Albums (
+	albumId int auto_increment not null,
+    albumName varchar(255) not null,
+    CONSTRAINT pk_Albums PRIMARY KEY (albumId)
+);
+
 CREATE TABLE Tracks (
 	trackId int auto_increment not null,
     title varchar(255) not null,
     performer int not null,
     duration int not null,
-    album varchar(255) null,
+    album int null,
     playcount int null,
     publicationDate date null,
     trackDescription varchar(255) null,
@@ -41,7 +47,11 @@ CREATE TABLE Tracks (
     CONSTRAINT fk_Tracks_Perfomers FOREIGN KEY (performer)
 		REFERENCES Performers(performerId)
         ON UPDATE NO ACTION
-        ON DELETE NO ACTION
+        ON DELETE NO ACTION,
+	CONSTRAINT fk_Tracks_Albums FOREIGN KEY (album)
+		REFERENCES Albums(albumId)
+        ON UPDATE NO ACTION
+        ON DELETE CASCADE
 );
 
 CREATE TABLE Playlists (
