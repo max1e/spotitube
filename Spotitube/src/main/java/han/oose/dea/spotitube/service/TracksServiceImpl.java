@@ -5,9 +5,11 @@ import han.oose.dea.spotitube.controllers.dto.TracksDTO;
 import han.oose.dea.spotitube.controllers.service.TracksService;
 import han.oose.dea.spotitube.service.datasource.TrackDAO;
 
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import java.util.List;
 
+@Default
 public class TracksServiceImpl implements TracksService {
 
     private TrackDAO trackDAO;

@@ -27,17 +27,9 @@ public class TracksController {
 
     @GET
     public Response getAvailableTracks(@QueryParam("token") String token, @QueryParam("playlistId") Integer playlistId) {
-        Response response;
-
-        if (!loginService.validateToken(token)) {
-            response = Response.status(Response.Status.UNAUTHORIZED).build();
-        }
-        else {
-            var tracks = tracksService.getAvailableTracks(playlistId);
-            response = Response.status(Response.Status.OK).entity(tracks).build();
-        }
+        var tracks = tracksService.getAvailableTracks(playlistId);
+        var response = Response.status(Response.Status.OK).entity(tracks).build();
 
         return response;
     }
-
 }

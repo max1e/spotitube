@@ -5,8 +5,10 @@ import han.oose.dea.spotitube.controllers.service.LoginService;
 import han.oose.dea.spotitube.service.datasource.LoginDAO;
 import org.apache.commons.codec.digest.DigestUtils;
 
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
+@Default
 public class LoginServiceImpl implements LoginService {
 
     private LoginDAO loginDAO;
@@ -17,16 +19,9 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
-    public boolean validateLogin(String username, String password) {
+    public LoginResponseDTO validateLogin(String username, String password) {
         var hashedPassword = hashPassword(password);
-        var loginMatches = loginDAO.validateLogin(username, hashedPassword);
-        return loginMatches;
-    }
-
-    @Override
-    public LoginResponseDTO getLoginResponse(String username, String password) {
-        var hashedPassword = hashPassword(password);
-        var loginResponse = loginDAO.getUserAndToken(username, hashedPassword);
+        var loginResponse = loginDAO.validateLogin(username, hashedPassword);
         return loginResponse;
     }
 

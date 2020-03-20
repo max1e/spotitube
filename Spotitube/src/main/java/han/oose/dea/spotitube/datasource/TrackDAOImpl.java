@@ -1,10 +1,12 @@
 package han.oose.dea.spotitube.datasource;
 
 import han.oose.dea.spotitube.controllers.dto.TrackDTO;
-import han.oose.dea.spotitube.datasource.assembler.implementation.TrackAssemblerImpl;
+import han.oose.dea.spotitube.datasource.mappers.implementation.TrackMapperImpl;
 import han.oose.dea.spotitube.datasource.util.DatabaseProperties;
+import han.oose.dea.spotitube.datasource.util.ExceptionMapper;
 import han.oose.dea.spotitube.service.datasource.TrackDAO;
 
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,11 +14,12 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Default
 public class TrackDAOImpl implements TrackDAO {
 
     private DatabaseProperties databaseProperties;
     private Logger logger;
-    private TrackAssemblerImpl trackAssemblerImpl;
+    private TrackMapperImpl trackAssemblerImpl;
 
     public TrackDAOImpl() {
         databaseProperties = new DatabaseProperties();
@@ -24,7 +27,7 @@ public class TrackDAOImpl implements TrackDAO {
     }
 
     @Inject
-    public void setTrackAssemblerImpl(TrackAssemblerImpl trackAssemblerImpl) {
+    public void setTrackAssemblerImpl(TrackMapperImpl trackAssemblerImpl) {
         this.trackAssemblerImpl = trackAssemblerImpl;
     }
 
@@ -33,6 +36,7 @@ public class TrackDAOImpl implements TrackDAO {
         List<TrackDTO> tracks = null;
 
         try {
+            Class.forName(databaseProperties.getDriver());
             // Connect to database
             var connection = DriverManager.getConnection(databaseProperties.getConnectionString());
 
@@ -52,7 +56,11 @@ public class TrackDAOImpl implements TrackDAO {
             connection.close();
         }
         catch (SQLException e) {
+            ExceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+        }
+        catch (ClassNotFoundException e) {
+            logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
         }
 
         return tracks;
@@ -64,6 +72,7 @@ public class TrackDAOImpl implements TrackDAO {
 
         try {
             // Connect to database
+            Class.forName(databaseProperties.getDriver());
             var connection = DriverManager.getConnection(databaseProperties.getConnectionString());
 
             // Query database
@@ -80,7 +89,11 @@ public class TrackDAOImpl implements TrackDAO {
             connection.close();
         }
         catch (SQLException e) {
+            ExceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+        }
+        catch (ClassNotFoundException e) {
+            logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
         }
 
         return tracks;

@@ -12,7 +12,6 @@ import org.mockito.Mockito;
 import javax.ws.rs.core.Response;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 @DisplayName("TracksController unit tests")
 public class TracksControllerTest {
@@ -40,25 +39,6 @@ public class TracksControllerTest {
     @Nested
     @DisplayName("getAvailableTracks() unit tests")
     class GetAvailableTracksTest {
-        @Test
-        @DisplayName("Test getAvailableTracks() returns unauthorized if token doesn't match")
-        public void testGetAvailableTracksReturnsUnauthorizedIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-
-            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
-
-            // Act
-            var response = sut.getAvailableTracks(TOKEN, PLAYLIST_ID);
-
-            var actualStatus = response.getStatus();
-            var actualEntity = response.getEntity();
-
-            // Assert
-            assertEquals(expectedStatus, actualStatus);
-            assertNull(actualEntity);
-        }
-
         @Test
         @DisplayName("Test getAvailableTracks() passes on tracks if token matches")
         public void testGetAvailableTracksPassesOnTracksIfTokenMatches() {

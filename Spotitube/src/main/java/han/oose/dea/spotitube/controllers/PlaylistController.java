@@ -28,15 +28,8 @@ public class PlaylistController {
 
     @GET
     public Response getAllPlaylists(@QueryParam("token") String token) {
-        Response response;
-
-        if (!loginService.validateToken(token)) {
-            response = Response.status(Response.Status.UNAUTHORIZED).build();
-        }
-        else {
-            var playlists = playlistService.getAllPlaylists(token);
-            response = Response.status(Response.Status.OK).entity(playlists).build();
-        }
+        var playlists = playlistService.getAllPlaylists(token);
+        var response = Response.status(Response.Status.OK).entity(playlists).build();
 
         return response;
     }
@@ -44,15 +37,8 @@ public class PlaylistController {
     @GET
     @Path("/{playlistId}/tracks")
     public Response getPlaylistsTracks(@QueryParam("token") String token, @PathParam("playlistId") int playlistId) {
-        Response response;
-
-        if (!loginService.validateToken(token)) {
-            response = Response.status(Response.Status.UNAUTHORIZED).build();
-        }
-        else {
-            var tracks = playlistService.getPlaylistsTracks(playlistId);
-            response = Response.status(Response.Status.OK).entity(tracks).build();
-        }
+        var tracks = playlistService.getPlaylistsTracks(playlistId);
+        var response = Response.status(Response.Status.OK).entity(tracks).build();
 
         return response;
     }
@@ -60,16 +46,10 @@ public class PlaylistController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addPlaylist(@QueryParam("token") String token, PlaylistDTO playlist) {
-        Response response;
+        playlistService.addPlaylist(token, playlist);
 
-        if (!loginService.validateToken(token)) {
-            response = Response.status(Response.Status.UNAUTHORIZED).build();
-        }
-        else {
-            playlistService.addPlaylist(token, playlist);
-            var playlists = playlistService.getAllPlaylists(token);
-            response = Response.status(Response.Status.CREATED).entity(playlists).build();
-        }
+        var playlists = playlistService.getAllPlaylists(token);
+        var response = Response.status(Response.Status.CREATED).entity(playlists).build();
 
         return response;
     }
@@ -77,54 +57,36 @@ public class PlaylistController {
     @PUT
     @Path("/{playlistId}")
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response editPlaylistName(@QueryParam("token") String token, @PathParam("playlistId") int playlistId, PlaylistDTO playlist) {
-        Response response;
+        playlistService.editPlaylistName(token, playlistId, playlist);
 
-        if (!loginService.validateToken(token)) {
-            response = Response.status(Response.Status.UNAUTHORIZED).build();
-        }
-        else if (playlist.getId() != playlistId) {
-            throw new BadRequestException();
-        }
-        else {
-            playlistService.editPlaylistName(token, playlist);
-            var playlists = playlistService.getAllPlaylists(token);
-            response = Response.status(Response.Status.OK).entity(playlists).build();
-        }
+        var playlists = playlistService.getAllPlaylists(token);
+        var response = Response.status(Response.Status.OK).entity(playlists).build();
 
         return response;
     }
 
     @DELETE
     @Path("/{playlistId}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response deletePlaylist(@QueryParam("token") String token, @PathParam("playlistId") int playlistId) {
-        Response response;
+        playlistService.deletePlaylist(token, playlistId);
 
-        if (!loginService.validateToken(token)) {
-            response = Response.status(Response.Status.UNAUTHORIZED).build();
-        }
-        else {
-            playlistService.deletePlaylist(token, playlistId);
-            var playlists = playlistService.getAllPlaylists(token);
-            response = Response.status(Response.Status.OK).entity(playlists).build();
-        }
+        var playlists = playlistService.getAllPlaylists(token);
+        var response = Response.status(Response.Status.OK).entity(playlists).build();
 
         return response;
     }
 
     @DELETE
     @Path("{playlistId}/tracks/{trackId}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response removeTrackFromPlaylist(@QueryParam("token") String token, @PathParam("playlistId") int playlistId, @PathParam("trackId") int trackId) {
-        Response response;
+        playlistService.removeTrackFromPlaylist(token, playlistId, trackId);
 
-        if (!loginService.validateToken(token)) {
-            response = Response.status(Response.Status.UNAUTHORIZED).build();
-        }
-        else {
-            playlistService.removeTrackFromPlaylist(token, playlistId, trackId);
-            var tracks = playlistService.getPlaylistsTracks(playlistId);
-            response = Response.status(Response.Status.OK).entity(tracks).build();
-        }
+        var tracks = playlistService.getPlaylistsTracks(playlistId);
+        var response = Response.status(Response.Status.OK).entity(tracks).build();
 
         return response;
     }
@@ -132,17 +94,12 @@ public class PlaylistController {
     @POST
     @Path("{playlistId}/tracks")
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response addTrackToPlaylist(@QueryParam("token") String token, @PathParam("playlistId") int playlistId, TrackDTO track) {
-        Response response;
+        playlistService.addTrackToPlaylist(token, playlistId, track);
 
-        if (!loginService.validateToken(token)) {
-            response = Response.status(Response.Status.UNAUTHORIZED).build();
-        }
-        else {
-            playlistService.addTrackToPlaylist(token, playlistId, track);
-            var tracks = playlistService.getPlaylistsTracks(playlistId);
-            response = Response.status(Response.Status.OK).entity(tracks).build();
-        }
+        var tracks = playlistService.getPlaylistsTracks(playlistId);
+        var response = Response.status(Response.Status.OK).entity(tracks).build();
 
         return response;
     }

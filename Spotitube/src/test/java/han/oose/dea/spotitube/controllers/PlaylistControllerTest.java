@@ -48,27 +48,8 @@ public class PlaylistControllerTest {
     @DisplayName("getAllPlaylists() unit tests")
     class GetAllPlaylistsTest {
         @Test
-        @DisplayName("Test getAllPlaylists() returns unauthorized if token doesn't match")
-        public void testGetAllPlaylistsReturnsUnauthorizedIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-
-            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
-
-            // Act
-            var response = sut.getAllPlaylists(TOKEN);
-
-            var actualStatus = response.getStatus();
-            var actualEntity = response.getEntity();
-
-            // Assert
-            assertEquals(expectedStatus, actualStatus);
-            assertNull(actualEntity);
-        }
-
-        @Test
-        @DisplayName("Test getAllPlaylists() passes on playlists if token matches")
-        public void testGetAllPlaylistsPassesOnPlaylistsIfTokenMatches() {
+        @DisplayName("Test getAllPlaylists() passes on playlists")
+        public void testGetAllPlaylistsPassesOnPlaylists() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists(TOKEN)).thenReturn(PLAYLISTS_DTO);
@@ -88,31 +69,12 @@ public class PlaylistControllerTest {
         }
     }
 
-
     @Nested
     @DisplayName("getPlaylistsTracks() unit tests")
     class GetPlaylistsTracksTest {
         @Test
-        @DisplayName("Test getPlaylistsTracks() returns unauthorized if token doesn't match")
-        public void testGetPlaylistsTracksReturnsUnauthorizedIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
-
-            // Act
-            var response = sut.getPlaylistsTracks(TOKEN, PLAYLIST_ID);
-
-            var actualStatus = response.getStatus();
-            var actualEntity = response.getEntity();
-
-            // Assert
-            assertEquals(expectedStatus, actualStatus);
-            assertNull(actualEntity);
-        }
-
-        @Test
-        @DisplayName("Test getPlaylistsTracks() passes on tracks if token matches")
-        public void testGetPlaylistsTracksPassesOnTracksIfTokenMatches() {
+        @DisplayName("Test getPlaylistsTracks() passes on tracks")
+        public void testGetPlaylistsTracksPassesOnTracks() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
@@ -137,39 +99,8 @@ public class PlaylistControllerTest {
     @DisplayName("addPlaylist unit tests")
     class AddPlaylistTest {
         @Test
-        @DisplayName("Test addPlaylist() returns unauthorized if token doesn't match")
-        public void testAddPlaylistReturnsUnauthorizedIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
-
-            // Act
-            var response = sut.addPlaylist(TOKEN, PLAYLIST_DTO);
-
-            var actualStatus = response.getStatus();
-            var actualEntity = response.getEntity();
-
-            // Assert
-            assertEquals(expectedStatus, actualStatus);
-            assertNull(actualEntity);
-        }
-
-        @Test
-        @DisplayName("Test addPlaylist() doesn't call playlistService.addPlaylist() if token doesn't match")
-        public void testAddPlaylistDoesntCallPlaylistServiceAddPlaylistIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-
-            // Act
-            sut.addPlaylist(TOKEN, PLAYLIST_DTO);
-
-            // Assert
-            Mockito.verify(mockedPlaylistService, never()).addPlaylist(TOKEN, PLAYLIST_DTO);
-        }
-
-        @Test
-        @DisplayName("Test addPlaylist() calls playlistService.addPlaylist() if token matches")
-        public void testAddPlaylistCallsPlaylistServiceAddPlaylistIfTokenMatches() {
+        @DisplayName("Test addPlaylist() calls playlistService.addPlaylist()")
+        public void testAddPlaylistCallsPlaylistServiceAddPlaylist() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
@@ -181,8 +112,8 @@ public class PlaylistControllerTest {
         }
 
         @Test
-        @DisplayName("Test addPlaylist() passes on playlists if token matches")
-        public void testAddPlaylistPassesOnPlaylistsIfTokenMatches() {
+        @DisplayName("Test addPlaylist() passes on playlists")
+        public void testAddPlaylistPassesOnPlaylists() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists(TOKEN)).thenReturn(PLAYLISTS_DTO);
@@ -206,40 +137,8 @@ public class PlaylistControllerTest {
     @DisplayName("editPlaylistName() unit tests")
     class EditPlaylistNameTest {
         @Test
-        @DisplayName("Test editPlaylistName() returns unauthorized if token doesn't match")
-        public void testEditPlaylistNameReturnsUnauthorizedIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-
-            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
-
-            // Act
-            var response = sut.editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
-
-            var actualStatus = response.getStatus();
-            var actualEntity = response.getEntity();
-
-            // Assert
-            assertEquals(expectedStatus, actualStatus);
-            assertNull(actualEntity);
-        }
-
-        @Test
-        @DisplayName("Test editPlaylistName() doesn't call playlistService.editPlaylistName() if token doesn't match")
-        public void testEditPlaylistNameDoesntCallPlaylistServiceEditPlaylistNameIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-
-            // Act
-            sut.editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
-
-            // Assert
-            Mockito.verify(mockedPlaylistService, never()).editPlaylistName(TOKEN, PLAYLIST_DTO);
-        }
-
-        @Test
-        @DisplayName("Test editPlaylistName() calls playlistService.editPlaylistName() if token matches")
-        public void testEditPlaylistNameCallsPlaylistServiceEditPlaylistNameIfTokenMatches() {
+        @DisplayName("Test editPlaylistName() calls playlistService.editPlaylistName()")
+        public void testEditPlaylistNameCallsPlaylistServiceEditPlaylistName() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
@@ -247,12 +146,12 @@ public class PlaylistControllerTest {
             sut.editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
 
             // Assert
-            Mockito.verify(mockedPlaylistService).editPlaylistName(TOKEN, PLAYLIST_DTO);
+            Mockito.verify(mockedPlaylistService).editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
         }
 
         @Test
-        @DisplayName("Test editPlaylistName() passes on playlists if token matches")
-        public void testEditPlaylistNamePassesOnPlaylistsIfTokenMatches() {
+        @DisplayName("Test editPlaylistName() passes on playlists")
+        public void testEditPlaylistNamePassesOnPlaylists() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists(TOKEN)).thenReturn(PLAYLISTS_DTO);
@@ -270,74 +169,14 @@ public class PlaylistControllerTest {
             assertEquals(expectedStatus, actualStatus);
             assertEquals(expectedEntity, actualEntity);
         }
-
-        @Test
-        @DisplayName("Test editPlaylistName() throws BadRequestException if playlistId does not match playlistDTO")
-        public void testEditPlaylistNameThrowsBadRequestExceptionIfPlaylistIdDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
-
-            var testPlaylistId = 2;
-
-            // Act & Assert
-            assertThrows(BadRequestException.class, () -> sut.editPlaylistName(TOKEN, testPlaylistId, PLAYLIST_DTO));
-        }
-
-        @Test
-        @DisplayName("Test editPlaylistName() doesn't call playlistService.editPlaylistName() if bad request exception is thrown")
-        public void testEditPlaylistNameDoesntCallEditPlaylistNameIfBadRequestExceptionIsThrown() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
-
-            var differentPlaylistId = 2;
-
-            // Act & Assert
-            try {
-                sut.editPlaylistName(TOKEN, differentPlaylistId, PLAYLIST_DTO);
-            } catch (BadRequestException e) {
-                Mockito.verify(mockedPlaylistService, never()).editPlaylistName(TOKEN, PLAYLIST_DTO);
-            }
-        }
     }
 
     @Nested
     @DisplayName("deletePlaylist() unit tests")
     class DeletePlaylistTest {
         @Test
-        @DisplayName("Test deletePlaylist() returns unauthorized if token doesn't match")
-        public void testDeletePlaylistReturnsUnauthorizedIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-
-            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
-
-            // Act
-            var response = sut.deletePlaylist(TOKEN, PLAYLIST_ID);
-
-            var actualStatus = response.getStatus();
-            var actualEntity = response.getEntity();
-
-            // Assert
-            assertEquals(expectedStatus, actualStatus);
-            assertNull(actualEntity);
-        }
-
-        @Test
-        @DisplayName("Test deletePlaylist() doesn't call playlistService.deletePlaylist() if token doesn't match")
-        public void testDeletePlaylistDoesntCallPlaylistServiceDeletePlaylistIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-
-            // Act
-            sut.deletePlaylist(TOKEN, PLAYLIST_ID);
-
-            // Assert
-            Mockito.verify(mockedPlaylistService, never()).deletePlaylist(TOKEN, PLAYLIST_ID);
-        }
-
-        @Test
-        @DisplayName("Test deletePlaylist() calls playlistService.deletePlaylist() if token matches")
-        public void testDeletePlaylistCallsPlaylistServiceDeletePlaylistIfTokenMatches() {
+        @DisplayName("Test deletePlaylist() calls playlistService.deletePlaylist()")
+        public void testDeletePlaylistCallsPlaylistServiceDeletePlaylist() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
@@ -349,8 +188,8 @@ public class PlaylistControllerTest {
         }
 
         @Test
-        @DisplayName("Test deletePlaylist() passes on playlists if token matches")
-        public void testDeletePlaylistPassesOnPlaylistsIfTokenMatches() {
+        @DisplayName("Test deletePlaylist() passes on playlists")
+        public void testDeletePlaylistPassesOnPlaylists() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists(TOKEN)).thenReturn(PLAYLISTS_DTO);
@@ -374,40 +213,8 @@ public class PlaylistControllerTest {
     @DisplayName("removeTrackFromPlaylist() unit tests")
     class RemoveTrackFromPlaylistTest {
         @Test
-        @DisplayName("Test removeTrackFromPlaylist() returns unauthorized if token doesn't match")
-        public void testRemoveTrackFromPlaylistReturnsUnauthorizedIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-
-            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
-
-            // Act
-            var response = sut.removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
-
-            var actualStatus = response.getStatus();
-            var actualEntity = response.getEntity();
-
-            // Assert
-            assertEquals(expectedStatus, actualStatus);
-            assertNull(actualEntity);
-        }
-
-        @Test
-        @DisplayName("Test removeTrackFromPlaylist() doesn't call playlistService.removeTrackFromPlaylist() if token doesn't match")
-        public void testRemoveTrackFromPlaylistDoesntCallPlaylistServiceRemoveTrackFromPlaylistIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-
-            // Act
-            sut.removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
-
-            // Assert
-            Mockito.verify(mockedPlaylistService, never()).removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
-        }
-
-        @Test
-        @DisplayName("Test removeTrackFromPlaylist() calls playlistService.removeTrackFromPlaylist() if token matches")
-        public void testRemoveTrackFromPlaylistCallsPlaylistServiceRemoveTrackFromPlaylistIfTokenMatches() {
+        @DisplayName("Test removeTrackFromPlaylist() calls playlistService.removeTrackFromPlaylist()")
+        public void testRemoveTrackFromPlaylistCallsPlaylistServiceRemoveTrackFromPlaylist() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
@@ -419,8 +226,8 @@ public class PlaylistControllerTest {
         }
 
         @Test
-        @DisplayName("Test removeTrackFromPlaylist() passes on tracks if token matches")
-        public void testRemoveTrackFromPlaylistPassesOnTracksIfTokenMatches() {
+        @DisplayName("Test removeTrackFromPlaylist() passes on tracks")
+        public void testRemoveTrackFromPlaylistPassesOnTracks() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
@@ -444,40 +251,8 @@ public class PlaylistControllerTest {
     @DisplayName("addTrackToPlaylist() unit tests")
     class AddTrackToPlaylistTest {
         @Test
-        @DisplayName("Test addTrackToPlaylist() returns unauthorized if token doesn't match")
-        public void testAddTrackToPlaylistReturnsUnauthorizedIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-
-            var expectedStatus = Response.Status.UNAUTHORIZED.getStatusCode();
-
-            // Act
-            var response = sut.addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
-
-            var actualStatus = response.getStatus();
-            var actualEntity = response.getEntity();
-
-            // Assert
-            assertEquals(expectedStatus, actualStatus);
-            assertNull(actualEntity);
-        }
-
-        @Test
-        @DisplayName("Test addTrackToPlaylist() doesn't call playlistService.addTrackToPlaylist() if token doesn't match")
-        public void testAddTrackToPlaylistDoesntCallPlaylistServiceAddTrackToPlaylistIfTokenDoesntMatch() {
-            // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(false);
-
-            // Act
-            sut.addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
-
-            // Assert
-            Mockito.verify(mockedPlaylistService, never()).addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
-        }
-
-        @Test
-        @DisplayName("Test addTrackToPlaylist() calls playlistService.addTrackToPlaylist() if token matches")
-        public void testAddTrackToPlaylistCallsPlaylistServiceRemoveAddTrackToPlaylistIfTokenMatches() {
+        @DisplayName("Test addTrackToPlaylist() calls playlistService.addTrackToPlaylist()")
+        public void testAddTrackToPlaylistCallsPlaylistServiceRemoveAddTrackToPlaylist() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
@@ -489,8 +264,8 @@ public class PlaylistControllerTest {
         }
 
         @Test
-        @DisplayName("Test addTrackToPlaylist() passes on tracks if token matches")
-        public void testAddTrackToPlaylistPassesOnTracksIfTokenMatches() {
+        @DisplayName("Test addTrackToPlaylist() passes on tracks")
+        public void testAddTrackToPlaylistPassesOnTracks() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);

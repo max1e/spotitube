@@ -8,10 +8,29 @@ CREATE PROCEDURE sp_validateLogin(
     IN hashedPassword char(64)
 )
 BEGIN
-	SELECT COUNT(*) AS loginAccepted
+	-- If username and password don't match throw error
+	IF (SELECT COUNT(*) AS loginAccepted
+		FROM Users u
+		WHERE u.username = username
+		AND u.hashedPassword = hashedPassword)
+        != 1
+	THEN
+		SET @exception = (SELECT exceptionName FROM HTTPExceptions WHERE statusCode = 401);
+		SIGNAL SQLSTATE '45000'
+			SET MESSAGE_TEXT = @exception;
+	END IF;
+    
+    -- Give user new token
+    UPDATE Users u
+    SET u.token = fn_fetchToken(username)
+	WHERE u.username = username
+    AND u.hashedPassword = hashedPassword;
+    
+    -- Return token and users full name
+	SELECT token, CONCAT(firstName, " ", lastName) AS fullName
 	FROM Users u
 	WHERE u.username = username
-	AND u.hashedPassword = hashedPassword;
+    AND u.hashedPassword = hashedPassword;
 END$$
 
 DELIMITER ;

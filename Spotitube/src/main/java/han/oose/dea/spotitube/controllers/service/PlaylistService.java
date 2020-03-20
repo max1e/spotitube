@@ -11,7 +11,7 @@ public interface PlaylistService {
     TracksDTO getPlaylistsTracks(int playlistId);
     void deletePlaylist(String token, int id);
     void addPlaylist(String token, PlaylistDTO playlist);
-    void editPlaylistName(String token, PlaylistDTO playlist);
+    void editPlaylistName(String token, int playlistId, PlaylistDTO playlist);
     void removeTrackFromPlaylist(String token, int playlistId, int trackId);
     void addTrackToPlaylist(String token, int playlistId, TrackDTO track);
 }

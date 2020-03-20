@@ -78,3 +78,10 @@ CREATE TABLE PlaylistsTracks (
         ON UPDATE NO ACTION
         ON DELETE CASCADE
 );
+
+CREATE TABLE HTTPExceptions (
+	statusCode int,
+    exceptionName VARCHAR(255),
+    CONSTRAINT pk_HTTPExceptions PRIMARY KEY (statusCode),
+    CONSTRAINT ak_HTTPExceptions UNIQUE (statusCode)
+)

@@ -6,10 +6,13 @@ import han.oose.dea.spotitube.service.datasource.PlaylistDAO;
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 
+import javax.ws.rs.BadRequestException;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.never;
 
 @DisplayName("PlaylistService unit tests")
 public class PlaylistServiceTest {
@@ -21,6 +24,7 @@ public class PlaylistServiceTest {
     private static final String PLAYLIST_NAME = "playlist";
     private static final int TRACK_ID = 1;
     private static final String TOKEN = "1234-1234-1234";
+    private static final int DURATION = 674;
 
     private static final PlaylistDTO PLAYLIST_DTO = new PlaylistDTO();
     private static final List<PlaylistDTO> PLAYLIST_DTO_LIST = new ArrayList<>();
@@ -40,6 +44,7 @@ public class PlaylistServiceTest {
         playlistTracks.add(TRACK_DTO);
         PLAYLIST_DTO.setTracks(playlistTracks);
         PLAYLIST_DTO.setName(PLAYLIST_NAME);
+        PLAYLIST_DTO.setDuration(DURATION);
 
         PLAYLIST_DTO_LIST.add(PLAYLIST_DTO);
     }
@@ -87,7 +92,7 @@ public class PlaylistServiceTest {
         @DisplayName("Test getAllPlaylists() adds correct duration to playlists")
         public void getGetAllPlaylistsAddsCorrectDurationToPlaylists() {
             // Assert
-            var expectedDuration = 674;
+            var expectedDuration = DURATION;
 
             Mockito.when(mockedPlaylistDAO.getAllPlaylists(TOKEN)).thenReturn(PLAYLIST_DTO_LIST);
 
@@ -186,6 +191,31 @@ public class PlaylistServiceTest {
     @Nested
     @DisplayName("editPlaylistName() unit tests")
     class EditPlaylistNameTest {
+        @Test
+        @DisplayName("Test editPlaylistName() throws BadRequestException if playlistId does not match playlistDTO")
+        public void testEditPlaylistNameThrowsBadRequestExceptionIfPlaylistIdDoesntMatch() {
+            // Arrange
+            var testPlaylistId = 2;
+
+            // Act & Assert
+            assertThrows(BadRequestException.class, () -> sut.editPlaylistName(TOKEN, testPlaylistId, PLAYLIST_DTO));
+        }
+
+        @Test
+        @DisplayName("Test editPlaylistName() doesn't call playlistDAO.editPlaylistName() if bad request exception is thrown")
+        public void testEditPlaylistNameDoesntCallEditPlaylistNameIfBadRequestExceptionIsThrown() {
+            // Arrange
+            var differentPlaylistId = 2;
+            var expectedPlaylistId = PLAYLIST_DTO.getId();
+            var expectedNewName = PLAYLIST_DTO.getName();
+
+            // Act & Assert
+            try {
+                sut.editPlaylistName(TOKEN, differentPlaylistId, PLAYLIST_DTO);
+            } catch (BadRequestException e) {
+                Mockito.verify(mockedPlaylistDAO, never()).editPlaylistName(TOKEN, expectedPlaylistId, expectedNewName);
+            }
+        }
 
         @Test
         @DisplayName("Test editPlaylistName() calls playlistDAO.editPlaylistName()")
@@ -195,7 +225,7 @@ public class PlaylistServiceTest {
             var expectedName = PLAYLIST_DTO.getName();
 
             // Act
-            sut.editPlaylistName(TOKEN, PLAYLIST_DTO);
+            sut.editPlaylistName(TOKEN, expectedId, PLAYLIST_DTO);
 
             // Assert
             Mockito.verify(mockedPlaylistDAO).editPlaylistName(TOKEN, expectedId, expectedName);

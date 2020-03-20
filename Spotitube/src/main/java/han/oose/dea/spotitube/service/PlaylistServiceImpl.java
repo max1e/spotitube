@@ -7,9 +7,12 @@ import han.oose.dea.spotitube.controllers.dto.TracksDTO;
 import han.oose.dea.spotitube.controllers.service.PlaylistService;
 import han.oose.dea.spotitube.service.datasource.PlaylistDAO;
 
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
+import javax.ws.rs.BadRequestException;
 import java.util.List;
 
+@Default
 public class PlaylistServiceImpl implements PlaylistService {
 
     private PlaylistDAO playlistDAO;
@@ -68,10 +71,14 @@ public class PlaylistServiceImpl implements PlaylistService {
     }
 
     @Override
-    public void editPlaylistName(String token, PlaylistDTO playlist) {
-        var playlistId = playlist.getId();
+    public void editPlaylistName(String token, int playlistId, PlaylistDTO playlist) {
+        if (playlist.getId() != playlistId) {
+            throw new BadRequestException();
+        }
+
         var newName = playlist.getName();
         playlistDAO.editPlaylistName(token, playlistId, newName);
+
     }
 
     @Override

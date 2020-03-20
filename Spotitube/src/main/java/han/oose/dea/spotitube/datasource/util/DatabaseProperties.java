@@ -12,6 +12,8 @@ public class DatabaseProperties {
     private Logger logger;
 
     public DatabaseProperties() {
+        logger = Logger.getLogger(getClass().getName());
+
         properties = new Properties();
 
         try {

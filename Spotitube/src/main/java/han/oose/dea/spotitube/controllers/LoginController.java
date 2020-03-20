@@ -22,16 +22,8 @@ public class LoginController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response handleLogin(LoginDTO login) {
-        Response response;
-
-        // TODO één database handeling van maken
-        if (!loginService.validateLogin(login.getUser(), login.getPassword())) {
-            response = Response.status(Response.Status.UNAUTHORIZED).build();
-        }
-        else {
-            var loginResponse = loginService.getLoginResponse(login.getUser(), login.getPassword());
-            response = Response.status(Response.Status.OK).entity(loginResponse).build();
-        }
+        var loginResponse = loginService.validateLogin(login.getUser(), login.getPassword());
+        var response = Response.status(Response.Status.OK).entity(loginResponse).build();
 
         return response;
     }

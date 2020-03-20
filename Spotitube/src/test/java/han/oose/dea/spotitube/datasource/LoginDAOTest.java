@@ -9,6 +9,8 @@ public class LoginDAOTest {
 
     @Test
     public void validateLoginTest() {
-        System.out.println(sut.validateLogin("plakplaatje", "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8"));
+        var user = sut.validateLogin("plakplaatje", "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8");
+        System.out.println(user.getToken());
+        System.out.println(user.getUser());
     }
 }
