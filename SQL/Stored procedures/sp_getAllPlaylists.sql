@@ -8,10 +8,11 @@ CREATE PROCEDURE sp_getAllPlaylists(
 )
 BEGIN
 	-- If token doesn't match throw error
-	IF (SELECT COUNT(*) AS tokenAccepted
+	IF NOT EXISTS (
+		SELECT *
 		FROM Users u
-		WHERE u.token = @token)
-        != 1
+		WHERE token = token
+	)
 	THEN
 		SET @exception = (SELECT exceptionName FROM HTTPExceptions WHERE statusCode = 401);
 		SIGNAL SQLSTATE '45000'
@@ -20,14 +21,13 @@ BEGIN
     
 	SET @playlistOwner = (SELECT userId FROM Users WHERE Users.token = token);
     
-	SELECT Playlists.playlistId, playlistName, playlistOwner = @playlistOwner AS isOwner, SUM(Tracks.duration) AS duration
-    FROM Playlists
+	SELECT p.playlistId, playlistName, playlistOwner = @playlistOwner AS isOwner, SUM(Tracks.duration) AS duration
+    FROM Playlists p
 		INNER JOIN PlaylistsTracks
-			ON Playlists.playlistId = PlaylistsTracks.playlistId
+			ON p.playlistId = PlaylistsTracks.playlistId
 		INNER JOIN Tracks
 			ON PlaylistsTracks.trackId = Tracks.trackId
-    WHERE Users.token = token
-	GROUP BY Playlists.playlistId;
+	GROUP BY p.playlistId;
 END$$
 
 DELIMITER ;

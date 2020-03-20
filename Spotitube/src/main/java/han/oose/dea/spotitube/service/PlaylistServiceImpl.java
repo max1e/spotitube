@@ -6,6 +6,7 @@ import han.oose.dea.spotitube.controllers.dto.TrackDTO;
 import han.oose.dea.spotitube.controllers.dto.TracksDTO;
 import han.oose.dea.spotitube.controllers.service.PlaylistService;
 import han.oose.dea.spotitube.service.datasource.PlaylistDAO;
+import han.oose.dea.spotitube.service.datasource.TrackDAO;
 
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
@@ -16,10 +17,16 @@ import java.util.List;
 public class PlaylistServiceImpl implements PlaylistService {
 
     private PlaylistDAO playlistDAO;
+    private TrackDAO trackDAO;
 
     @Inject
     public void setPlaylistDAO(PlaylistDAO playlistDAO) {
         this.playlistDAO = playlistDAO;
+    }
+
+    @Inject
+    public void setTrackDAO(TrackDAO trackDAO) {
+        this.trackDAO = trackDAO;
     }
 
     @Override
@@ -46,8 +53,8 @@ public class PlaylistServiceImpl implements PlaylistService {
     }
 
     @Override
-    public TracksDTO getPlaylistsTracks(int playlistId) {
-        var tracks = playlistDAO.getPlaylistsTracks(playlistId);
+    public TracksDTO getPlaylistsTracks(String token, int playlistId) {
+        var tracks = trackDAO.getPlaylistsTracks(token, playlistId);
         var tracksWrapper = new TracksDTO(tracks);
         return tracksWrapper;
     }

@@ -9,11 +9,12 @@ CREATE PROCEDURE sp_validateLogin(
 )
 BEGIN
 	-- If username and password don't match throw error
-	IF (SELECT COUNT(*) AS loginAccepted
+	IF NOT EXISTS (
+		SELECT *
 		FROM Users u
 		WHERE u.username = username
-		AND u.hashedPassword = hashedPassword)
-        != 1
+		AND u.hashedPassword = hashedPassword
+	)
 	THEN
 		SET @exception = (SELECT exceptionName FROM HTTPExceptions WHERE statusCode = 401);
 		SIGNAL SQLSTATE '45000'

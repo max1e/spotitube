@@ -27,7 +27,7 @@ public class TracksController {
 
     @GET
     public Response getAvailableTracks(@QueryParam("token") String token, @QueryParam("playlistId") Integer playlistId) {
-        var tracks = tracksService.getAvailableTracks(playlistId);
+        var tracks = tracksService.getAvailableTracks(token, playlistId);
         var response = Response.status(Response.Status.OK).entity(tracks).build();
 
         return response;

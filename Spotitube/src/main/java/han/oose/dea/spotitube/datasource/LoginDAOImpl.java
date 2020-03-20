@@ -21,6 +21,7 @@ public class LoginDAOImpl implements LoginDAO {
     private Logger logger;
 
     private LoginResponseMapper loginResponseMapper;
+    private ExceptionMapper exceptionMapper;
 
     public LoginDAOImpl() {
         databaseProperties = new DatabaseProperties();
@@ -30,6 +31,11 @@ public class LoginDAOImpl implements LoginDAO {
     @Inject
     public void setLoginResponseMapper(LoginResponseMapper loginResponseMapper) {
         this.loginResponseMapper = loginResponseMapper;
+    }
+
+    @Inject
+    public void setExceptionMapper(ExceptionMapper exceptionMapper) {
+        this.exceptionMapper = exceptionMapper;
     }
 
     @Override
@@ -59,7 +65,7 @@ public class LoginDAOImpl implements LoginDAO {
             connection.close();
         }
         catch (SQLException e) {
-            ExceptionMapper.mapException(e);
+            exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
         }
         catch (ClassNotFoundException e) {
@@ -94,7 +100,7 @@ public class LoginDAOImpl implements LoginDAO {
             connection.close();
         }
         catch (SQLException e) {
-            ExceptionMapper.mapException(e);
+            exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
         }
 

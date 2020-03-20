@@ -44,7 +44,7 @@ public class TracksControllerTest {
         public void testGetAvailableTracksPassesOnTracksIfTokenMatches() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
-            Mockito.when(mockedTracksService.getAvailableTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
+            Mockito.when(mockedTracksService.getAvailableTracks(TOKEN, PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = TRACKS_DTO;

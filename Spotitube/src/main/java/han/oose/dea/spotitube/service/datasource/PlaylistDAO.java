@@ -14,6 +14,5 @@ public interface PlaylistDAO {
     int addPlaylist(String token, String playlistName);
     void editPlaylistName(String token, int playlistId, String newName);
     void removeTrackFromPlaylist(String token, int playlistId, int trackId);
-    List<TrackDTO> getPlaylistsTracks(int playlistId);
     void addTrackToPlaylist(String token, int playlistId, int trackId);
 }

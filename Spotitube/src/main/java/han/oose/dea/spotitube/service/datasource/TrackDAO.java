@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface TrackDAO {
 
-    List<TrackDTO> getTracksNotInPlaylist(Integer playlistId);
-    List<TrackDTO> getAllTracks();
+    List<TrackDTO> getTracksNotInPlaylist(String token, Integer playlistId);
+    List<TrackDTO> getAllTracks(String token);
+    List<TrackDTO> getPlaylistsTracks(String token, int playlistId);
 }

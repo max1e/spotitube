@@ -19,6 +19,7 @@ public class TracksServiceTest {
     private TracksServiceImpl sut;
     private TrackDAO mockedTrackDAO;
 
+    private static final String TOKEN = "1234-1234-1234";
     private static final int PLAYLIST_ID = 1;
     private static final Integer EMPTY_PLAYLIST_ID = null;
 
@@ -41,10 +42,10 @@ public class TracksServiceTest {
             // Arrange
 
             // Act
-            sut.getAvailableTracks(PLAYLIST_ID);
+            sut.getAvailableTracks(TOKEN, PLAYLIST_ID);
 
             // Assert
-            Mockito.verify(mockedTrackDAO).getTracksNotInPlaylist(PLAYLIST_ID);
+            Mockito.verify(mockedTrackDAO).getTracksNotInPlaylist(TOKEN, PLAYLIST_ID);
         }
 
         @Test
@@ -53,10 +54,10 @@ public class TracksServiceTest {
             // Assert
             var expectedTracks = TRACKS;
 
-            Mockito.when(mockedTrackDAO.getTracksNotInPlaylist(PLAYLIST_ID)).thenReturn(TRACKS);
+            Mockito.when(mockedTrackDAO.getTracksNotInPlaylist(TOKEN, PLAYLIST_ID)).thenReturn(TRACKS);
 
             // Act
-            var actual = sut.getAvailableTracks(PLAYLIST_ID);
+            var actual = sut.getAvailableTracks(TOKEN, PLAYLIST_ID);
             var actualTracks = actual.getTracks();
 
             // Assert
@@ -69,10 +70,10 @@ public class TracksServiceTest {
             // Arrange
 
             // Act
-            sut.getAvailableTracks(EMPTY_PLAYLIST_ID);
+            sut.getAvailableTracks(TOKEN, EMPTY_PLAYLIST_ID);
 
             // Assert
-            Mockito.verify(mockedTrackDAO).getAllTracks();
+            Mockito.verify(mockedTrackDAO).getAllTracks(TOKEN);
         }
 
         @Test
@@ -81,10 +82,10 @@ public class TracksServiceTest {
             // Assert
             var expectedTracks = TRACKS;
 
-            Mockito.when(mockedTrackDAO.getAllTracks()).thenReturn(TRACKS);
+            Mockito.when(mockedTrackDAO.getAllTracks(TOKEN)).thenReturn(TRACKS);
 
             // Act
-            var actual = sut.getAvailableTracks(EMPTY_PLAYLIST_ID);
+            var actual = sut.getAvailableTracks(TOKEN, EMPTY_PLAYLIST_ID);
             var actualTracks = actual.getTracks();
 
             // Assert

@@ -3,6 +3,7 @@ package han.oose.dea.spotitube.service;
 import han.oose.dea.spotitube.controllers.dto.PlaylistDTO;
 import han.oose.dea.spotitube.controllers.dto.TrackDTO;
 import han.oose.dea.spotitube.service.datasource.PlaylistDAO;
+import han.oose.dea.spotitube.service.datasource.TrackDAO;
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 
@@ -19,6 +20,7 @@ public class PlaylistServiceTest {
 
     private PlaylistServiceImpl sut;
     private PlaylistDAO mockedPlaylistDAO;
+    private TrackDAO mockedTrackDAO;
 
     private static final int PLAYLIST_ID = 1;
     private static final String PLAYLIST_NAME = "playlist";
@@ -55,6 +57,9 @@ public class PlaylistServiceTest {
 
         mockedPlaylistDAO = Mockito.mock(PlaylistDAO.class);
         sut.setPlaylistDAO(mockedPlaylistDAO);
+
+        mockedTrackDAO = Mockito.mock(TrackDAO.class);
+        sut.setTrackDAO(mockedTrackDAO);
     }
 
     @Nested
@@ -114,10 +119,10 @@ public class PlaylistServiceTest {
             // Arrange
 
             // Act
-            sut.getPlaylistsTracks(PLAYLIST_ID);
+            sut.getPlaylistsTracks(TOKEN, PLAYLIST_ID);
 
             // Assert
-            Mockito.verify(mockedPlaylistDAO).getPlaylistsTracks(PLAYLIST_ID);
+            Mockito.verify(mockedTrackDAO).getPlaylistsTracks(TOKEN, PLAYLIST_ID);
         }
 
         @Test
@@ -126,10 +131,10 @@ public class PlaylistServiceTest {
             // Assert
             var expectedTracks = TRACKS;
 
-            Mockito.when(mockedPlaylistDAO.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS);
+            Mockito.when(mockedTrackDAO.getPlaylistsTracks(TOKEN, PLAYLIST_ID)).thenReturn(TRACKS);
 
             // Act
-            var actual = sut.getPlaylistsTracks(PLAYLIST_ID);
+            var actual = sut.getPlaylistsTracks(TOKEN, PLAYLIST_ID);
             var actualTracks = actual.getTracks();
 
             // Assert

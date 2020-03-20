@@ -6,11 +6,9 @@ import han.oose.dea.spotitube.controllers.service.PlaylistService;
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 
-import javax.ws.rs.BadRequestException;
 import javax.ws.rs.core.Response;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.never;
 
 @DisplayName("PlaylistController unit tests")
 public class PlaylistControllerTest {
@@ -77,7 +75,7 @@ public class PlaylistControllerTest {
         public void testGetPlaylistsTracksPassesOnTracks() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
-            Mockito.when(mockedPlaylistService.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
+            Mockito.when(mockedPlaylistService.getPlaylistsTracks(TOKEN, PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = TRACKS_DTO;
@@ -230,7 +228,7 @@ public class PlaylistControllerTest {
         public void testRemoveTrackFromPlaylistPassesOnTracks() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
-            Mockito.when(mockedPlaylistService.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
+            Mockito.when(mockedPlaylistService.getPlaylistsTracks(TOKEN, PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = TRACKS_DTO;
@@ -268,7 +266,7 @@ public class PlaylistControllerTest {
         public void testAddTrackToPlaylistPassesOnTracks() {
             // Arrange
             Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
-            Mockito.when(mockedPlaylistService.getPlaylistsTracks(PLAYLIST_ID)).thenReturn(TRACKS_DTO);
+            Mockito.when(mockedPlaylistService.getPlaylistsTracks(TOKEN, PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
             var expectedEntity = TRACKS_DTO;

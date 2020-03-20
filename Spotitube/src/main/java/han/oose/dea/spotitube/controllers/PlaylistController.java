@@ -37,7 +37,7 @@ public class PlaylistController {
     @GET
     @Path("/{playlistId}/tracks")
     public Response getPlaylistsTracks(@QueryParam("token") String token, @PathParam("playlistId") int playlistId) {
-        var tracks = playlistService.getPlaylistsTracks(playlistId);
+        var tracks = playlistService.getPlaylistsTracks(token, playlistId);
         var response = Response.status(Response.Status.OK).entity(tracks).build();
 
         return response;
@@ -85,7 +85,7 @@ public class PlaylistController {
     public Response removeTrackFromPlaylist(@QueryParam("token") String token, @PathParam("playlistId") int playlistId, @PathParam("trackId") int trackId) {
         playlistService.removeTrackFromPlaylist(token, playlistId, trackId);
 
-        var tracks = playlistService.getPlaylistsTracks(playlistId);
+        var tracks = playlistService.getPlaylistsTracks(token, playlistId);
         var response = Response.status(Response.Status.OK).entity(tracks).build();
 
         return response;
@@ -98,7 +98,7 @@ public class PlaylistController {
     public Response addTrackToPlaylist(@QueryParam("token") String token, @PathParam("playlistId") int playlistId, TrackDTO track) {
         playlistService.addTrackToPlaylist(token, playlistId, track);
 
-        var tracks = playlistService.getPlaylistsTracks(playlistId);
+        var tracks = playlistService.getPlaylistsTracks(token, playlistId);
         var response = Response.status(Response.Status.OK).entity(tracks).build();
 
         return response;

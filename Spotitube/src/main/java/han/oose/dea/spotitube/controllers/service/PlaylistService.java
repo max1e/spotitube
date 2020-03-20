@@ -8,7 +8,7 @@ import han.oose.dea.spotitube.controllers.dto.TracksDTO;
 public interface PlaylistService {
 
     PlaylistsDTO getAllPlaylists(String token);
-    TracksDTO getPlaylistsTracks(int playlistId);
+    TracksDTO getPlaylistsTracks(String token, int playlistId);
     void deletePlaylist(String token, int id);
     void addPlaylist(String token, PlaylistDTO playlist);
     void editPlaylistName(String token, int playlistId, PlaylistDTO playlist);

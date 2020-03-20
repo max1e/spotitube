@@ -22,6 +22,7 @@ public class PlaylistDAOImpl implements PlaylistDAO {
     private Logger logger;
     private PlaylistMapper playlistMapper;
     private TrackMapper trackMapper;
+    private ExceptionMapper exceptionMapper;
 
     public PlaylistDAOImpl() {
         databaseProperties = new DatabaseProperties();
@@ -36,6 +37,11 @@ public class PlaylistDAOImpl implements PlaylistDAO {
     @Inject
     public void setTrackMapper(TrackMapper trackMapper) {
         this.trackMapper = trackMapper;
+    }
+
+    @Inject
+    public void setExceptionMapper(ExceptionMapper exceptionMapper) {
+        this.exceptionMapper = exceptionMapper;
     }
 
     @Override
@@ -62,7 +68,7 @@ public class PlaylistDAOImpl implements PlaylistDAO {
             connection.close();
         }
         catch (SQLException e) {
-            ExceptionMapper.mapException(e);
+            exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
         }
         catch (ClassNotFoundException e) {
@@ -93,7 +99,7 @@ public class PlaylistDAOImpl implements PlaylistDAO {
             connection.close();
         }
         catch (SQLException e) {
-            ExceptionMapper.mapException(e);
+            exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
         }
         catch (ClassNotFoundException e) {
@@ -125,7 +131,7 @@ public class PlaylistDAOImpl implements PlaylistDAO {
             connection.close();
         }
         catch (SQLException e) {
-            ExceptionMapper.mapException(e);
+            exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
         }
         catch (ClassNotFoundException e) {
@@ -157,7 +163,7 @@ public class PlaylistDAOImpl implements PlaylistDAO {
             connection.close();
         }
         catch (SQLException e) {
-            ExceptionMapper.mapException(e);
+            exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
         }
         catch (ClassNotFoundException e) {
@@ -187,47 +193,12 @@ public class PlaylistDAOImpl implements PlaylistDAO {
             connection.close();
         }
         catch (SQLException e) {
-            ExceptionMapper.mapException(e);
+            exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
         }
         catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
         }
-    }
-
-    // TODO naar tracks
-    @Override
-    public List<TrackDTO> getPlaylistsTracks(int playlistId) {
-        List<TrackDTO> tracks = null;
-
-        try {
-            // Connect to database
-            Class.forName(databaseProperties.getDriver());
-            var connection = DriverManager.getConnection(databaseProperties.getConnectionString());
-
-            // Query database
-            var sqlQuery = "CALL sp_getPlaylistsTracks(?)";
-            var sqlStatement = connection.prepareStatement(sqlQuery);
-
-            sqlStatement.setInt(1, playlistId);
-
-            var resultset = sqlStatement.executeQuery();
-
-            tracks = trackMapper.toTrackDTOList(resultset);
-
-            // Close connection
-            sqlStatement.close();
-            connection.close();
-        }
-        catch (SQLException e) {
-            ExceptionMapper.mapException(e);
-            logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
-        }
-        catch (ClassNotFoundException e) {
-            logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
-        }
-
-        return tracks;
     }
 
     @Override
@@ -252,7 +223,7 @@ public class PlaylistDAOImpl implements PlaylistDAO {
             connection.close();
         }
         catch (SQLException e) {
-            ExceptionMapper.mapException(e);
+            exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
         }
         catch (ClassNotFoundException e) {

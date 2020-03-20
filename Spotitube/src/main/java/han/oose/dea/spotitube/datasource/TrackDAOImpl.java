@@ -19,7 +19,8 @@ public class TrackDAOImpl implements TrackDAO {
 
     private DatabaseProperties databaseProperties;
     private Logger logger;
-    private TrackMapperImpl trackAssemblerImpl;
+    private TrackMapperImpl trackMapper;
+    private ExceptionMapper exceptionMapper;
 
     public TrackDAOImpl() {
         databaseProperties = new DatabaseProperties();
@@ -27,12 +28,17 @@ public class TrackDAOImpl implements TrackDAO {
     }
 
     @Inject
-    public void setTrackAssemblerImpl(TrackMapperImpl trackAssemblerImpl) {
-        this.trackAssemblerImpl = trackAssemblerImpl;
+    public void setTrackMapper(TrackMapperImpl trackMapper) {
+        this.trackMapper = trackMapper;
+    }
+
+    @Inject
+    public void setExceptionMapper(ExceptionMapper exceptionMapper) {
+        this.exceptionMapper = exceptionMapper;
     }
 
     @Override
-    public List<TrackDTO> getTracksNotInPlaylist(Integer playlistId) {
+    public List<TrackDTO> getTracksNotInPlaylist(String token, Integer playlistId) {
         List<TrackDTO> tracks = null;
 
         try {
@@ -41,22 +47,23 @@ public class TrackDAOImpl implements TrackDAO {
             var connection = DriverManager.getConnection(databaseProperties.getConnectionString());
 
             // Query database
-            var sqlQuery = "CALL sp_getTracksNotInPlaylist(?)";
+            var sqlQuery = "CALL sp_getTracksNotInPlaylist(?, ?)";
             var sqlStatement = connection.prepareStatement(sqlQuery);
 
-            sqlStatement.setInt(1, playlistId);
+            sqlStatement.setString(1, token);
+            sqlStatement.setInt(2, playlistId);
 
             var resultset = sqlStatement.executeQuery();
 
             // Read result set
-            tracks = trackAssemblerImpl.toTrackDTOList(resultset);
+            tracks = trackMapper.toTrackDTOList(resultset);
 
             // Close connection
             sqlStatement.close();
             connection.close();
         }
         catch (SQLException e) {
-            ExceptionMapper.mapException(e);
+            exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
         }
         catch (ClassNotFoundException e) {
@@ -67,7 +74,7 @@ public class TrackDAOImpl implements TrackDAO {
     }
 
     @Override
-    public List<TrackDTO> getAllTracks() {
+    public List<TrackDTO> getAllTracks(String token) {
         List<TrackDTO> tracks = null;
 
         try {
@@ -76,20 +83,58 @@ public class TrackDAOImpl implements TrackDAO {
             var connection = DriverManager.getConnection(databaseProperties.getConnectionString());
 
             // Query database
-            var sqlQuery = "CALL sp_getAllTracks()";
+            var sqlQuery = "CALL sp_getAllTracks(?)";
             var sqlStatement = connection.prepareStatement(sqlQuery);
 
-            var resultset = sqlStatement.executeQuery();
+            sqlStatement.setString(1, token);
 
             // Read result set
-            tracks = trackAssemblerImpl.toTrackDTOList(resultset);
+            var resultset = sqlStatement.executeQuery();
+
+            tracks = trackMapper.toTrackDTOList(resultset);
 
             // Close connection
             sqlStatement.close();
             connection.close();
         }
         catch (SQLException e) {
-            ExceptionMapper.mapException(e);
+            exceptionMapper.mapException(e);
+            logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+        }
+        catch (ClassNotFoundException e) {
+            logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
+        }
+
+        return tracks;
+    }
+
+    @Override
+    public List<TrackDTO> getPlaylistsTracks(String token, int playlistId) {
+        List<TrackDTO> tracks = null;
+
+        try {
+            // Connect to database
+            Class.forName(databaseProperties.getDriver());
+            var connection = DriverManager.getConnection(databaseProperties.getConnectionString());
+
+            // Query database
+            var sqlQuery = "CALL sp_getPlaylistsTracks(?, ?)";
+            var sqlStatement = connection.prepareStatement(sqlQuery);
+
+            sqlStatement.setString(1, token);
+            sqlStatement.setInt(2, playlistId);
+
+            // Read result set
+            var resultset = sqlStatement.executeQuery();
+
+            tracks = trackMapper.toTrackDTOList(resultset);
+
+            // Close connection
+            sqlStatement.close();
+            connection.close();
+        }
+        catch (SQLException e) {
+            exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
         }
         catch (ClassNotFoundException e) {

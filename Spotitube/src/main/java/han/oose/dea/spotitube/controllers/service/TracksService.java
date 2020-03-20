@@ -4,5 +4,5 @@ import han.oose.dea.spotitube.controllers.dto.TracksDTO;
 
 public interface TracksService {
 
-    TracksDTO getAvailableTracks(Integer playlistId);
+    TracksDTO getAvailableTracks(String token, Integer playlistId);
 }
