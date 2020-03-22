@@ -63,35 +63,4 @@ public class LoginServiceTest {
             assertEquals(expected, actual);
         }
     }
-
-    @Nested
-    @DisplayName("validateToken() unit tests")
-    class ValidateTokenTest {
-        @Test
-        @DisplayName("Test validateToken() calls loginDAO.validateToken()")
-        public void testvalidateTokenCallsLoginDAOValidateLogin() {
-            // Arrange
-
-            // Act
-            sut.validateToken(TOKEN);
-
-            // Assert
-            Mockito.verify(mockedLoginDAO).validateToken(TOKEN);
-        }
-
-        @Test
-        @DisplayName("Test validateToken() passes on boolean from loginDAO.validateToken()")
-        public void testValidateTokenPassesOnBooleanFromLoginDAOValidateToken() {
-            // Assert
-            var expected = true;
-
-            Mockito.when(mockedLoginDAO.validateToken(TOKEN)).thenReturn(expected);
-
-            // Act
-            var actual = sut.validateToken(TOKEN);
-
-            // Assert
-            assertEquals(expected, actual);
-        }
-    }
 }

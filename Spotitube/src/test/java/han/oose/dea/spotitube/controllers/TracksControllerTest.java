@@ -40,10 +40,9 @@ public class TracksControllerTest {
     @DisplayName("getAvailableTracks() unit tests")
     class GetAvailableTracksTest {
         @Test
-        @DisplayName("Test getAvailableTracks() passes on tracks if token matches")
-        public void testGetAvailableTracksPassesOnTracksIfTokenMatches() {
+        @DisplayName("Test getAvailableTracks() passes on tracks")
+        public void testGetAvailableTracksPassesOnTracks() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedTracksService.getAvailableTracks(TOKEN, PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();

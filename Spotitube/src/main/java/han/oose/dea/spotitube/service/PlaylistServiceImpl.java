@@ -68,13 +68,7 @@ public class PlaylistServiceImpl implements PlaylistService {
     public void addPlaylist(String token, PlaylistDTO playlist) {
         var playlistName = playlist.getName();
 
-        var playlistId = playlistDAO.addPlaylist(token, playlistName);
-
-        var playlistTracks = playlist.getTracks();
-        for (var track : playlistTracks) {
-            var trackId = track.getId();
-            playlistDAO.addTrackToPlaylist(token, playlistId, trackId);
-        }
+        playlistDAO.addPlaylist(token, playlistName);
     }
 
     @Override

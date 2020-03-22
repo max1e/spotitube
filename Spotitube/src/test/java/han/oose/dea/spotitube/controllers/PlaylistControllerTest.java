@@ -1,7 +1,6 @@
 package han.oose.dea.spotitube.controllers;
 
 import han.oose.dea.spotitube.controllers.dto.*;
-import han.oose.dea.spotitube.controllers.service.LoginService;
 import han.oose.dea.spotitube.controllers.service.PlaylistService;
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
@@ -14,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PlaylistControllerTest {
 
     private PlaylistController sut;
-    private LoginService mockedLoginService;
     private PlaylistService mockedPlaylistService;
 
     private static final String TOKEN = "1234-1234-1234";
@@ -35,9 +33,6 @@ public class PlaylistControllerTest {
     public void setup() {
         sut = new PlaylistController();
 
-        mockedLoginService = Mockito.mock(LoginService.class);
-        sut.setLoginService(mockedLoginService);
-
         mockedPlaylistService = Mockito.mock(PlaylistService.class);
         sut.setPlaylistService(mockedPlaylistService);
     }
@@ -49,7 +44,6 @@ public class PlaylistControllerTest {
         @DisplayName("Test getAllPlaylists() passes on playlists")
         public void testGetAllPlaylistsPassesOnPlaylists() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists(TOKEN)).thenReturn(PLAYLISTS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
@@ -74,7 +68,6 @@ public class PlaylistControllerTest {
         @DisplayName("Test getPlaylistsTracks() passes on tracks")
         public void testGetPlaylistsTracksPassesOnTracks() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getPlaylistsTracks(TOKEN, PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
@@ -100,7 +93,6 @@ public class PlaylistControllerTest {
         @DisplayName("Test addPlaylist() calls playlistService.addPlaylist()")
         public void testAddPlaylistCallsPlaylistServiceAddPlaylist() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
             // Act
             sut.addPlaylist(TOKEN, PLAYLIST_DTO);
@@ -113,7 +105,6 @@ public class PlaylistControllerTest {
         @DisplayName("Test addPlaylist() passes on playlists")
         public void testAddPlaylistPassesOnPlaylists() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists(TOKEN)).thenReturn(PLAYLISTS_DTO);
 
             var expectedStatus = Response.Status.CREATED.getStatusCode();
@@ -138,7 +129,6 @@ public class PlaylistControllerTest {
         @DisplayName("Test editPlaylistName() calls playlistService.editPlaylistName()")
         public void testEditPlaylistNameCallsPlaylistServiceEditPlaylistName() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
             // Act
             sut.editPlaylistName(TOKEN, PLAYLIST_ID, PLAYLIST_DTO);
@@ -151,7 +141,6 @@ public class PlaylistControllerTest {
         @DisplayName("Test editPlaylistName() passes on playlists")
         public void testEditPlaylistNamePassesOnPlaylists() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists(TOKEN)).thenReturn(PLAYLISTS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
@@ -176,7 +165,6 @@ public class PlaylistControllerTest {
         @DisplayName("Test deletePlaylist() calls playlistService.deletePlaylist()")
         public void testDeletePlaylistCallsPlaylistServiceDeletePlaylist() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
             // Act
             sut.deletePlaylist(TOKEN, PLAYLIST_ID);
@@ -189,7 +177,6 @@ public class PlaylistControllerTest {
         @DisplayName("Test deletePlaylist() passes on playlists")
         public void testDeletePlaylistPassesOnPlaylists() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getAllPlaylists(TOKEN)).thenReturn(PLAYLISTS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
@@ -214,7 +201,6 @@ public class PlaylistControllerTest {
         @DisplayName("Test removeTrackFromPlaylist() calls playlistService.removeTrackFromPlaylist()")
         public void testRemoveTrackFromPlaylistCallsPlaylistServiceRemoveTrackFromPlaylist() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
             // Act
             sut.removeTrackFromPlaylist(TOKEN, PLAYLIST_ID, TRACK_ID);
@@ -227,7 +213,6 @@ public class PlaylistControllerTest {
         @DisplayName("Test removeTrackFromPlaylist() passes on tracks")
         public void testRemoveTrackFromPlaylistPassesOnTracks() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getPlaylistsTracks(TOKEN, PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();
@@ -252,7 +237,6 @@ public class PlaylistControllerTest {
         @DisplayName("Test addTrackToPlaylist() calls playlistService.addTrackToPlaylist()")
         public void testAddTrackToPlaylistCallsPlaylistServiceRemoveAddTrackToPlaylist() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
 
             // Act
             sut.addTrackToPlaylist(TOKEN, PLAYLIST_ID, TRACK_DTO);
@@ -265,7 +249,6 @@ public class PlaylistControllerTest {
         @DisplayName("Test addTrackToPlaylist() passes on tracks")
         public void testAddTrackToPlaylistPassesOnTracks() {
             // Arrange
-            Mockito.when(mockedLoginService.validateToken(TOKEN)).thenReturn(true);
             Mockito.when(mockedPlaylistService.getPlaylistsTracks(TOKEN, PLAYLIST_ID)).thenReturn(TRACKS_DTO);
 
             var expectedStatus = Response.Status.OK.getStatusCode();

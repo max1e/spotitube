@@ -23,7 +23,7 @@ public class LoginControllerTest {
     private static final String USERNAME = "username";
     private static final String PASSWORD = "password";
 
-    private LoginDTO loginDTO = new LoginDTO(USERNAME, PASSWORD);;
+    private LoginDTO loginDTO = new LoginDTO(USERNAME, PASSWORD);
 
     @BeforeEach
     public void setup() {
@@ -36,7 +36,7 @@ public class LoginControllerTest {
     @Nested
     @DisplayName("handleLogin() unit tests")
     class HandleLoginTest {
-       @Test
+        @Test
         @DisplayName("Test handleLogin() passes on login response")
         public void testHandleLoginPassesOnLoginResponse() {
             // Arrange

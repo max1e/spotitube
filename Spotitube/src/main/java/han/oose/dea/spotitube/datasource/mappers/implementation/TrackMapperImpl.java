@@ -20,7 +20,7 @@ public class TrackMapperImpl implements TrackMapper {
             tracks.add(new TrackDTO(
                     resultset.getInt("trackId"),
                     resultset.getString("title"),
-                    resultset.getString("performer"),
+                    resultset.getString("performerName"),
                     resultset.getInt("duration"),
                     resultset.getString("albumName"),
                     resultset.getInt("playcount"),

@@ -1,7 +1,6 @@
 package han.oose.dea.spotitube.datasource;
 
 import han.oose.dea.spotitube.controllers.dto.PlaylistDTO;
-import han.oose.dea.spotitube.controllers.dto.TrackDTO;
 import han.oose.dea.spotitube.datasource.mappers.abstraction.PlaylistMapper;
 import han.oose.dea.spotitube.datasource.mappers.abstraction.TrackMapper;
 import han.oose.dea.spotitube.datasource.util.DatabaseProperties;
@@ -10,6 +9,7 @@ import han.oose.dea.spotitube.service.datasource.PlaylistDAO;
 
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
+import javax.ws.rs.InternalServerErrorException;
 import java.sql.*;
 import java.util.List;
 import java.util.logging.Level;
@@ -70,9 +70,11 @@ public class PlaylistDAOImpl implements PlaylistDAO {
         catch (SQLException e) {
             exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
         catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
 
         return playlists;
@@ -101,16 +103,16 @@ public class PlaylistDAOImpl implements PlaylistDAO {
         catch (SQLException e) {
             exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
         catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
     }
 
     @Override
-    public int addPlaylist(String token, String playlistName) {
-        var playlistId = 0;
-
+    public void addPlaylist(String token, String playlistName) {
         try {
             // Connect to database
             Class.forName(databaseProperties.getDriver());
@@ -123,8 +125,7 @@ public class PlaylistDAOImpl implements PlaylistDAO {
             sqlStatement.setString(1, token);
             sqlStatement.setString(2, playlistName);
 
-            var resultset = sqlStatement.executeQuery();
-            playlistId = resultset.getInt("playlistId");
+            sqlStatement.executeUpdate();
 
             // Close connection
             sqlStatement.close();
@@ -133,12 +134,12 @@ public class PlaylistDAOImpl implements PlaylistDAO {
         catch (SQLException e) {
             exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
         catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
-
-        return playlistId;
     }
 
     @Override
@@ -165,9 +166,11 @@ public class PlaylistDAOImpl implements PlaylistDAO {
         catch (SQLException e) {
             exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
         catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
     }
 
@@ -195,9 +198,11 @@ public class PlaylistDAOImpl implements PlaylistDAO {
         catch (SQLException e) {
             exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
         catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
     }
 
@@ -225,9 +230,11 @@ public class PlaylistDAOImpl implements PlaylistDAO {
         catch (SQLException e) {
             exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
         catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
     }
 }

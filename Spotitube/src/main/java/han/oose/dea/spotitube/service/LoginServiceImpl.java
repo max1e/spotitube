@@ -25,12 +25,6 @@ public class LoginServiceImpl implements LoginService {
         return loginResponse;
     }
 
-    @Override
-    public boolean validateToken(String token) {
-        var tokenMatches = loginDAO.validateToken(token);
-        return tokenMatches;
-    }
-
     private String hashPassword(String password) {
         var hashedPassword = DigestUtils.sha256Hex(password);
         return hashedPassword;

@@ -23,7 +23,7 @@ BEGIN
     
     -- Give user new token
     UPDATE Users u
-    SET u.token = fn_fetchToken(username)
+    SET u.token = fn_fetchToken(userId)
 	WHERE u.username = username
     AND u.hashedPassword = hashedPassword;
     

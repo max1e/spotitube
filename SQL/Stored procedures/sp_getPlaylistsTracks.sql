@@ -8,7 +8,19 @@ CREATE PROCEDURE sp_getPlaylistsTracks(
     IN playlistId int
 )
 BEGIN
-	SELECT Tracks.trackId, title, performer, duration, albumName, playcount, publicationDate, trackDescription, offlineAvailable
+	-- If token doesn't match throw error
+	IF NOT EXISTS (
+		SELECT *
+		FROM Users u
+		WHERE u.token = token
+	)
+	THEN
+		SET @exception = (SELECT exceptionName FROM HTTPExceptions WHERE statusCode = 401);
+		SIGNAL SQLSTATE '45000'
+			SET MESSAGE_TEXT = @exception;
+	END IF;
+
+	SELECT Tracks.trackId, title, performerName, duration, albumName, playcount, publicationDate, trackDescription, offlineAvailable
     FROM PlaylistsTracks
 		INNER JOIN Tracks
 			ON PlaylistsTracks.trackId = Tracks.trackId

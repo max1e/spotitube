@@ -11,7 +11,7 @@ BEGIN
 	IF NOT EXISTS (
 		SELECT *
 		FROM Users u
-		WHERE token = token
+		WHERE u.token = token
 	)
 	THEN
 		SET @exception = (SELECT exceptionName FROM HTTPExceptions WHERE statusCode = 401);
@@ -23,9 +23,9 @@ BEGIN
     
 	SELECT p.playlistId, playlistName, playlistOwner = @playlistOwner AS isOwner, SUM(Tracks.duration) AS duration
     FROM Playlists p
-		INNER JOIN PlaylistsTracks
+		LEFT OUTER JOIN PlaylistsTracks
 			ON p.playlistId = PlaylistsTracks.playlistId
-		INNER JOIN Tracks
+		LEFT OUTER JOIN Tracks
 			ON PlaylistsTracks.trackId = Tracks.trackId
 	GROUP BY p.playlistId;
 END$$

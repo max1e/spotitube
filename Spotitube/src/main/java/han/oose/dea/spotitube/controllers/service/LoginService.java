@@ -5,5 +5,4 @@ import han.oose.dea.spotitube.controllers.dto.LoginResponseDTO;
 public interface LoginService {
 
     LoginResponseDTO validateLogin(String user, String password);
-    boolean validateToken(String token);
 }

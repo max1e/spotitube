@@ -9,6 +9,7 @@ import han.oose.dea.spotitube.service.datasource.LoginDAO;
 
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
+import javax.ws.rs.InternalServerErrorException;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -67,43 +68,13 @@ public class LoginDAOImpl implements LoginDAO {
         catch (SQLException e) {
             exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
         catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
 
         return user;
-    }
-
-    @Override
-    public boolean validateToken(String token) {
-        var tokenAccepted = false;
-
-        try {
-            // Connect to database
-            var connection = DriverManager.getConnection(databaseProperties.getConnectionString());
-
-            // Query database
-            var sqlQuery = "CALL sp_validateToken(?)";
-            var sqlStatement = connection.prepareStatement(sqlQuery);
-
-            sqlStatement.setString(1, token);
-
-            var resultset = sqlStatement.executeQuery();
-
-            // Read result set
-            resultset.next();
-            tokenAccepted = resultset.getBoolean("tokenAccepted");
-
-            // Close connection
-            sqlStatement.close();
-            connection.close();
-        }
-        catch (SQLException e) {
-            exceptionMapper.mapException(e);
-            logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
-        }
-
-        return tokenAccepted;
     }
 }

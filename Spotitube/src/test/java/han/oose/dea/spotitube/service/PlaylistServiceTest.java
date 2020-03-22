@@ -114,7 +114,7 @@ public class PlaylistServiceTest {
     @DisplayName("getPlaylistsTracks() unit tests")
     class GetPlaylistTracksTest {
         @Test
-        @DisplayName("Test getPlaylistsTracks() calls playlistDAO.getPlaylistsTracks()")
+        @DisplayName("Test getPlaylistsTracks() calls trackDAO.getPlaylistsTracks()")
         public void testGetPlaylistsTracksCallsPlaylistDAOGetPlaylistsTracks() {
             // Arrange
 
@@ -126,7 +126,7 @@ public class PlaylistServiceTest {
         }
 
         @Test
-        @DisplayName("Test getPlaylistsTracks() passes on tracks from playlistDAO.getPlaylistsTracks()")
+        @DisplayName("Test getPlaylistsTracks() passes on tracks from trackDAO.getPlaylistsTracks()")
         public void getGetPlaylistsTracksPassesOnTracksFromPlaylistDAOGetPlaylistsTracks() {
             // Assert
             var expectedTracks = TRACKS;
@@ -174,22 +174,6 @@ public class PlaylistServiceTest {
 
             // Assert
             Mockito.verify(mockedPlaylistDAO).addPlaylist(TOKEN, expectedPlaylistName);
-        }
-
-        @Test
-        @DisplayName("Test addPlaylist() calls playlistDAO.addTrackToPlaylist()")
-        public void testAddPlaylistCallsPlaylistDAOAddTrackToPlaylist() {
-            // Arrange
-            var expectedPlaylistId = PLAYLIST_ID;
-            var expectedTrackId = 1;
-
-            Mockito.when(mockedPlaylistDAO.addPlaylist(TOKEN, PLAYLIST_NAME)).thenReturn(PLAYLIST_ID);
-
-            // Act
-            sut.addPlaylist(TOKEN, PLAYLIST_DTO);
-
-            // Assert
-            Mockito.verify(mockedPlaylistDAO, Mockito.times(2)).addTrackToPlaylist(TOKEN, expectedPlaylistId, expectedTrackId);
         }
     }
 

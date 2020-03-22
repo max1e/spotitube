@@ -8,10 +8,20 @@ CREATE PROCEDURE sp_addPlaylist(
     IN playlistName VARCHAR(255)
 )
 BEGIN
-	INSERT INTO Playlists
-    VALUES (playlistName, (SELECT username FROM Users WHERE Users.token = token));
+	-- If token doesn't match throw error
+	IF NOT EXISTS (
+		SELECT *
+		FROM Users u
+		WHERE u.token = token
+	)
+	THEN
+		SET @exception = (SELECT exceptionName FROM HTTPExceptions WHERE statusCode = 401);
+		SIGNAL SQLSTATE '45000'
+			SET MESSAGE_TEXT = @exception;
+	END IF;
     
-    SELECT last_insert_id() as playlistId;
+	INSERT INTO Playlists (playlistName, playlistOwner)
+    VALUES (playlistName, (SELECT userId FROM Users WHERE Users.token = token));
 END$$
 
 DELIMITER ;

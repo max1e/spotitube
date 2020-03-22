@@ -8,6 +8,8 @@ import han.oose.dea.spotitube.service.datasource.TrackDAO;
 
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
+import javax.ws.rs.BadRequestException;
+import javax.ws.rs.InternalServerErrorException;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
@@ -65,9 +67,11 @@ public class TrackDAOImpl implements TrackDAO {
         catch (SQLException e) {
             exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
         catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
 
         return tracks;
@@ -100,9 +104,11 @@ public class TrackDAOImpl implements TrackDAO {
         catch (SQLException e) {
             exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
         catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
 
         return tracks;
@@ -136,9 +142,11 @@ public class TrackDAOImpl implements TrackDAO {
         catch (SQLException e) {
             exceptionMapper.mapException(e);
             logger.log(Level.SEVERE, "Error communicating with database: " + databaseProperties.getConnectionString(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
         catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Error loading database driver: " + databaseProperties.getDriver(), e);
+            throw new InternalServerErrorException("Something went horribly wrong!");
         }
 
         return tracks;
