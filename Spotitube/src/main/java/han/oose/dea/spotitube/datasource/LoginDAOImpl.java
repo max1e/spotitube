@@ -57,8 +57,7 @@ public class LoginDAOImpl implements LoginDAO {
 
             var resultset = sqlStatement.executeQuery();
 
-            // TODO vervangen voor de abstractie, gaf toen nullpointerException
-            user = new LoginResponseMapperImpl().toLoginResponse(resultset);
+            user = loginResponseMapper.toLoginResponse(resultset);
             resultset.next();
 
             // Close connection

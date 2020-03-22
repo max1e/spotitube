@@ -26,17 +26,6 @@ public class ExceptionMapperTest {
     @DisplayName("mapException() unit tests")
     class MapExceptionTest {
         @Test
-        @DisplayName("Test mapException() maps to no exception")
-        public void testMapExceptionMapsToNoException() {
-            // Arrange
-            var testValue = "none";
-            var sqlException = new SQLException(testValue);
-
-            // Act & Assert
-            sut.mapException(sqlException);
-        }
-
-        @Test
         @DisplayName("Test mapException() maps to unauthorized exception")
         public void testMapExceptionMapsToUnauthorized() {
             // Arrange

@@ -1,11 +1,13 @@
 package han.oose.dea.spotitube.datasource.util;
 
+import javax.enterprise.inject.Default;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Default
 public class DatabaseProperties {
 
     private Properties properties;

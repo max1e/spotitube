@@ -34,11 +34,11 @@ public class TrackMapperTest {
     }
 
     @Nested
-    @DisplayName("toPlaylistDTOList() unit tests")
-    class ToPlaylistDTOListTest {
+    @DisplayName("toTrackDTOList() unit tests")
+    class ToTrackDTOListTest {
         @Test
-        @DisplayName("Test toPlaylistDTOList() maps resultset")
-        public void testToPlaylistDTOListMapsResultset() {
+        @DisplayName("Test toTrackDTOList() maps resultset")
+        public void testToTrackDTOListMapsResultset() {
             try {
                 // Arrange
                 Mockito.when(mockedResultset.next()).thenReturn(true, false);
@@ -91,8 +91,8 @@ public class TrackMapperTest {
         }
 
         @Test
-        @DisplayName("Test toPlaylistDTOList() returns the right amount of playlists")
-        public void testToPlaylistDTOListReturnsTheRightAmountOfPlaylists() {
+        @DisplayName("Test toTrackDTOList() returns the right amount of tracks")
+        public void testToTrackDTOListReturnsTheRightAmountOfTracks() {
             try {
                 // Arrange
                 Mockito.when(mockedResultset.next()).thenReturn(true, true, false);
