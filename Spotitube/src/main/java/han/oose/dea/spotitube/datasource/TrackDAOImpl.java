@@ -1,6 +1,7 @@
 package han.oose.dea.spotitube.datasource;
 
 import han.oose.dea.spotitube.controllers.dto.TrackDTO;
+import han.oose.dea.spotitube.datasource.StatementHandlers.StatementBuilder;
 import han.oose.dea.spotitube.datasource.databaseConnection.DatabaseConnector;
 import han.oose.dea.spotitube.datasource.mappers.TrackMapperImpl;
 import han.oose.dea.spotitube.datasource.exceptions.ExceptionMapper;
@@ -8,21 +9,17 @@ import han.oose.dea.spotitube.service.datasource.TrackDAO;
 
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Logger;
 
 @Default
 public class TrackDAOImpl implements TrackDAO {
 
     private DatabaseConnector dbConnector;
-    private Logger logger;
     private TrackMapperImpl trackMapper;
     private ExceptionMapper exceptionMapper;
-
-    public TrackDAOImpl() {
-        logger = Logger.getLogger(getClass().getName());
-    }
 
     @Inject
     public void setTrackMapper(TrackMapperImpl trackMapper) {
@@ -46,21 +43,17 @@ public class TrackDAOImpl implements TrackDAO {
         try {
             var connection = dbConnector.makeConnection();
 
-            // Query database
-            var sqlQuery = "CALL sp_getTracksNotInPlaylist(?, ?)";
-            var sqlStatement = connection.prepareStatement(sqlQuery);
-
-            sqlStatement.setString(1, token);
-            sqlStatement.setInt(2, playlistId);
+            var sqlStatement = new StatementBuilder()
+                    .setConnection(connection)
+                    .setProcedureName("sp_getTracksNotInPlaylist")
+                    .addParameter(token)
+                    .addParameter(playlistId)
+                    .build();
 
             var resultset = sqlStatement.executeQuery();
-
-            // Read result set
             tracks = trackMapper.toDTO(resultset);
 
-            // Close connection
-            sqlStatement.close();
-            connection.close();
+            closeConnection(connection, sqlStatement);
         }
         catch (SQLException | ClassNotFoundException e) {
             exceptionMapper.mapException(e);
@@ -76,20 +69,16 @@ public class TrackDAOImpl implements TrackDAO {
         try {
             var connection = dbConnector.makeConnection();
 
-            // Query database
-            var sqlQuery = "CALL sp_getAllTracks(?)";
-            var sqlStatement = connection.prepareStatement(sqlQuery);
+            var sqlStatement = new StatementBuilder()
+                    .setConnection(connection)
+                    .setProcedureName("sp_getPlaylistsTracks")
+                    .addParameter(token)
+                    .build();
 
-            sqlStatement.setString(1, token);
-
-            // Read result set
             var resultset = sqlStatement.executeQuery();
-
             tracks = trackMapper.toDTO(resultset);
 
-            // Close connection
-            sqlStatement.close();
-            connection.close();
+            closeConnection(connection, sqlStatement);
         }
         catch (SQLException | ClassNotFoundException e) {
             exceptionMapper.mapException(e);
@@ -105,26 +94,28 @@ public class TrackDAOImpl implements TrackDAO {
         try {
             var connection = dbConnector.makeConnection();
 
-            // Query database
-            var sqlQuery = "CALL sp_getPlaylistsTracks(?, ?)";
-            var sqlStatement = connection.prepareStatement(sqlQuery);
+            var sqlStatement = new StatementBuilder()
+                    .setConnection(connection)
+                    .setProcedureName("sp_getPlaylistsTracks")
+                    .addParameter(token)
+                    .addParameter(playlistId)
+                    .build();
 
-            sqlStatement.setString(1, token);
-            sqlStatement.setInt(2, playlistId);
 
-            // Read result set
             var resultset = sqlStatement.executeQuery();
-
             tracks = trackMapper.toDTO(resultset);
 
-            // Close connection
-            sqlStatement.close();
-            connection.close();
+            closeConnection(connection, sqlStatement);
         }
         catch (SQLException | ClassNotFoundException e) {
             exceptionMapper.mapException(e);
         }
 
         return tracks;
+    }
+
+    private void closeConnection(Connection connection, PreparedStatement sqlStatement) throws SQLException {
+        sqlStatement.close();
+        dbConnector.closeConnection(connection);
     }
 }

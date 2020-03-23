@@ -1,6 +1,7 @@
 package han.oose.dea.spotitube.datasource;
 
 import han.oose.dea.spotitube.controllers.dto.PlaylistDTO;
+import han.oose.dea.spotitube.datasource.StatementHandlers.StatementBuilder;
 import han.oose.dea.spotitube.datasource.databaseConnection.DatabaseConnector;
 import han.oose.dea.spotitube.datasource.mappers.DTOMapper;
 import han.oose.dea.spotitube.datasource.exceptions.ExceptionMapper;
@@ -40,19 +41,16 @@ public class PlaylistDAOImpl implements PlaylistDAO {
         try {
             var connection = dbConnector.makeConnection();
 
-            // Query database
-            var sqlQuery = "CALL sp_getAllPlaylists(?)";
-            var sqlStatement = connection.prepareStatement(sqlQuery);
-
-            sqlStatement.setString(1, token);
+            var sqlStatement = new StatementBuilder()
+                    .setConnection(connection)
+                    .setProcedureName("sp_getAllPlaylists")
+                    .addParameter(token)
+                    .build();
 
             var resultset = sqlStatement.executeQuery();
-
             playlists = playlistMapper.toDTO(resultset);
 
-            // Close connection
-            sqlStatement.close();
-            connection.close();
+            closeConnection(connection, sqlStatement);
         }
         catch (SQLException | ClassNotFoundException e) {
             exceptionMapper.mapException(e);
@@ -66,18 +64,16 @@ public class PlaylistDAOImpl implements PlaylistDAO {
         try {
             var connection = dbConnector.makeConnection();
 
-            // Query database
-            var sqlQuery = "CALL sp_deletePlaylist(?, ?)";
-            var sqlStatement = connection.prepareStatement(sqlQuery);
-
-            sqlStatement.setString(1, token);
-            sqlStatement.setInt(2, playlistId);
+            var sqlStatement = new StatementBuilder()
+                    .setConnection(connection)
+                    .setProcedureName("sp_deletePlaylist")
+                    .addParameter(token)
+                    .addParameter(playlistId)
+                    .build();
 
             sqlStatement.executeUpdate();
 
-            // Close connection
-            sqlStatement.close();
-            connection.close();
+            closeConnection(connection, sqlStatement);
         }
         catch (SQLException | ClassNotFoundException e) {
             exceptionMapper.mapException(e);
@@ -89,18 +85,16 @@ public class PlaylistDAOImpl implements PlaylistDAO {
         try {
             var connection = dbConnector.makeConnection();
 
-            // Query database
-            var sqlQuery = "CALL sp_addPlaylist(?, ?)";
-            var sqlStatement = connection.prepareStatement(sqlQuery);
-
-            sqlStatement.setString(1, token);
-            sqlStatement.setString(2, playlistName);
+            var sqlStatement = new StatementBuilder()
+                    .setConnection(connection)
+                    .setProcedureName("sp_addPlaylist")
+                    .addParameter(token)
+                    .addParameter(playlistName)
+                    .build();
 
             sqlStatement.executeUpdate();
 
-            // Close connection
-            sqlStatement.close();
-            connection.close();
+            closeConnection(connection, sqlStatement);
         }
         catch (SQLException | ClassNotFoundException e) {
             exceptionMapper.mapException(e);
@@ -112,19 +106,17 @@ public class PlaylistDAOImpl implements PlaylistDAO {
         try {
             var connection = dbConnector.makeConnection();
 
-            // Query database
-            var sqlQuery = "CALL sp_editPlaylistName(?, ?, ?)";
-            var sqlStatement = connection.prepareStatement(sqlQuery);
-
-            sqlStatement.setString(1, token);
-            sqlStatement.setInt(2, playlistId);
-            sqlStatement.setString(3, newName);
+            var sqlStatement = new StatementBuilder()
+                    .setConnection(connection)
+                    .setProcedureName("sp_editPlaylistName")
+                    .addParameter(token)
+                    .addParameter(playlistId)
+                    .addParameter(newName)
+                    .build();
 
             sqlStatement.executeUpdate();
 
-            // Close connection
-            sqlStatement.close();
-            connection.close();
+            closeConnection(connection, sqlStatement);
         }
         catch (SQLException | ClassNotFoundException e) {
             exceptionMapper.mapException(e);
@@ -136,19 +128,17 @@ public class PlaylistDAOImpl implements PlaylistDAO {
         try {
             var connection = dbConnector.makeConnection();
 
-            // Query database
-            var sqlQuery = "CALL sp_removeTrackFromPlaylist(?, ?, ?)";
-            var sqlStatement = connection.prepareStatement(sqlQuery);
-
-            sqlStatement.setString(1, token);
-            sqlStatement.setInt(2, playlistId);
-            sqlStatement.setInt(3, trackId);
+            var sqlStatement = new StatementBuilder()
+                    .setConnection(connection)
+                    .setProcedureName("sp_removeTrackFromPlaylist")
+                    .addParameter(token)
+                    .addParameter(playlistId)
+                    .addParameter(trackId)
+                    .build();
 
             sqlStatement.executeUpdate();
 
-            // Close connection
-            sqlStatement.close();
-            connection.close();
+            closeConnection(connection, sqlStatement);
         }
         catch (SQLException | ClassNotFoundException e) {
             exceptionMapper.mapException(e);
@@ -161,21 +151,25 @@ public class PlaylistDAOImpl implements PlaylistDAO {
             var connection = dbConnector.makeConnection();
 
             // Query database
-            var sqlQuery = "CALL sp_addTrackToPlaylist(?, ?, ?)";
-            var sqlStatement = connection.prepareStatement(sqlQuery);
-
-            sqlStatement.setString(1, token);
-            sqlStatement.setInt(2, playlistId);
-            sqlStatement.setInt(3, trackId);
+            var sqlStatement = new StatementBuilder()
+                    .setConnection(connection)
+                    .setProcedureName("sp_addTrackToPlaylist")
+                    .addParameter(token)
+                    .addParameter(playlistId)
+                    .addParameter(trackId)
+                    .build();
 
             sqlStatement.executeUpdate();
 
-            // Close connection
-            sqlStatement.close();
-            connection.close();
+            closeConnection(connection, sqlStatement);
         }
         catch (SQLException | ClassNotFoundException e) {
             exceptionMapper.mapException(e);
         }
+    }
+
+    private void closeConnection(Connection connection, PreparedStatement sqlStatement) throws SQLException {
+        sqlStatement.close();
+        dbConnector.closeConnection(connection);
     }
 }

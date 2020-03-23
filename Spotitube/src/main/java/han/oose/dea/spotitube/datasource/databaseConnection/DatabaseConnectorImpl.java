@@ -18,4 +18,9 @@ public class DatabaseConnectorImpl implements DatabaseConnector{
         var connection = DriverManager.getConnection(databaseProperties.getConnectionString());
         return connection;
     }
+
+    @Override
+    public void closeConnection(Connection connection) throws SQLException {
+        connection.close();
+    }
 }

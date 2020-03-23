@@ -6,4 +6,5 @@ import java.sql.SQLException;
 public interface DatabaseConnector {
 
     Connection makeConnection() throws ClassNotFoundException, SQLException;
+    void closeConnection(Connection connection) throws SQLException;
 }

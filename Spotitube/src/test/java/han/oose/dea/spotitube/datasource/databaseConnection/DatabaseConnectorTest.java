@@ -1,16 +1,9 @@
 package han.oose.dea.spotitube.datasource.databaseConnection;
 
-import han.oose.dea.spotitube.datasource.exceptions.ExceptionMapper;
-import han.oose.dea.spotitube.datasource.exceptions.ExceptionMapperImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-
-import javax.ws.rs.NotAuthorizedException;
-import java.sql.SQLException;
-
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DatabaseConnectorTest {
 

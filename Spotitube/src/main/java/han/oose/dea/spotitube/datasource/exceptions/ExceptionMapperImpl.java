@@ -17,6 +17,7 @@ public class ExceptionMapperImpl implements ExceptionMapper {
                 exception = new ForbiddenException(e.getMessage());
                 break;
             default:
+                e.printStackTrace();
                 exception = new InternalServerErrorException("Something went horribly wrong!: ");
                 break;
         }

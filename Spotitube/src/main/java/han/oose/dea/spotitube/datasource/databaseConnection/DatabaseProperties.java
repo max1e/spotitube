@@ -1,21 +1,17 @@
 package han.oose.dea.spotitube.datasource.databaseConnection;
 
 import javax.enterprise.inject.Default;
+import javax.ws.rs.InternalServerErrorException;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @Default
 public class DatabaseProperties {
 
     private Properties properties;
-    private Logger logger;
 
     public DatabaseProperties() {
-        logger = Logger.getLogger(getClass().getName());
-
         properties = new Properties();
 
         try {
@@ -25,7 +21,7 @@ public class DatabaseProperties {
                     .getResourceAsStream("database.properties")));
         }
         catch (IOException e) {
-            logger.log(Level.SEVERE, "Error loading database properties: " + e);
+            throw new InternalServerErrorException("Error loading database properties: ", e);
         }
     }
 
