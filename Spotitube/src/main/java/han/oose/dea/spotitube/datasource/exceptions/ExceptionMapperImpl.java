@@ -18,7 +18,7 @@ public class ExceptionMapperImpl implements ExceptionMapper {
                 break;
             default:
                 e.printStackTrace();
-                exception = new InternalServerErrorException("Something went horribly wrong!: ");
+                exception = new InternalServerErrorException("Something went horribly wrong!: ", e);
                 break;
         }
 

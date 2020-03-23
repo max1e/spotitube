@@ -51,9 +51,7 @@ public class LoginDAOImpl implements LoginDAO {
                     .build();
 
             var resultset = sqlStatement.executeQuery();
-
             user = loginResponseMapper.toDTO(resultset);
-            resultset.next();
 
             closeConnection(connection, sqlStatement);
         }

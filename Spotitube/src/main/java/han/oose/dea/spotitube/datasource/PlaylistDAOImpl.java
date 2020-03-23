@@ -150,7 +150,6 @@ public class PlaylistDAOImpl implements PlaylistDAO {
         try {
             var connection = dbConnector.makeConnection();
 
-            // Query database
             var sqlStatement = new StatementBuilder()
                     .setConnection(connection)
                     .setProcedureName("sp_addTrackToPlaylist")

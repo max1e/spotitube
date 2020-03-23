@@ -49,9 +49,4 @@ public class DatabasePropertiesTest {
             assertEquals(expected, actual);
         }
     }
-
-    // TODO Should: Database unit testen
-
-    // TODO Could: fn_token fixen zodat de variabelen niet meer binnen de regels geset worden
-    // TODO Could: ervoor zorgen dat de datasource laag domein teruggeeft ipv dto's
 }

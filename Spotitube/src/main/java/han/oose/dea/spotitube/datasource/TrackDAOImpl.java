@@ -3,7 +3,7 @@ package han.oose.dea.spotitube.datasource;
 import han.oose.dea.spotitube.controllers.dto.TrackDTO;
 import han.oose.dea.spotitube.datasource.StatementHandlers.StatementBuilder;
 import han.oose.dea.spotitube.datasource.databaseConnection.DatabaseConnector;
-import han.oose.dea.spotitube.datasource.mappers.TrackMapperImpl;
+import han.oose.dea.spotitube.datasource.mappers.DTOMapper;
 import han.oose.dea.spotitube.datasource.exceptions.ExceptionMapper;
 import han.oose.dea.spotitube.service.datasource.TrackDAO;
 
@@ -18,11 +18,11 @@ import java.util.List;
 public class TrackDAOImpl implements TrackDAO {
 
     private DatabaseConnector dbConnector;
-    private TrackMapperImpl trackMapper;
+    private DTOMapper<List<TrackDTO>> trackMapper;
     private ExceptionMapper exceptionMapper;
 
     @Inject
-    public void setTrackMapper(TrackMapperImpl trackMapper) {
+    public void setTrackMapper(DTOMapper<List<TrackDTO>> trackMapper) {
         this.trackMapper = trackMapper;
     }
 

@@ -56,7 +56,6 @@ public class ExceptionMapperTest {
             var exception = new ClassNotFoundException(testValue);
 
             // Act & Assert
-            // TODO Log message surpressen
             assertThrows(InternalServerErrorException.class, () -> sut.mapException(exception));
         }
     }

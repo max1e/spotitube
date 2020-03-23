@@ -4,6 +4,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class DatabaseConnectorTest {
 
@@ -16,16 +24,43 @@ public class DatabaseConnectorTest {
 
     @Nested
     @DisplayName("makeConnection() unit tests")
-    class MapExceptionTest {
+    class MakeConnectionTest {
         @Test
-        @DisplayName("Test makeConnection() maps to unauthorized exception")
-        public void testMapExceptionMapsToUnauthorized() {
-            // TODO test verzinnen
-            // Arrange
+        @DisplayName("Test makeConnection() returns a connection")
+        public void testMakeConnectionReturnsConnection() {
+            try {
+                // Arrange
+                var expected = DriverManager.getConnection("jdbc:mysql://localhost/spotitube?serverTimezone=UTC&user=root&password=dbrules").getClass();
 
-            // Act
+                // Act
+                var actual =  sut.makeConnection().getClass();
 
-            // Assert
+                // Assert
+                assertEquals(expected, actual);
+            } catch (SQLException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Nested
+    @DisplayName("closeConnection() unit tests")
+    class CloseConnectionTest {
+        @Test
+        @DisplayName("Test closeConnection() calls connection.close()")
+        public void testCloseConnectionCallsConnectionClose() {
+            try {
+                // Arrange
+                var mockedConnection = Mockito.mock(Connection.class);
+
+                // Act
+                sut.closeConnection(mockedConnection);
+
+                // Assert
+                Mockito.verify(mockedConnection).close();
+            } catch (SQLException e) {
+                fail();
+            }
         }
     }
 }

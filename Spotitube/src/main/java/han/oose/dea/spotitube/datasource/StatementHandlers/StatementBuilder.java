@@ -1,5 +1,6 @@
 package han.oose.dea.spotitube.datasource.StatementHandlers;
 
+import javax.ws.rs.InternalServerErrorException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -37,7 +38,6 @@ public class StatementBuilder {
 
         setQueryParameters(sqlStatement);
 
-
         return sqlStatement;
     }
 
@@ -69,7 +69,7 @@ public class StatementBuilder {
                 sqlStatement.setBoolean(i , (Boolean) parameter);
             }
             else {
-                throw new RuntimeException();
+                throw new InternalServerErrorException("Something went horribly wrong!");
             }
 
             i++;
