@@ -7,8 +7,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a255ccb-d8cd-4dcc-bd6f-64468dd2b024" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Diagrams.asta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Diagrams.asta.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/DDL.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Functions/fn_fetchToken.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Insertscript.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Stored procedures/sp_addPlaylist.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Stored procedures/sp_addTrackToPlaylist.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Stored procedures/sp_deletePlaylist.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Stored procedures/sp_editPlaylistName.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Stored procedures/sp_getAllPlaylists.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Stored procedures/sp_getAllTracks.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Stored procedures/sp_getPlaylistsTracks.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Stored procedures/sp_getTracksNotInPlaylist.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Stored procedures/sp_removeTrackFromPlaylist.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/Stored procedures/sp_validateLogin.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/LoginDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/LoginDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/TrackDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/TrackDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/mappers/abstraction/LoginResponseMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/mappers/abstraction/PlaylistMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/mappers/abstraction/TrackMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/mappers/implementation/LoginResponseMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/mappers/LoginResponseMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/mappers/implementation/PlaylistMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/mappers/PlaylistMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/mappers/implementation/TrackMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/mappers/TrackMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/util/DatabaseProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/databaseConnection/DatabaseProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/util/ExceptionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/exceptions/ExceptionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/util/ExceptionMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/exceptions/ExceptionMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/mappers/implementation/LoginResponseMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/mappers/LoginResponseMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/mappers/implementation/PlaylistMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/mappers/PlaylistMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/mappers/implementation/TrackMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/mappers/TrackMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/util/DatabasePropertiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/databaseConnection/DatabasePropertiesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/util/ExceptionMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/exceptions/ExceptionMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/LoginDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/LoginDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/TrackDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/TrackDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/mappers/abstraction/LoginResponseMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/mappers/abstraction/PlaylistMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/mappers/abstraction/TrackMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/mappers/implementation/LoginResponseMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/mappers/implementation/PlaylistMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/mappers/implementation/TrackMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/util/DatabaseProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/util/ExceptionMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/util/ExceptionMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/mappers/implementation/LoginResponseMapperTest$ToLoginResponseTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/mappers/implementation/LoginResponseMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/mappers/implementation/PlaylistMapperTest$ToPlaylistDTOListTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/mappers/implementation/PlaylistMapperTest$ToPlaylistDTOWithDurationListTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/mappers/implementation/PlaylistMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/mappers/implementation/TrackMapperTest$ToTrackDTOListTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/mappers/implementation/TrackMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/util/DatabasePropertiesTest$GetConnectionStringTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/util/DatabasePropertiesTest$GetDriverTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/util/DatabasePropertiesTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/util/ExceptionMapperTest$MapExceptionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/util/ExceptionMapperTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +90,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -86,10 +141,13 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="han.oose.dea.spotitube.datasource.mappers" />
+      <recent name="han.oose.dea.spotitube.datasource.databaseConnection" />
+      <recent name="han.oose.dea.spotitube.datasource.exceptions" />
       <recent name="han.oose.dea.spottitube.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Spotitube">
+  <component name="RunManager" selected="JUnit.ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsToClassNotFoundException">
     <configuration name="All in Spotitube" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Spotitube" />
       <option name="PACKAGE_NAME" value="" />
@@ -102,42 +160,43 @@
       <module name="Spotitube" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="han.oose.dea.spotitube.datasource.util.*" />
+          <option name="PATTERN" value="han.oose.dea.spotitube.datasource.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.datasource.util" />
-      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.datasource.util.DatabasePropertiesTest" />
+      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.datasource.databaseConnection" />
+      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.datasource.databaseConnection.DatabasePropertiesTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaylistMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsToClassNotFoundException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Spotitube" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="han.oose.dea.spotitube.datasource.mappers.implementation.*" />
+          <option name="PATTERN" value="han.oose.dea.spotitube.datasource.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.datasource.mappers.implementation" />
-      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.datasource.mappers.implementation.PlaylistMapperTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.datasource.exceptions" />
+      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.datasource.exceptions.ExceptionMapperTest$MapExceptionTest" />
+      <option name="METHOD_NAME" value="testMapExceptionMapsToClassNotFoundException" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TrackMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExceptionMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Spotitube" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="han.oose.dea.spotitube.datasource.mappers.implementation.*" />
+          <option name="PATTERN" value="han.oose.dea.spotitube.datasource.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.datasource.mappers.implementation" />
-      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.datasource.mappers.implementation.TrackMapperTest" />
+      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.datasource.exceptions" />
+      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.datasource.exceptions.ExceptionMapperTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -231,20 +290,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.PlaylistMapperTest" />
-      <item itemvalue="JUnit.TrackMapperTest" />
       <item itemvalue="JUnit.han.oose.dea.spotitube.datasource in Spotitube" />
       <item itemvalue="JUnit.All in Spotitube" />
       <item itemvalue="JUnit.DatabasePropertiesTest" />
       <item itemvalue="TomEE Server.TomEE? More like Tom ieeh" />
+      <item itemvalue="JUnit.ExceptionMapperTest" />
+      <item itemvalue="JUnit.ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsToClassNotFoundException" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsToClassNotFoundException" />
+        <item itemvalue="JUnit.ExceptionMapperTest" />
         <item itemvalue="JUnit.All in Spotitube" />
         <item itemvalue="JUnit.DatabasePropertiesTest" />
         <item itemvalue="JUnit.han.oose.dea.spotitube.datasource in Spotitube" />
-        <item itemvalue="JUnit.TrackMapperTest" />
-        <item itemvalue="JUnit.PlaylistMapperTest" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +348,8 @@
       <workItem from="1584631520838" duration="31000" />
       <workItem from="1584709016830" duration="17927000" />
       <workItem from="1584801479240" duration="17537000" />
-      <workItem from="1584954590822" duration="2258000" />
+      <workItem from="1584954590822" duration="2486000" />
+      <workItem from="1584959168669" duration="8100000" />
     </task>
     <servers />
   </component>
@@ -321,22 +381,26 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1584450966743" />
-    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1584725112818">
+    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1584960823038">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1584725112818" />
+    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1584960823038" />
     <state x="417" y="356" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1584200250544">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="417" y="356" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1600.860@0.0.1600.860" timestamp="1584200250544" />
-    <state x="596" y="290" width="437" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584269162028">
+    <state x="596" y="290" width="547" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584961965915">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="596" y="290" width="437" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1584269162028" />
+    <state x="596" y="290" width="547" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1584961965915" />
     <state x="281" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584712573915">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="281" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1584712573915" />
+    <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584961485957">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1584961485957" />
     <state x="530" y="177" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1584544255473">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -345,22 +409,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1584359414677" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1584954421026">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1584964425355">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584954421026" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1584954421022">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584964425355" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1584964425354">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584954421022" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1584954421022">
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584964425354" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1584964425354">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584954421022" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1584954421026">
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584964425354" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1584964425354">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584954421026" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584964425354" />
     <state width="1069" height="222" key="GridCell.Tab.1.bottom" timestamp="1584954421014">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -449,10 +513,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="280" y="5" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584350584129" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584954592930">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584959169035">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584954592930" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584959169035" />
     <state x="542" y="59" key="refactoring.ChangeSignatureDialog" timestamp="1584731636391">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -484,6 +548,12 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/Spotitube$PlaylistControllerTest__1_.ic" NAME="PlaylistControllerTest (1) Coverage Results" MODIFIED="1584185853457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>han.oose.dea.spottitube.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Spotitube$ExceptionMapperTest.ic" NAME="ExceptionMapperTest Coverage Results" MODIFIED="1584963940596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>han.oose.dea.spotitube.datasource.exceptions.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Spotitube$ExceptionMapperTest_MapExceptionTest_testMapExceptionMapsToClassNotFoundException.ic" NAME="ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsToClassNotFoundException Coverage Results" MODIFIED="1584964027276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>han.oose.dea.spotitube.datasource.exceptions.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Spotitube$All_in_Spotitube.ic" NAME="All in Spotitube Coverage Results" MODIFIED="1584956462655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Spotitube$LoginControllerTest.ic" NAME="LoginControllerTest Coverage Results" MODIFIED="1584185886135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
