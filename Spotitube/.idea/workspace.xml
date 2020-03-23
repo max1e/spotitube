@@ -7,26 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a255ccb-d8cd-4dcc-bd6f-64468dd2b024" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_199.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spotitube.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Spotitube.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/LoginDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/LoginDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/util/DatabaseProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/util/DatabaseProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/LoginDAOTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/mappers/implementation/TrackMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/mappers/implementation/TrackMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/util/DatabasePropertiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/util/DatabasePropertiesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/util/ExceptionMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/util/ExceptionMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spotitube.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spotitube.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spotitube/WEB-INF/classes/han/oose/dea/spotitube/datasource/LoginDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spotitube/WEB-INF/classes/han/oose/dea/spotitube/datasource/LoginDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spotitube/WEB-INF/classes/han/oose/dea/spotitube/datasource/util/DatabaseProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spotitube/WEB-INF/classes/han/oose/dea/spotitube/datasource/util/DatabaseProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/LoginDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/LoginDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/util/DatabaseProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/util/DatabaseProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/LoginDAOTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/mappers/implementation/TrackMapperTest$ToPlaylistDTOListTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/mappers/implementation/TrackMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/mappers/implementation/TrackMapperTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/util/DatabasePropertiesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/util/DatabasePropertiesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/util/ExceptionMapperTest$MapExceptionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/han/oose/dea/spotitube/datasource/util/ExceptionMapperTest$MapExceptionTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +89,7 @@
       <recent name="han.oose.dea.spottitube.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DatabasePropertiesTest">
+  <component name="RunManager" selected="JUnit.All in Spotitube">
     <configuration name="All in Spotitube" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Spotitube" />
       <option name="PACKAGE_NAME" value="" />
@@ -249,17 +231,17 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TomEE Server.TomEE? More like Tom ieeh" />
       <item itemvalue="JUnit.PlaylistMapperTest" />
       <item itemvalue="JUnit.TrackMapperTest" />
       <item itemvalue="JUnit.han.oose.dea.spotitube.datasource in Spotitube" />
       <item itemvalue="JUnit.All in Spotitube" />
       <item itemvalue="JUnit.DatabasePropertiesTest" />
+      <item itemvalue="TomEE Server.TomEE? More like Tom ieeh" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DatabasePropertiesTest" />
         <item itemvalue="JUnit.All in Spotitube" />
+        <item itemvalue="JUnit.DatabasePropertiesTest" />
         <item itemvalue="JUnit.han.oose.dea.spotitube.datasource in Spotitube" />
         <item itemvalue="JUnit.TrackMapperTest" />
         <item itemvalue="JUnit.PlaylistMapperTest" />
@@ -306,7 +288,8 @@
       <workItem from="1584609349789" duration="17963000" />
       <workItem from="1584631520838" duration="31000" />
       <workItem from="1584709016830" duration="17927000" />
-      <workItem from="1584801479240" duration="17022000" />
+      <workItem from="1584801479240" duration="17537000" />
+      <workItem from="1584954590822" duration="2258000" />
     </task>
     <servers />
   </component>
@@ -362,54 +345,54 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1584359414677" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1584902729776">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1584954421026">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584902729776" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1584902729776">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584954421026" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1584954421022">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584902729776" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1584902729775">
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584954421022" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1584954421022">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584902729775" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1584902729776">
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584954421022" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1584954421026">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584902729776" />
-    <state width="1069" height="222" key="GridCell.Tab.1.bottom" timestamp="1584901860444">
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584954421026" />
+    <state width="1069" height="222" key="GridCell.Tab.1.bottom" timestamp="1584954421014">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584901860444" />
-    <state width="1069" height="222" key="GridCell.Tab.1.center" timestamp="1584901860444">
+    <state width="1069" height="222" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584954421014" />
+    <state width="1069" height="222" key="GridCell.Tab.1.center" timestamp="1584954421014">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1584901860444" />
-    <state width="1069" height="222" key="GridCell.Tab.1.left" timestamp="1584901860444">
+    <state width="1069" height="222" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1584954421014" />
+    <state width="1069" height="222" key="GridCell.Tab.1.left" timestamp="1584954421014">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1584901860444" />
-    <state width="1069" height="222" key="GridCell.Tab.1.right" timestamp="1584901860444">
+    <state width="1069" height="222" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1584954421014" />
+    <state width="1069" height="222" key="GridCell.Tab.1.right" timestamp="1584954421014">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1584901860444" />
-    <state width="1069" height="222" key="GridCell.Tab.2.bottom" timestamp="1584901860444">
+    <state width="1069" height="222" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1584954421014" />
+    <state width="1069" height="222" key="GridCell.Tab.2.bottom" timestamp="1584954421018">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584901860444" />
-    <state width="1069" height="222" key="GridCell.Tab.2.center" timestamp="1584901860444">
+    <state width="1069" height="222" key="GridCell.Tab.2.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584954421018" />
+    <state width="1069" height="222" key="GridCell.Tab.2.center" timestamp="1584954421018">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1584901860444" />
-    <state width="1069" height="222" key="GridCell.Tab.2.left" timestamp="1584901860444">
+    <state width="1069" height="222" key="GridCell.Tab.2.center/0.0.1600.860@0.0.1600.860" timestamp="1584954421018" />
+    <state width="1069" height="222" key="GridCell.Tab.2.left" timestamp="1584954421014">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1584901860444" />
-    <state width="1069" height="222" key="GridCell.Tab.2.right" timestamp="1584901860444">
+    <state width="1069" height="222" key="GridCell.Tab.2.left/0.0.1600.860@0.0.1600.860" timestamp="1584954421014" />
+    <state width="1069" height="222" key="GridCell.Tab.2.right" timestamp="1584954421018">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1584901860444" />
+    <state width="1069" height="222" key="GridCell.Tab.2.right/0.0.1600.860@0.0.1600.860" timestamp="1584954421018" />
     <state width="1069" height="222" key="GridCell.Tab.3.bottom" timestamp="1584359812320">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -466,10 +449,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="280" y="5" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584350584129" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584801479343">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584954592930">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584801479343" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584954592930" />
     <state x="542" y="59" key="refactoring.ChangeSignatureDialog" timestamp="1584731636391">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -502,7 +485,7 @@
     <SUITE FILE_PATH="coverage/Spotitube$PlaylistControllerTest__1_.ic" NAME="PlaylistControllerTest (1) Coverage Results" MODIFIED="1584185853457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>han.oose.dea.spottitube.controllers.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Spotitube$All_in_Spotitube.ic" NAME="All in Spotitube Coverage Results" MODIFIED="1584895420322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Spotitube$All_in_Spotitube.ic" NAME="All in Spotitube Coverage Results" MODIFIED="1584956462655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Spotitube$LoginControllerTest.ic" NAME="LoginControllerTest Coverage Results" MODIFIED="1584185886135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>han.oose.dea.spottitube.controllers.*</FILTER>
     </SUITE>

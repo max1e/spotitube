@@ -2,7 +2,6 @@ package han.oose.dea.spotitube.datasource;
 
 import han.oose.dea.spotitube.controllers.dto.LoginResponseDTO;
 import han.oose.dea.spotitube.datasource.mappers.abstraction.LoginResponseMapper;
-import han.oose.dea.spotitube.datasource.mappers.implementation.LoginResponseMapperImpl;
 import han.oose.dea.spotitube.datasource.util.DatabaseProperties;
 import han.oose.dea.spotitube.datasource.util.ExceptionMapper;
 import han.oose.dea.spotitube.service.datasource.LoginDAO;
