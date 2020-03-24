@@ -31,7 +31,7 @@ public class ExceptionMapperTest {
         @DisplayName("Test mapException() maps to invalid credentials exception")
         public void testMapExceptionMapsToInvalidcredentials() {
             // Arrange
-            var testValue = "Precondition failed";
+            var testValue = "Invalid credentials";
             var sqlException = new SQLException(testValue);
 
             // Act & Assert
