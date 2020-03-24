@@ -16,7 +16,7 @@ BEGIN
 		AND u.hashedPassword = hashedPassword
 	)
 	THEN
-		SET @exception = (SELECT exceptionName FROM HTTPExceptions WHERE statusCode = 401);
+		SET @exception = (SELECT exceptionName FROM HTTPExceptions WHERE statusCode = 1);
 		SIGNAL SQLSTATE '45000'
 			SET MESSAGE_TEXT = @exception;
 	END IF;

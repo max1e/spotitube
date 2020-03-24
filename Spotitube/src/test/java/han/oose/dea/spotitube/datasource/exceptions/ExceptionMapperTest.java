@@ -1,5 +1,6 @@
 package han.oose.dea.spotitube.datasource.exceptions;
 
+import han.oose.dea.spotitube.controllers.exceptions.InvalidCredentialsException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -27,6 +28,17 @@ public class ExceptionMapperTest {
     @DisplayName("mapException() unit tests")
     class MapExceptionTest {
         @Test
+        @DisplayName("Test mapException() maps to invalid credentials exception")
+        public void testMapExceptionMapsToInvalidcredentials() {
+            // Arrange
+            var testValue = "Precondition failed";
+            var sqlException = new SQLException(testValue);
+
+            // Act & Assert
+            assertThrows(InvalidCredentialsException.class, () -> sut.mapException(sqlException));
+        }
+
+        @Test
         @DisplayName("Test mapException() maps to unauthorized exception")
         public void testMapExceptionMapsToUnauthorized() {
             // Arrange
@@ -49,8 +61,8 @@ public class ExceptionMapperTest {
         }
 
         @Test
-        @DisplayName("Test mapException() maps to classNotFoundException")
-        public void testMapExceptionMapsToClassNotFoundException() {
+        @DisplayName("Test mapException() maps to internal server error exception")
+        public void testMapExceptionMapsToInternalServerError() {
             // Arrange
             var testValue = "Class not found";
             var exception = new ClassNotFoundException(testValue);

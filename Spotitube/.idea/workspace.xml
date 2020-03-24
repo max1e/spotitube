@@ -8,18 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6a255ccb-d8cd-4dcc-bd6f-64468dd2b024" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/LoginDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/LoginDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/StatementHandlers/StatementBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/StatementHandlers/StatementBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/TrackDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/TrackDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/exceptions/ExceptionMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/exceptions/ExceptionMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/StatementHandlers/StatementBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/StatementHandlers/StatementBuilderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/databaseConnection/DatabaseConnectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/databaseConnection/DatabaseConnectorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/databaseConnection/DatabasePropertiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/databaseConnection/DatabasePropertiesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/exceptions/ExceptionMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/exceptions/ExceptionMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/LoginDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/LoginDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Spotitube.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spotitube.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/TrackDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/han/oose/dea/spotitube/datasource/TrackDAOImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +96,7 @@
       <recent name="han.oose.dea.spottitube.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DatabaseConnectorTest">
+  <component name="RunManager" selected="JUnit.ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsToInvalidcredentials">
     <configuration name="All in Spotitube" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Spotitube" />
       <option name="PACKAGE_NAME" value="" />
@@ -128,22 +120,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DatabaseConnectorTest$MakeConnectionTest.testMakeConnectionReturnsConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Spotitube" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="han.oose.dea.spotitube.datasource.databaseConnection.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.datasource.databaseConnection" />
-      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.datasource.databaseConnection.DatabaseConnectorTest$MakeConnectionTest" />
-      <option name="METHOD_NAME" value="testMakeConnectionReturnsConnection" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DatabaseConnectorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Spotitube" />
       <extension name="coverage">
@@ -159,17 +135,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StatementBuilderTest$BuildTest.testBuildThrowsExceptionIfInvalidObjectIsGiven" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsNullToInternalServerError" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Spotitube" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="han.oose.dea.spotitube.datasource.StatementHandlers.*" />
+          <option name="PATTERN" value="han.oose.dea.spotitube.datasource.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.datasource.StatementHandlers" />
-      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.datasource.StatementHandlers.StatementBuilderTest$BuildTest" />
-      <option name="METHOD_NAME" value="testBuildThrowsExceptionIfInvalidObjectIsGiven" />
+      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.datasource.exceptions" />
+      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.datasource.exceptions.ExceptionMapperTest$MapExceptionTest" />
+      <option name="METHOD_NAME" value="testMapExceptionMapsNullToInternalServerError" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsToInvalidcredentials" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="han.oose.dea.spotitube.datasource.exceptions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="han.oose.dea.spotitube.datasource.exceptions" />
+      <option name="MAIN_CLASS_NAME" value="han.oose.dea.spotitube.datasource.exceptions.ExceptionMapperTest$MapExceptionTest" />
+      <option name="METHOD_NAME" value="testMapExceptionMapsToInvalidcredentials" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -250,19 +242,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All in Spotitube" />
-      <item itemvalue="TomEE Server.TomEE? More like Tom ieeh" />
-      <item itemvalue="JUnit.StatementBuilderTest$BuildTest.testBuildThrowsExceptionIfInvalidObjectIsGiven" />
       <item itemvalue="JUnit.DatabaseConnectorTest" />
-      <item itemvalue="JUnit.DatabaseConnectorTest$MakeConnectionTest.testMakeConnectionReturnsConnection" />
       <item itemvalue="JUnit.DatabaseConnectorTest$MakeConnectionTest" />
+      <item itemvalue="TomEE Server.TomEE? More like Tom ieeh" />
+      <item itemvalue="JUnit.ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsNullToInternalServerError" />
+      <item itemvalue="JUnit.ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsToInvalidcredentials" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsToInvalidcredentials" />
+        <item itemvalue="JUnit.All in Spotitube" />
+        <item itemvalue="JUnit.ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsNullToInternalServerError" />
         <item itemvalue="JUnit.DatabaseConnectorTest" />
         <item itemvalue="JUnit.DatabaseConnectorTest$MakeConnectionTest" />
-        <item itemvalue="JUnit.DatabaseConnectorTest$MakeConnectionTest.testMakeConnectionReturnsConnection" />
-        <item itemvalue="JUnit.All in Spotitube" />
-        <item itemvalue="JUnit.StatementBuilderTest$BuildTest.testBuildThrowsExceptionIfInvalidObjectIsGiven" />
       </list>
     </recent_temporary>
   </component>
@@ -275,11 +267,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="TomEE Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="TomEE Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -309,6 +296,7 @@
       <workItem from="1584801479240" duration="17537000" />
       <workItem from="1584954590822" duration="2486000" />
       <workItem from="1584959168669" duration="22520000" />
+      <workItem from="1585043139925" duration="3894000" />
     </task>
     <servers />
   </component>
@@ -332,10 +320,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="392" y="89" key="#SQL_Dialects/0.0.1600.860@0.0.1600.860" timestamp="1584270602869" />
-    <state x="118" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584360622988">
+    <state x="118" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585044600448">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="118" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1584360622988" />
+    <state x="118" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1585044600448" />
     <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584450966743">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -368,22 +356,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1584359414677" />
-    <state width="1069" height="222" key="GridCell.Tab.0.bottom" timestamp="1584984249446">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1585046352978">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1584984249446" />
-    <state width="1069" height="222" key="GridCell.Tab.0.center" timestamp="1584984249446">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585046352978" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1585046352978">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1584984249446" />
-    <state width="1069" height="222" key="GridCell.Tab.0.left" timestamp="1584984249446">
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1585046352978" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1585046352978">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1584984249446" />
-    <state width="1069" height="222" key="GridCell.Tab.0.right" timestamp="1584984249446">
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1585046352978" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1585046352978">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1069" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1584984249446" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1585046352978" />
     <state width="1069" height="222" key="GridCell.Tab.1.bottom" timestamp="1584984249446">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -472,10 +460,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="280" y="5" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584350584129" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1584959169035">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1585043140119">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1584959169035" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585043140119" />
     <state x="542" y="59" key="refactoring.ChangeSignatureDialog" timestamp="1584731636391">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -523,7 +511,10 @@
     <SUITE FILE_PATH="coverage/Spotitube$ExceptionMapperTest_MapExceptionTest_testMapExceptionMapsToClassNotFoundException.ic" NAME="ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsToClassNotFoundException Coverage Results" MODIFIED="1584967682458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>han.oose.dea.spotitube.datasource.exceptions.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Spotitube$All_in_Spotitube.ic" NAME="All in Spotitube Coverage Results" MODIFIED="1584981341068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Spotitube$All_in_Spotitube.ic" NAME="All in Spotitube Coverage Results" MODIFIED="1585045973494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Spotitube$ExceptionMapperTest_MapExceptionTest_testMapExceptionMapsToInvalidcredentials.ic" NAME="ExceptionMapperTest$MapExceptionTest.testMapExceptionMapsToInvalidcredentials Coverage Results" MODIFIED="1585046352901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>han.oose.dea.spotitube.datasource.exceptions.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Spotitube$PlaylistServiceTest.ic" NAME="PlaylistServiceTest Coverage Results" MODIFIED="1584548505447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>han.oose.dea.spotitube.service.*</FILTER>
     </SUITE>

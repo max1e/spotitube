@@ -83,5 +83,5 @@ CREATE TABLE HTTPExceptions (
 	statusCode int,
     exceptionName VARCHAR(255),
     CONSTRAINT pk_HTTPExceptions PRIMARY KEY (statusCode),
-    CONSTRAINT ak_HTTPExceptions UNIQUE (statusCode)
-)
+    CONSTRAINT ak_HTTPExceptions UNIQUE (exceptionName)
+);
