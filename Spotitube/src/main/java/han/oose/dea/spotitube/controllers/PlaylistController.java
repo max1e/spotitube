@@ -2,7 +2,6 @@ package han.oose.dea.spotitube.controllers;
 
 import han.oose.dea.spotitube.controllers.dto.PlaylistDTO;
 import han.oose.dea.spotitube.controllers.dto.TrackDTO;
-import han.oose.dea.spotitube.controllers.service.LoginService;
 import han.oose.dea.spotitube.controllers.service.PlaylistService;
 import han.oose.dea.spotitube.controllers.service.TracksService;
 
@@ -14,14 +13,8 @@ import javax.ws.rs.core.Response;
 @Path("/playlists")
 public class PlaylistController {
 
-    private LoginService loginService;
     private PlaylistService playlistService;
     private TracksService tracksService;
-
-    @Inject
-    public void setLoginService(LoginService loginService) {
-        this.loginService = loginService;
-    }
 
     @Inject
     public void setPlaylistService(PlaylistService playlistService) {
