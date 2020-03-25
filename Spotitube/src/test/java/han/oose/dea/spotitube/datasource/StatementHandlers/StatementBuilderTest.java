@@ -46,10 +46,10 @@ public class StatementBuilderTest {
                 // Act
                 var actual = sut
                         .setConnection(mockedConnection)
-                        .setProcedureName(PROCEDURE_NAME)
-                        .addParameter(PARAMETER_1)
-                        .addParameter(PARAMETER_2)
-                        .addParameter(PARAMETER_3)
+                        .setProcedure(PROCEDURE_NAME)
+                        .addArgument(PARAMETER_1)
+                        .addArgument(PARAMETER_2)
+                        .addArgument(PARAMETER_3)
                         .build();
 
                 // Assert
@@ -75,8 +75,8 @@ public class StatementBuilderTest {
                 // Act & Assert
                 assertThrows(InternalServerErrorException.class, () -> sut
                         .setConnection(mockedConnection)
-                        .setProcedureName(PROCEDURE_NAME)
-                        .addParameter(PARAMETER_4)
+                        .setProcedure(PROCEDURE_NAME)
+                        .addArgument(PARAMETER_4)
                         .build());
             } catch (SQLException e) {
                 fail();

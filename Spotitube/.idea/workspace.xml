@@ -7,11 +7,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a255ccb-d8cd-4dcc-bd6f-64468dd2b024" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Documentatie/~$leverdocument.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Documentatie/~WRL1807.tmp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/databaseConnection/DatabaseConnectorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/databaseConnection/DatabaseConnectorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/databaseConnection/DatabaseConnectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/databaseConnection/DatabaseConnectorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/PlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/PlaylistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/TracksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/TracksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/PlaylistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/PlaylistService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/TracksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/service/TracksService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/LoginDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/LoginDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/PlaylistDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/StatementHandlers/StatementBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/StatementHandlers/StatementBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/TrackDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/TrackDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/databaseConnection/DatabaseConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/databaseConnection/DatabaseConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/exceptions/ExceptionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/exceptions/ExceptionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/mappers/DTOMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/datasource/mappers/DTOMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/PlaylistServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/PlaylistServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/TracksServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/TracksServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/LoginDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/PlaylistDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/TrackDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/service/datasource/TrackDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/StatementHandlers/StatementBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/datasource/StatementHandlers/StatementBuilderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/PlaylistServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/PlaylistServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/TracksServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/han/oose/dea/spotitube/service/TracksServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +113,7 @@
       <recent name="han.oose.dea.spottitube.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DatabaseConnectorTest$MakeConnectionTest.testMakeConnectionReturnsConnection">
+  <component name="RunManager" selected="JUnit.All in Spotitube">
     <configuration name="All in Spotitube" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Spotitube" />
       <option name="PACKAGE_NAME" value="" />
@@ -244,17 +261,17 @@
       <item itemvalue="JUnit.All in Spotitube" />
       <item itemvalue="JUnit.DatabaseConnectorTest" />
       <item itemvalue="JUnit.DatabaseConnectorTest$MakeConnectionTest" />
-      <item itemvalue="TomEE Server.TomEE? More like Tom ieeh" />
       <item itemvalue="JUnit.DatabaseConnectorTest$MakeConnectionTest.testMakeConnectionCallsGetConnectionString" />
       <item itemvalue="JUnit.DatabaseConnectorTest$MakeConnectionTest.testMakeConnectionReturnsConnection" />
+      <item itemvalue="TomEE Server.TomEE? More like Tom ieeh" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in Spotitube" />
         <item itemvalue="JUnit.DatabaseConnectorTest$MakeConnectionTest.testMakeConnectionReturnsConnection" />
         <item itemvalue="JUnit.DatabaseConnectorTest" />
         <item itemvalue="JUnit.DatabaseConnectorTest$MakeConnectionTest.testMakeConnectionCallsGetConnectionString" />
         <item itemvalue="JUnit.DatabaseConnectorTest$MakeConnectionTest" />
-        <item itemvalue="JUnit.All in Spotitube" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +314,8 @@
       <workItem from="1584954590822" duration="2486000" />
       <workItem from="1584959168669" duration="22520000" />
       <workItem from="1585043139925" duration="10305000" />
-      <workItem from="1585056643237" duration="2417000" />
+      <workItem from="1585056643237" duration="2463000" />
+      <workItem from="1585093138317" duration="3836000" />
     </task>
     <servers />
   </component>
@@ -329,10 +347,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1600.860@0.0.1600.860" timestamp="1584450966743" />
-    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1585058978060">
+    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1585131208072">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1585058978060" />
+    <state x="605" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1585131208072" />
     <state x="417" y="356" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1585058764708">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -357,22 +375,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1584359414677" />
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1585059958255">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom" timestamp="1585131309759">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585059958255" />
-    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1585059958255">
+    <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1585131309759" />
+    <state width="1557" height="222" key="GridCell.Tab.0.center" timestamp="1585131309759">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1585059958255" />
-    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1585059958254">
+    <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1585131309759" />
+    <state width="1557" height="222" key="GridCell.Tab.0.left" timestamp="1585131309759">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1585059958254" />
-    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1585059958255">
+    <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1585131309759" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right" timestamp="1585131309759">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1585059958255" />
+    <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1585131309759" />
     <state width="1069" height="222" key="GridCell.Tab.1.bottom" timestamp="1584984249446">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -461,10 +479,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="280" y="5" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584350584129" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1585056661085">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1585093140458">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585056661085" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585093140458" />
     <state x="542" y="59" key="refactoring.ChangeSignatureDialog" timestamp="1584731636391">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -473,10 +491,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1584967884659" />
-    <state x="456" y="83" width="672" height="676" key="search.everywhere.popup" timestamp="1584974399736">
+    <state x="456" y="83" width="672" height="676" key="search.everywhere.popup" timestamp="1585129662886">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="456" y="83" width="672" height="676" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1584974399736" />
+    <state x="456" y="83" width="672" height="676" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1585129662886" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Spotitube$LoginControllerTest_getItemsTest.ic" NAME="LoginControllerTest.getItemsTest Coverage Results" MODIFIED="1584112793630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

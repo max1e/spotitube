@@ -17,16 +17,10 @@ import java.util.List;
 public class PlaylistServiceImpl implements PlaylistService {
 
     private PlaylistDAO playlistDAO;
-    private TrackDAO trackDAO;
 
     @Inject
     public void setPlaylistDAO(PlaylistDAO playlistDAO) {
         this.playlistDAO = playlistDAO;
-    }
-
-    @Inject
-    public void setTrackDAO(TrackDAO trackDAO) {
-        this.trackDAO = trackDAO;
     }
 
     @Override
@@ -53,15 +47,8 @@ public class PlaylistServiceImpl implements PlaylistService {
     }
 
     @Override
-    public TracksDTO getPlaylistsTracks(String token, int playlistId) {
-        var tracks = trackDAO.getPlaylistsTracks(token, playlistId);
-        var tracksWrapper = new TracksDTO(tracks);
-        return tracksWrapper;
-    }
-
-    @Override
-    public void deletePlaylist(String token, int id) {
-        playlistDAO.deletePlaylist(token, id);
+    public void deletePlaylist(String token, int playlistId) {
+        playlistDAO.deletePlaylist(token, playlistId);
     }
 
     @Override

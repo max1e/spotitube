@@ -25,6 +25,13 @@ public class TracksController {
         this.tracksService = tracksService;
     }
 
+    /**
+     * Returns response containing the available tracks of the given playlist, or all tracks if none is given
+     *
+     * @param token The token of the querying user
+     * @param playlistId The playlist whose available tracks are requested
+     * @return Response OK containing available tracks
+     */
     @GET
     public Response getAvailableTracks(@QueryParam("token") String token, @QueryParam("playlistId") Integer playlistId) {
         var tracks = tracksService.getAvailableTracks(token, playlistId);

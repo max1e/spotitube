@@ -20,7 +20,6 @@ public class PlaylistServiceTest {
 
     private PlaylistServiceImpl sut;
     private PlaylistDAO mockedPlaylistDAO;
-    private TrackDAO mockedTrackDAO;
 
     private static final int PLAYLIST_ID = 1;
     private static final String PLAYLIST_NAME = "playlist";
@@ -57,9 +56,6 @@ public class PlaylistServiceTest {
 
         mockedPlaylistDAO = Mockito.mock(PlaylistDAO.class);
         sut.setPlaylistDAO(mockedPlaylistDAO);
-
-        mockedTrackDAO = Mockito.mock(TrackDAO.class);
-        sut.setTrackDAO(mockedTrackDAO);
     }
 
     @Nested
@@ -107,38 +103,6 @@ public class PlaylistServiceTest {
 
             // Assert
             assertEquals(expectedDuration, actualDuration);
-        }
-    }
-
-    @Nested
-    @DisplayName("getPlaylistsTracks() unit tests")
-    class GetPlaylistTracksTest {
-        @Test
-        @DisplayName("Test getPlaylistsTracks() calls trackDAO.getPlaylistsTracks()")
-        public void testGetPlaylistsTracksCallsPlaylistDAOGetPlaylistsTracks() {
-            // Arrange
-
-            // Act
-            sut.getPlaylistsTracks(TOKEN, PLAYLIST_ID);
-
-            // Assert
-            Mockito.verify(mockedTrackDAO).getPlaylistsTracks(TOKEN, PLAYLIST_ID);
-        }
-
-        @Test
-        @DisplayName("Test getPlaylistsTracks() passes on tracks from trackDAO.getPlaylistsTracks()")
-        public void getGetPlaylistsTracksPassesOnTracksFromPlaylistDAOGetPlaylistsTracks() {
-            // Assert
-            var expectedTracks = TRACKS;
-
-            Mockito.when(mockedTrackDAO.getPlaylistsTracks(TOKEN, PLAYLIST_ID)).thenReturn(TRACKS);
-
-            // Act
-            var actual = sut.getPlaylistsTracks(TOKEN, PLAYLIST_ID);
-            var actualTracks = actual.getTracks();
-
-            // Assert
-            assertEquals(expectedTracks, actualTracks);
         }
     }
 

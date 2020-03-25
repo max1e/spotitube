@@ -34,6 +34,38 @@ public class TracksServiceTest {
     }
 
     @Nested
+    @DisplayName("getPlaylistsTracks() unit tests")
+    class GetPlaylistTracksTest {
+        @Test
+        @DisplayName("Test getPlaylistsTracks() calls trackDAO.getPlaylistsTracks()")
+        public void testGetPlaylistsTracksCallsPlaylistDAOGetPlaylistsTracks() {
+            // Arrange
+
+            // Act
+            sut.getPlaylistsTracks(TOKEN, PLAYLIST_ID);
+
+            // Assert
+            Mockito.verify(mockedTrackDAO).getPlaylistsTracks(TOKEN, PLAYLIST_ID);
+        }
+
+        @Test
+        @DisplayName("Test getPlaylistsTracks() passes on tracks from trackDAO.getPlaylistsTracks()")
+        public void getGetPlaylistsTracksPassesOnTracksFromPlaylistDAOGetPlaylistsTracks() {
+            // Assert
+            var expectedTracks = TRACKS;
+
+            Mockito.when(mockedTrackDAO.getPlaylistsTracks(TOKEN, PLAYLIST_ID)).thenReturn(TRACKS);
+
+            // Act
+            var actual = sut.getPlaylistsTracks(TOKEN, PLAYLIST_ID);
+            var actualTracks = actual.getTracks();
+
+            // Assert
+            assertEquals(expectedTracks, actualTracks);
+        }
+    }
+
+    @Nested
     @DisplayName("getAvailableTracks() unit tests")
     class GetAvailableTracksTest {
         @Test

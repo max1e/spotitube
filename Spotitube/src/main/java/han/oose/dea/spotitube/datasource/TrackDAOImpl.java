@@ -37,6 +37,33 @@ public class TrackDAOImpl implements TrackDAO {
     }
 
     @Override
+    public List<TrackDTO> getPlaylistsTracks(String token, int playlistId) {
+        List<TrackDTO> tracks = null;
+
+        try {
+            var connection = dbConnector.makeConnection();
+
+            var sqlStatement = new StatementBuilder()
+                    .setConnection(connection)
+                    .setProcedure("sp_getPlaylistsTracks")
+                    .addArgument(token)
+                    .addArgument(playlistId)
+                    .build();
+
+
+            var resultset = sqlStatement.executeQuery();
+            tracks = trackMapper.toDTO(resultset);
+
+            closeConnection(connection, sqlStatement);
+        }
+        catch (SQLException | ClassNotFoundException e) {
+            exceptionMapper.mapException(e);
+        }
+
+        return tracks;
+    }
+
+    @Override
     public List<TrackDTO> getTracksNotInPlaylist(String token, Integer playlistId) {
         List<TrackDTO> tracks = null;
 
@@ -45,9 +72,9 @@ public class TrackDAOImpl implements TrackDAO {
 
             var sqlStatement = new StatementBuilder()
                     .setConnection(connection)
-                    .setProcedureName("sp_getTracksNotInPlaylist")
-                    .addParameter(token)
-                    .addParameter(playlistId)
+                    .setProcedure("sp_getTracksNotInPlaylist")
+                    .addArgument(token)
+                    .addArgument(playlistId)
                     .build();
 
             var resultset = sqlStatement.executeQuery();
@@ -71,36 +98,9 @@ public class TrackDAOImpl implements TrackDAO {
 
             var sqlStatement = new StatementBuilder()
                     .setConnection(connection)
-                    .setProcedureName("sp_getPlaylistsTracks")
-                    .addParameter(token)
+                    .setProcedure("sp_getPlaylistsTracks")
+                    .addArgument(token)
                     .build();
-
-            var resultset = sqlStatement.executeQuery();
-            tracks = trackMapper.toDTO(resultset);
-
-            closeConnection(connection, sqlStatement);
-        }
-        catch (SQLException | ClassNotFoundException e) {
-            exceptionMapper.mapException(e);
-        }
-
-        return tracks;
-    }
-
-    @Override
-    public List<TrackDTO> getPlaylistsTracks(String token, int playlistId) {
-        List<TrackDTO> tracks = null;
-
-        try {
-            var connection = dbConnector.makeConnection();
-
-            var sqlStatement = new StatementBuilder()
-                    .setConnection(connection)
-                    .setProcedureName("sp_getPlaylistsTracks")
-                    .addParameter(token)
-                    .addParameter(playlistId)
-                    .build();
-
 
             var resultset = sqlStatement.executeQuery();
             tracks = trackMapper.toDTO(resultset);

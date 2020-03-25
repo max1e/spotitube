@@ -21,12 +21,12 @@ public class StatementBuilder {
         return this;
     }
 
-    public StatementBuilder setProcedureName(String procedureName) {
+    public StatementBuilder setProcedure(String procedureName) {
         this.procedureName = procedureName;
         return this;
     }
 
-    public StatementBuilder addParameter(Object object) {
+    public StatementBuilder addArgument(Object object) {
         parameters.add(object);
         return this;
     }

@@ -18,6 +18,12 @@ public class LoginController {
         this.loginService = loginService;
     }
 
+    /**
+     * Validates the users attempted login
+     *
+     * @param login A loginDTO containing the username and password of the user trying to log in
+     * @return Response OK containing the users token and full name
+     */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

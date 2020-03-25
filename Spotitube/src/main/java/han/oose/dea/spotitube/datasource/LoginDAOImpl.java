@@ -45,9 +45,9 @@ public class LoginDAOImpl implements LoginDAO {
 
             var sqlStatement = new StatementBuilder()
                     .setConnection(connection)
-                    .setProcedureName("sp_validateLogin")
-                    .addParameter(username)
-                    .addParameter(hashedPassword)
+                    .setProcedure("sp_validateLogin")
+                    .addArgument(username)
+                    .addArgument(hashedPassword)
                     .build();
 
             var resultset = sqlStatement.executeQuery();

@@ -43,8 +43,8 @@ public class PlaylistDAOImpl implements PlaylistDAO {
 
             var sqlStatement = new StatementBuilder()
                     .setConnection(connection)
-                    .setProcedureName("sp_getAllPlaylists")
-                    .addParameter(token)
+                    .setProcedure("sp_getAllPlaylists")
+                    .addArgument(token)
                     .build();
 
             var resultset = sqlStatement.executeQuery();
@@ -66,9 +66,9 @@ public class PlaylistDAOImpl implements PlaylistDAO {
 
             var sqlStatement = new StatementBuilder()
                     .setConnection(connection)
-                    .setProcedureName("sp_deletePlaylist")
-                    .addParameter(token)
-                    .addParameter(playlistId)
+                    .setProcedure("sp_deletePlaylist")
+                    .addArgument(token)
+                    .addArgument(playlistId)
                     .build();
 
             sqlStatement.executeUpdate();
@@ -87,9 +87,9 @@ public class PlaylistDAOImpl implements PlaylistDAO {
 
             var sqlStatement = new StatementBuilder()
                     .setConnection(connection)
-                    .setProcedureName("sp_addPlaylist")
-                    .addParameter(token)
-                    .addParameter(playlistName)
+                    .setProcedure("sp_addPlaylist")
+                    .addArgument(token)
+                    .addArgument(playlistName)
                     .build();
 
             sqlStatement.executeUpdate();
@@ -108,10 +108,10 @@ public class PlaylistDAOImpl implements PlaylistDAO {
 
             var sqlStatement = new StatementBuilder()
                     .setConnection(connection)
-                    .setProcedureName("sp_editPlaylistName")
-                    .addParameter(token)
-                    .addParameter(playlistId)
-                    .addParameter(newName)
+                    .setProcedure("sp_editPlaylistName")
+                    .addArgument(token)
+                    .addArgument(playlistId)
+                    .addArgument(newName)
                     .build();
 
             sqlStatement.executeUpdate();
@@ -130,10 +130,10 @@ public class PlaylistDAOImpl implements PlaylistDAO {
 
             var sqlStatement = new StatementBuilder()
                     .setConnection(connection)
-                    .setProcedureName("sp_removeTrackFromPlaylist")
-                    .addParameter(token)
-                    .addParameter(playlistId)
-                    .addParameter(trackId)
+                    .setProcedure("sp_removeTrackFromPlaylist")
+                    .addArgument(token)
+                    .addArgument(playlistId)
+                    .addArgument(trackId)
                     .build();
 
             sqlStatement.executeUpdate();
@@ -152,10 +152,10 @@ public class PlaylistDAOImpl implements PlaylistDAO {
 
             var sqlStatement = new StatementBuilder()
                     .setConnection(connection)
-                    .setProcedureName("sp_addTrackToPlaylist")
-                    .addParameter(token)
-                    .addParameter(playlistId)
-                    .addParameter(trackId)
+                    .setProcedure("sp_addTrackToPlaylist")
+                    .addArgument(token)
+                    .addArgument(playlistId)
+                    .addArgument(trackId)
                     .build();
 
             sqlStatement.executeUpdate();

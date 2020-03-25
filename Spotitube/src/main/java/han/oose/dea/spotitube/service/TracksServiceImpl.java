@@ -20,6 +20,13 @@ public class TracksServiceImpl implements TracksService {
     }
 
     @Override
+    public TracksDTO getPlaylistsTracks(String token, int playlistId) {
+        var tracks = trackDAO.getPlaylistsTracks(token, playlistId);
+        var tracksWrapper = new TracksDTO(tracks);
+        return tracksWrapper;
+    }
+
+    @Override
     public TracksDTO getAvailableTracks(String token, Integer playlistId) {
         List<TrackDTO> availableTracks;
 
