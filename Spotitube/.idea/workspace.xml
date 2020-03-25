@@ -7,8 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a255ccb-d8cd-4dcc-bd6f-64468dd2b024" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Documentatie/Diagrams/Diagrams.asta" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentatie/Diagrams/Diagrams.asta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documentatie/Diagrams/Package diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentatie/Diagrams/Package diagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documentatie/Diagrams/Package diagram.png.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentatie/Diagrams/Package diagram.png.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documentatie/Opleverdocument.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentatie/Opleverdocument.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documentatie/~$leverdocument.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentatie/~$leverdocument.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documentatie/~WRL3569.tmp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/PlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/han/oose/dea/spotitube/controllers/PlaylistController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +301,8 @@
       <workItem from="1585043139925" duration="10305000" />
       <workItem from="1585056643237" duration="2463000" />
       <workItem from="1585093138317" duration="5245000" />
-      <workItem from="1585133543013" duration="3868000" />
+      <workItem from="1585133543013" duration="4457000" />
+      <workItem from="1585172125622" duration="612000" />
     </task>
     <servers />
   </component>
@@ -460,10 +466,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="280" y="5" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1584350584129" />
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1585133546343">
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog" timestamp="1585172134877">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585133546343" />
+    <state x="0" y="0" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1585172134877" />
     <state x="542" y="59" key="refactoring.ChangeSignatureDialog" timestamp="1584731636391">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
